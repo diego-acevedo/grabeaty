@@ -1,0 +1,146 @@
+[gd_scene load_steps=9 format=3 uid="uid://d6kq7u8dug83"]
+
+[ext_resource type="Script" path="res://SCRIPTS/LEFT-SIDE/left_side.gd" id="1_mtwpr"]
+[ext_resource type="Texture2D" uid="uid://c07qppiwfbmp" path="res://assets/SHAPES/cuadrado.png" id="2_w4dvp"]
+[ext_resource type="Texture2D" uid="uid://b4a5qqqnljura" path="res://assets/SHAPES/CuadradoBlanco.png" id="3_l2xcd"]
+[ext_resource type="PackedScene" uid="uid://ug85r7bb4k6j" path="res://SCENES/LEFT-SIDE/nota.tscn" id="4_ctv3y"]
+[ext_resource type="Script" path="res://SCRIPTS/LEFT-SIDE/q_key.gd" id="5_0c5cg"]
+[ext_resource type="Script" path="res://SCRIPTS/LEFT-SIDE/w_key.gd" id="6_nih5g"]
+[ext_resource type="Script" path="res://SCRIPTS/LEFT-SIDE/e_key.gd" id="7_ifh57"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1gg4l"]
+size = Vector2(120, 34)
+
+[node name="LEFT-SIDE" type="Node2D"]
+script = ExtResource("1_mtwpr")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(343, 537)
+scale = Vector2(5.71875, 9.0625)
+texture = ExtResource("2_w4dvp")
+
+[node name="STRUCTURE" type="Node2D" parent="."]
+
+[node name="ColumnaQ" type="Sprite2D" parent="STRUCTURE"]
+modulate = Color(1, 0, 1, 1)
+position = Vector2(122, 5.74997)
+scale = Vector2(1, 13.7305)
+texture = ExtResource("3_l2xcd")
+
+[node name="ColumnaW" type="Sprite2D" parent="STRUCTURE"]
+modulate = Color(1, 0, 1, 1)
+position = Vector2(328, 8.24994)
+scale = Vector2(1, 13.6602)
+texture = ExtResource("3_l2xcd")
+
+[node name="ColumnaE" type="Sprite2D" parent="STRUCTURE"]
+modulate = Color(1, 0, 1, 1)
+position = Vector2(549, 0.75)
+scale = Vector2(1, 13.8086)
+texture = ExtResource("3_l2xcd")
+
+[node name="AreaBlanca" type="Sprite2D" parent="STRUCTURE"]
+position = Vector2(345, 893.25)
+scale = Vector2(5.70313, 0.949219)
+texture = ExtResource("3_l2xcd")
+
+[node name="NOTES" type="Node2D" parent="."]
+
+[node name="NOTA" parent="NOTES" instance=ExtResource("4_ctv3y")]
+position = Vector2(121, 63)
+
+[node name="NOTA2" parent="NOTES" instance=ExtResource("4_ctv3y")]
+position = Vector2(328, 211)
+
+[node name="NOTA3" parent="NOTES" instance=ExtResource("4_ctv3y")]
+position = Vector2(552, 370)
+
+[node name="NOTA4" parent="NOTES" instance=ExtResource("4_ctv3y")]
+position = Vector2(117, 558)
+
+[node name="NOTA5" parent="NOTES" instance=ExtResource("4_ctv3y")]
+position = Vector2(119, -210)
+
+[node name="NOTA6" parent="NOTES" instance=ExtResource("4_ctv3y")]
+position = Vector2(118, -349)
+
+[node name="NOTA7" parent="NOTES" instance=ExtResource("4_ctv3y")]
+position = Vector2(117, -488)
+
+[node name="NOTA8" parent="NOTES" instance=ExtResource("4_ctv3y")]
+position = Vector2(329, -347)
+
+[node name="NOTA9" parent="NOTES" instance=ExtResource("4_ctv3y")]
+position = Vector2(552, -81)
+
+[node name="NOTA10" parent="NOTES" instance=ExtResource("4_ctv3y")]
+position = Vector2(556, -476)
+
+[node name="INPUTS" type="Node2D" parent="."]
+
+[node name="Q-key" type="Node2D" parent="INPUTS"]
+script = ExtResource("5_0c5cg")
+
+[node name="sprite" type="Sprite2D" parent="INPUTS/Q-key"]
+visible = false
+modulate = Color(0, 0.654902, 1, 1)
+position = Vector2(122, 892)
+scale = Vector2(1, 0.296875)
+texture = ExtResource("3_l2xcd")
+
+[node name="key" type="Area2D" parent="INPUTS/Q-key"]
+
+[node name="Colision" type="CollisionShape2D" parent="INPUTS/Q-key/key"]
+position = Vector2(121, 892)
+shape = SubResource("RectangleShape2D_1gg4l")
+disabled = true
+
+[node name="Timer" type="Timer" parent="INPUTS/Q-key/key/Colision"]
+wait_time = 0.1
+
+[node name="W-key" type="Node2D" parent="INPUTS"]
+script = ExtResource("6_nih5g")
+
+[node name="key" type="Area2D" parent="INPUTS/W-key"]
+position = Vector2(207, 1)
+
+[node name="Colision" type="CollisionShape2D" parent="INPUTS/W-key/key"]
+position = Vector2(121, 893.5)
+shape = SubResource("RectangleShape2D_1gg4l")
+disabled = true
+
+[node name="Timer" type="Timer" parent="INPUTS/W-key/key/Colision"]
+wait_time = 0.1
+
+[node name="sprite" type="Sprite2D" parent="INPUTS/W-key"]
+visible = false
+modulate = Color(0.380086, 0.710759, 0.383655, 1)
+position = Vector2(327, 895)
+scale = Vector2(1, 0.296875)
+texture = ExtResource("3_l2xcd")
+
+[node name="E-key" type="Node2D" parent="INPUTS"]
+position = Vector2(222, -1)
+script = ExtResource("7_ifh57")
+
+[node name="key" type="Area2D" parent="INPUTS/E-key"]
+position = Vector2(207, 1)
+
+[node name="Colision" type="CollisionShape2D" parent="INPUTS/E-key/key"]
+position = Vector2(121, 893.5)
+shape = SubResource("RectangleShape2D_1gg4l")
+disabled = true
+
+[node name="Timer" type="Timer" parent="INPUTS/E-key/key/Colision"]
+wait_time = 0.1
+
+[node name="sprite" type="Sprite2D" parent="INPUTS/E-key"]
+visible = false
+modulate = Color(0.866667, 0.709804, 0.384314, 1)
+position = Vector2(331, 895)
+scale = Vector2(1, 0.296875)
+texture = ExtResource("3_l2xcd")
+
+[connection signal="body_entered" from="INPUTS/Q-key/key" to="INPUTS/Q-key" method="_on_key_body_entered"]
+[connection signal="body_entered" from="INPUTS/W-key/key" to="INPUTS/W-key" method="_on_key_body_entered"]
+[connection signal="body_entered" from="INPUTS/E-key/key" to="INPUTS/E-key" method="_on_key_body_entered"]
