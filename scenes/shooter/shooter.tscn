@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://csoulkdm5bos7"]
+
+[node name="Shooter" type="Node2D"]
