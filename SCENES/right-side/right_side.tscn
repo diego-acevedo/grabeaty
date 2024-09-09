@@ -1,7 +1,11 @@
-[gd_scene load_steps=35 format=3 uid="uid://cqarly8sc0w26"]
+[gd_scene load_steps=40 format=3 uid="uid://cqarly8sc0w26"]
 
 [ext_resource type="Texture2D" uid="uid://e7o1flid6ayb" path="res://assets/CelestialObjects.png" id="2_g71wd"]
 [ext_resource type="Texture2D" uid="uid://ch0boq2k7affq" path="res://assets/SpaceshipKit.png" id="2_ije2k"]
+[ext_resource type="Texture2D" uid="uid://v6pemd4ye8gx" path="res://assets/background_rythm.png" id="3_0u7pu"]
+[ext_resource type="Texture2D" uid="uid://bm1bw2lrjgt8r" path="res://assets/foreground_rythm.png" id="4_hsmnb"]
+[ext_resource type="Script" path="res://SCENES/right-side/buttons.gd" id="5_6snak"]
+[ext_resource type="Texture2D" uid="uid://co6rk841jgnn1" path="res://assets/buttons_rythm.png" id="5_yq4p5"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_bq7i7"]
 tile_data = PackedInt32Array(0, 2, 0, 65536, 2, 1, 1, 65538, 0, 65537, 65538, 1)
@@ -227,6 +231,8 @@ pattern_27 = SubResource("TileMapPattern_ia4hq")
 pattern_28 = SubResource("TileMapPattern_v8ynd")
 pattern_29 = SubResource("TileMapPattern_by2r8")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wqq3n"]
+
 [node name="Right Side" type="Node2D"]
 scale = Vector2(3, 3)
 
@@ -237,11 +243,12 @@ rendering_quadrant_size = 32
 format = 2
 layer_0/tile_data = PackedInt32Array(458763, 524290, 3, 524299, 524290, 4, 589835, 524290, 5, 655371, 524290, 6, 458764, 589826, 3, 524300, 589826, 4, 589836, 589826, 5, 655372, 589826, 6, 458765, 655362, 3, 524301, 655362, 4, 589837, 655362, 5, 655373, 655362, 6, 458766, 720898, 3, 524302, 720898, 4, 589838, 720898, 5, 655374, 720898, 6, 327695, 524290, 7, 327696, 589826, 7, 327697, 655362, 7, 327698, 720898, 7, 393231, 262146, 7, 589841, 196610, 7, 393226, 196610, 7, 65548, 524290, 0, 131084, 524290, 1, 196620, 524290, 2, 65549, 589826, 0, 131085, 589826, 1, 196621, 589826, 2, 65550, 655362, 0, 131086, 655362, 1, 196622, 655362, 2, 65551, 720898, 0, 131087, 720898, 1, 196623, 720898, 2, 262154, 524290, 7, 262155, 589826, 7, 262156, 655362, 7, 262157, 720898, 7, 196625, 196610, 6, 393228, 458754, 7, 65547, 393218, 7, 655370, 327682, 7, 262159, 458754, 7, 655379, 262146, 7, 458769, 2, 2, 524305, 2, 3, 458770, 65538, 2, 524306, 65538, 3, 655376, 393218, 7)
 
-[node name="TileMapLayer" type="TileMapLayer" parent="TileMap"]
-
-[node name="Node2D" type="Node2D" parent="."]
+[node name="Node2D" type="CharacterBody2D" parent="."]
 position = Vector2(496, 272)
 metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D"]
+shape = SubResource("RectangleShape2D_wqq3n")
 
 [node name="Bottom" type="Sprite2D" parent="Node2D"]
 texture = ExtResource("2_ije2k")
@@ -262,16 +269,39 @@ hframes = 18
 vframes = 10
 frame = 4
 
-[node name="Top" type="Sprite2D" parent="."]
-position = Vector2(485, 242)
-texture = ExtResource("2_ije2k")
-hframes = 18
-vframes = 10
-frame = 129
+[node name="Rythm UI" type="Node2D" parent="."]
+position = Vector2(110, 180)
+metadata/_edit_group_ = true
 
-[node name="Top2" type="Sprite2D" parent="."]
-position = Vector2(507, 242)
-texture = ExtResource("2_ije2k")
-hframes = 18
-vframes = 10
-frame = 129
+[node name="Background" type="Sprite2D" parent="Rythm UI"]
+z_index = -1
+texture = ExtResource("3_0u7pu")
+
+[node name="Foreground" type="Sprite2D" parent="Rythm UI"]
+z_index = 1
+texture = ExtResource("4_hsmnb")
+
+[node name="Buttons" type="Node2D" parent="Rythm UI"]
+z_index = 2
+position = Vector2(0, -1)
+script = ExtResource("5_6snak")
+
+[node name="A" type="Sprite2D" parent="Rythm UI/Buttons"]
+position = Vector2(-46, 158)
+texture = ExtResource("5_yq4p5")
+hframes = 2
+vframes = 3
+
+[node name="S" type="Sprite2D" parent="Rythm UI/Buttons"]
+position = Vector2(-2.03848e-05, 158)
+texture = ExtResource("5_yq4p5")
+hframes = 2
+vframes = 3
+frame = 2
+
+[node name="D" type="Sprite2D" parent="Rythm UI/Buttons"]
+position = Vector2(46, 158)
+texture = ExtResource("5_yq4p5")
+hframes = 2
+vframes = 3
+frame = 4
