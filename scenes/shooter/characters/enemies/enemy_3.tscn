@@ -1,0 +1,36 @@
+[gd_scene load_steps=3 format=3 uid="uid://c75gnfrt2jnmh"]
+
+[ext_resource type="Script" path="res://scripts/shooter/characters/enemy.gd" id="1_jemk4"]
+[ext_resource type="Texture2D" uid="uid://cti2yrxs2vrvl" path="res://assets/sprites/spaceships.png" id="2_go5j0"]
+
+[node name="Enemy3" type="CharacterBody2D"]
+collision_layer = 4
+script = ExtResource("1_jemk4")
+metadata/_edit_group_ = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(0, -1)
+polygon = PackedVector2Array(15, 14, 15, 2, 6, -15, -6, -15, -15, 2, -15, 14)
+
+[node name="Sprites" type="Node2D" parent="."]
+
+[node name="Bottom" type="Sprite2D" parent="Sprites"]
+position = Vector2(0, -1)
+texture = ExtResource("2_go5j0")
+hframes = 18
+vframes = 10
+frame = 47
+
+[node name="Middle" type="Sprite2D" parent="Sprites"]
+position = Vector2(0, 1)
+texture = ExtResource("2_go5j0")
+hframes = 18
+vframes = 10
+frame = 99
+
+[node name="Top" type="Sprite2D" parent="Sprites"]
+position = Vector2(0, -1)
+texture = ExtResource("2_go5j0")
+hframes = 18
+vframes = 10
+frame = 26

@@ -1,3 +1,21 @@
-[gd_scene format=3 uid="uid://csoulkdm5bos7"]
+[gd_scene load_steps=5 format=3 uid="uid://bgg8kc0il1xyh"]
+
+[ext_resource type="PackedScene" uid="uid://cbhabtj12l8cd" path="res://scenes/shooter/characters/player/player.tscn" id="1_memmo"]
+[ext_resource type="PackedScene" uid="uid://dq6pu4hm4bqav" path="res://scenes/shooter/characters/enemies/enemy_1.tscn" id="2_wqiss"]
+[ext_resource type="PackedScene" uid="uid://ce0q61f8uhu4d" path="res://scenes/shooter/characters/enemies/enemy_2.tscn" id="3_m2700"]
+[ext_resource type="PackedScene" uid="uid://c75gnfrt2jnmh" path="res://scenes/shooter/characters/enemies/enemy_3.tscn" id="4_ino3g"]
 
 [node name="Shooter" type="Node2D"]
+scale = Vector2(3, 3)
+
+[node name="Player" parent="." instance=ExtResource("1_memmo")]
+position = Vector2(434.333, 333.667)
+
+[node name="Enemy1" parent="." instance=ExtResource("2_wqiss")]
+position = Vector2(347, 61.6667)
+
+[node name="Enemy2" parent="." instance=ExtResource("3_m2700")]
+position = Vector2(435.333, 75)
+
+[node name="Enemy3" parent="." instance=ExtResource("4_ino3g")]
+position = Vector2(522, 61.6667)
