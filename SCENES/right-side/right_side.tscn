@@ -1,5 +1,6 @@
-[gd_scene load_steps=37 format=3 uid="uid://cqarly8sc0w26"]
+[gd_scene load_steps=38 format=3 uid="uid://cqarly8sc0w26"]
 
+[ext_resource type="Script" path="res://SCRIPTS/RIGHT-SIDE/right_side.gd" id="1_rstqr"]
 [ext_resource type="Texture2D" uid="uid://e7o1flid6ayb" path="res://assets/CelestialObjects.png" id="2_g71wd"]
 [ext_resource type="Texture2D" uid="uid://ch0boq2k7affq" path="res://assets/SpaceshipKit.png" id="2_ije2k"]
 [ext_resource type="Script" path="res://SCENES/right-side/character.gd" id="3_c3x36"]
@@ -232,6 +233,7 @@ pattern_29 = SubResource("TileMapPattern_by2r8")
 
 [node name="Right Side" type="Node2D"]
 scale = Vector2(3, 3)
+script = ExtResource("1_rstqr")
 
 [node name="TileMap" type="TileMap" parent="."]
 modulate = Color(1, 1, 1, 0.486275)
