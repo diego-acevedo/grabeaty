@@ -24,12 +24,12 @@ func _input(event: InputEvent) -> void:
 		await timer.timeout
 		colision.set_deferred("disabled", true)
 		sprite.visible = false
-		
-func _on_key_body_entered(body: Node2D) -> void:
+
+func _on_key_area_entered(area: Area2D) -> void:
 	
 	# Utilizo esta señal para evaluar cuando una nota ha sido tocada, en caso
 	# positivo entonces llamamos a la funcion "die" de la nota lo que hace que
 	# desaparezca.
 	
-	if body.has_method("die"):
-		body.die()
+	if area.has_method("die"):
+		area.die()

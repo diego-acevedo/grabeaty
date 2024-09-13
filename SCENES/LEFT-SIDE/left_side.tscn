@@ -12,7 +12,6 @@
 size = Vector2(120, 34)
 
 [node name="LEFT-SIDE" type="Node2D"]
-visible = false
 script = ExtResource("1_mtwpr")
 
 [node name="Background" type="Sprite2D" parent="."]
@@ -142,6 +141,6 @@ position = Vector2(331, 895)
 scale = Vector2(1, 0.296875)
 texture = ExtResource("3_l2xcd")
 
-[connection signal="body_entered" from="INPUTS/Q-key/key" to="INPUTS/Q-key" method="_on_key_body_entered"]
-[connection signal="body_entered" from="INPUTS/W-key/key" to="INPUTS/W-key" method="_on_key_body_entered"]
-[connection signal="body_entered" from="INPUTS/E-key/key" to="INPUTS/E-key" method="_on_key_body_entered"]
+[connection signal="area_entered" from="INPUTS/Q-key/key" to="INPUTS/Q-key" method="_on_key_area_entered"]
+[connection signal="area_entered" from="INPUTS/W-key/key" to="INPUTS/W-key" method="_on_key_area_entered"]
+[connection signal="area_entered" from="INPUTS/E-key/key" to="INPUTS/E-key" method="_on_key_area_entered"]

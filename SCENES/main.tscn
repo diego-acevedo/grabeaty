@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://bgg8locm7ra5i"]
+
+[ext_resource type="PackedScene" uid="uid://d6kq7u8dug83" path="res://SCENES/LEFT-SIDE/left_side.tscn" id="1_cmshf"]
+[ext_resource type="PackedScene" uid="uid://cqarly8sc0w26" path="res://SCENES/right-side/right_side.tscn" id="2_1mamc"]
+
+[node name="MAIN" type="Node2D"]
+
+[node name="LEFT-SIDE" parent="." instance=ExtResource("1_cmshf")]
+
+[node name="Right Side" parent="." instance=ExtResource("2_1mamc")]
