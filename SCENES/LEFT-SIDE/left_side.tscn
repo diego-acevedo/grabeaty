@@ -1,12 +1,14 @@
-[gd_scene load_steps=9 format=3 uid="uid://d6kq7u8dug83"]
+[gd_scene load_steps=11 format=3 uid="uid://d6kq7u8dug83"]
 
 [ext_resource type="Script" path="res://SCRIPTS/LEFT-SIDE/left_side.gd" id="1_mtwpr"]
 [ext_resource type="Texture2D" uid="uid://c07qppiwfbmp" path="res://assets/SHAPES/cuadrado.png" id="2_w4dvp"]
 [ext_resource type="Texture2D" uid="uid://b4a5qqqnljura" path="res://assets/SHAPES/CuadradoBlanco.png" id="3_l2xcd"]
+[ext_resource type="Texture2D" uid="uid://v6pemd4ye8gx" path="res://assets/background_rythm.png" id="4_c3fey"]
 [ext_resource type="PackedScene" uid="uid://ug85r7bb4k6j" path="res://SCENES/LEFT-SIDE/nota.tscn" id="4_ctv3y"]
 [ext_resource type="Script" path="res://SCRIPTS/LEFT-SIDE/q_key.gd" id="5_0c5cg"]
 [ext_resource type="Script" path="res://SCRIPTS/LEFT-SIDE/w_key.gd" id="6_nih5g"]
 [ext_resource type="Script" path="res://SCRIPTS/LEFT-SIDE/e_key.gd" id="7_ifh57"]
+[ext_resource type="Texture2D" uid="uid://bm1bw2lrjgt8r" path="res://assets/foreground_rythm.png" id="9_4fuaa"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1gg4l"]
 size = Vector2(120, 34)
@@ -23,19 +25,19 @@ texture = ExtResource("2_w4dvp")
 
 [node name="ColumnaQ" type="Sprite2D" parent="STRUCTURE"]
 modulate = Color(1, 0, 1, 1)
-position = Vector2(122, 5.74997)
+position = Vector2(195, 15)
 scale = Vector2(1, 13.7305)
 texture = ExtResource("3_l2xcd")
 
 [node name="ColumnaW" type="Sprite2D" parent="STRUCTURE"]
 modulate = Color(1, 0, 1, 1)
-position = Vector2(328, 8.24994)
+position = Vector2(336, 18)
 scale = Vector2(1, 13.6602)
 texture = ExtResource("3_l2xcd")
 
 [node name="ColumnaE" type="Sprite2D" parent="STRUCTURE"]
 modulate = Color(1, 0, 1, 1)
-position = Vector2(549, 0.75)
+position = Vector2(470, 25)
 scale = Vector2(1, 13.8086)
 texture = ExtResource("3_l2xcd")
 
@@ -44,41 +46,47 @@ position = Vector2(345, 893.25)
 scale = Vector2(5.70313, 0.949219)
 texture = ExtResource("3_l2xcd")
 
+[node name="BackgroundRythm" type="Sprite2D" parent="."]
+position = Vector2(326, 494)
+scale = Vector2(3, 3)
+texture = ExtResource("4_c3fey")
+
 [node name="NOTES" type="Node2D" parent="."]
 
 [node name="NOTA" parent="NOTES" instance=ExtResource("4_ctv3y")]
-position = Vector2(121, 63)
+position = Vector2(193, 66)
 
 [node name="NOTA2" parent="NOTES" instance=ExtResource("4_ctv3y")]
-position = Vector2(328, 211)
+position = Vector2(341, 280)
 
 [node name="NOTA3" parent="NOTES" instance=ExtResource("4_ctv3y")]
-position = Vector2(552, 370)
+position = Vector2(473, 373)
 
 [node name="NOTA4" parent="NOTES" instance=ExtResource("4_ctv3y")]
-position = Vector2(117, 558)
+position = Vector2(193, 554)
 
 [node name="NOTA5" parent="NOTES" instance=ExtResource("4_ctv3y")]
-position = Vector2(119, -210)
+position = Vector2(191, -214)
 
 [node name="NOTA6" parent="NOTES" instance=ExtResource("4_ctv3y")]
-position = Vector2(118, -349)
+position = Vector2(193, -353)
 
 [node name="NOTA7" parent="NOTES" instance=ExtResource("4_ctv3y")]
-position = Vector2(117, -488)
+position = Vector2(196, -491)
 
 [node name="NOTA8" parent="NOTES" instance=ExtResource("4_ctv3y")]
-position = Vector2(329, -347)
+position = Vector2(338, -348)
 
 [node name="NOTA9" parent="NOTES" instance=ExtResource("4_ctv3y")]
-position = Vector2(552, -81)
+position = Vector2(471, -85)
 
 [node name="NOTA10" parent="NOTES" instance=ExtResource("4_ctv3y")]
-position = Vector2(556, -476)
+position = Vector2(469, -476)
 
 [node name="INPUTS" type="Node2D" parent="."]
 
 [node name="Q-key" type="Node2D" parent="INPUTS"]
+position = Vector2(72, -20)
 script = ExtResource("5_0c5cg")
 
 [node name="sprite" type="Sprite2D" parent="INPUTS/Q-key"]
@@ -99,6 +107,7 @@ disabled = true
 wait_time = 0.1
 
 [node name="W-key" type="Node2D" parent="INPUTS"]
+position = Vector2(5, -25)
 script = ExtResource("6_nih5g")
 
 [node name="key" type="Area2D" parent="INPUTS/W-key"]
@@ -120,7 +129,7 @@ scale = Vector2(1, 0.296875)
 texture = ExtResource("3_l2xcd")
 
 [node name="E-key" type="Node2D" parent="INPUTS"]
-position = Vector2(222, -1)
+position = Vector2(134, -20)
 script = ExtResource("7_ifh57")
 
 [node name="key" type="Area2D" parent="INPUTS/E-key"]
@@ -140,6 +149,11 @@ modulate = Color(0.866667, 0.709804, 0.384314, 1)
 position = Vector2(331, 895)
 scale = Vector2(1, 0.296875)
 texture = ExtResource("3_l2xcd")
+
+[node name="ForegroundRythm" type="Sprite2D" parent="."]
+position = Vector2(330, 531)
+scale = Vector2(3, 3)
+texture = ExtResource("9_4fuaa")
 
 [connection signal="area_entered" from="INPUTS/Q-key/key" to="INPUTS/Q-key" method="_on_key_area_entered"]
 [connection signal="area_entered" from="INPUTS/W-key/key" to="INPUTS/W-key" method="_on_key_area_entered"]
