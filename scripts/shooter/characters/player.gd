@@ -9,3 +9,7 @@ func _physics_process(delta: float) -> void:
 	velocity.x = move_toward(velocity.x, speed * move_input, acceleration * delta)
 	
 	move_and_slide()
+
+
+func shoot():
+	print("you shot")
