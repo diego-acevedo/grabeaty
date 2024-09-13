@@ -1,9 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://bgg8locm7ra5i"]
+[gd_scene load_steps=4 format=3 uid="uid://bgg8locm7ra5i"]
 
 [ext_resource type="PackedScene" uid="uid://d6kq7u8dug83" path="res://SCENES/LEFT-SIDE/left_side.tscn" id="1_cmshf"]
+[ext_resource type="Script" path="res://SCRIPTS/intermediary.gd" id="1_rrwhu"]
 [ext_resource type="PackedScene" uid="uid://cqarly8sc0w26" path="res://SCENES/right-side/right_side.tscn" id="2_1mamc"]
 
 [node name="MAIN" type="Node2D"]
+script = ExtResource("1_rrwhu")
 
 [node name="LEFT-SIDE" parent="." instance=ExtResource("1_cmshf")]
 

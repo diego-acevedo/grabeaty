@@ -31,5 +31,5 @@ func _on_key_area_entered(area: Area2D) -> void:
 	# positivo entonces llamamos a la funcion "die" de la nota lo que hace que
 	# desaparezca.
 	
-	if area.has_method("die"):
-		area.die()
+	if area.has_method("correct"):
+		area.correct()

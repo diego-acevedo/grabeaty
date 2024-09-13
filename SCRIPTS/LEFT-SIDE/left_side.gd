@@ -13,3 +13,8 @@ func _input(event: InputEvent) -> void:
 	
 	if event.is_action_pressed("EXIT"):
 		get_tree().quit()
+
+
+func pass_to_main():
+	get_parent().correct_to_shoot()
+	

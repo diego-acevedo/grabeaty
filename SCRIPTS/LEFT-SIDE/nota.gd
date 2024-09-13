@@ -16,5 +16,5 @@ func correct():
 	# Esta funcion se ejecuta cuando la nota ha sido tocada, por lo tanto
 	# hago que desaparezca.
 	
-	Intermediary.correct_to_shoot()
+	get_parent().get_parent().pass_to_main()
 	queue_free()

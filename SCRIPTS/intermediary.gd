@@ -1,7 +1,10 @@
 extends Node
 
-@onready var character: CharacterBody2D = get_node("MAIN/Right Side/character")
+@onready var right_side: Node2D = $"Right Side"
+
+func _ready() -> void:
+	print(right_side)
 
 func correct_to_shoot():
-	character.shoot()
+	right_side.shoot_right()
 	
