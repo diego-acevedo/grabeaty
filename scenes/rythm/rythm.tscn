@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://coftx1hc4aqyd"]
+[gd_scene load_steps=14 format=3 uid="uid://coftx1hc4aqyd"]
 
 [ext_resource type="Texture2D" uid="uid://ps3tkv2y118y" path="res://assets/ui/background_rythm.png" id="1_8ndhq"]
 [ext_resource type="Script" path="res://scripts/rythm/left_side.gd" id="1_fcyd0"]
@@ -8,6 +8,10 @@
 [ext_resource type="Script" path="res://scripts/rythm/w_key.gd" id="5_1x7iw"]
 [ext_resource type="Texture2D" uid="uid://b7xe1ldr7cv3s" path="res://assets/sprites/CirculoBlanco.png" id="5_nl0bq"]
 [ext_resource type="Script" path="res://scripts/rythm/e_key.gd" id="6_2awgi"]
+[ext_resource type="Texture2D" uid="uid://bl0lrhhasinm6" path="res://assets/ui/buttons_rythm.png" id="9_842e2"]
+[ext_resource type="Script" path="res://scripts/rythm/a_button.gd" id="10_ehxoa"]
+[ext_resource type="Script" path="res://scripts/rythm/s_button.gd" id="11_06xms"]
+[ext_resource type="Script" path="res://scripts/rythm/d_button.gd" id="12_8pyc5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p3q2w"]
 size = Vector2(120, 34)
@@ -41,20 +45,20 @@ position = Vector2(345, 893.25)
 scale = Vector2(5.70313, 0.949219)
 
 [node name="BackgroundRythm" type="Sprite2D" parent="."]
-position = Vector2(326, 494)
+position = Vector2(331, 490)
 scale = Vector2(3, 3)
 texture = ExtResource("1_8ndhq")
 
 [node name="NOTES" type="Node2D" parent="."]
 
 [node name="NOTA" parent="NOTES" instance=ExtResource("2_ob0ol")]
-position = Vector2(193, 66)
+position = Vector2(194, 66)
 
 [node name="NOTA2" parent="NOTES" instance=ExtResource("2_ob0ol")]
-position = Vector2(341, 280)
+position = Vector2(331, 280)
 
 [node name="NOTA3" parent="NOTES" instance=ExtResource("2_ob0ol")]
-position = Vector2(473, 373)
+position = Vector2(469, 335)
 
 [node name="NOTA4" parent="NOTES" instance=ExtResource("2_ob0ol")]
 position = Vector2(193, 554)
@@ -72,7 +76,7 @@ position = Vector2(196, -491)
 position = Vector2(338, -348)
 
 [node name="NOTA9" parent="NOTES" instance=ExtResource("2_ob0ol")]
-position = Vector2(471, -85)
+position = Vector2(471, -93)
 
 [node name="NOTA10" parent="NOTES" instance=ExtResource("2_ob0ol")]
 position = Vector2(469, -476)
@@ -86,8 +90,8 @@ script = ExtResource("4_g5skv")
 [node name="sprite" type="Sprite2D" parent="INPUTS/Q-key"]
 visible = false
 modulate = Color(0, 0.654902, 1, 1)
-position = Vector2(122, 892)
-scale = Vector2(1, 0.296875)
+position = Vector2(120.5, 893)
+scale = Vector2(0.835938, 0.796875)
 texture = ExtResource("5_nl0bq")
 
 [node name="key" type="Area2D" parent="INPUTS/Q-key"]
@@ -144,10 +148,47 @@ position = Vector2(331, 895)
 scale = Vector2(1, 0.296875)
 texture = ExtResource("5_nl0bq")
 
-[node name="ForegroundRythm" type="Sprite2D" parent="."]
+[node name="UI" type="Node2D" parent="."]
+
+[node name="ForegroundRythm" type="Sprite2D" parent="UI"]
 position = Vector2(330, 531)
 scale = Vector2(3, 3)
 texture = ExtResource("3_8u2qm")
+
+[node name="A Button" type="Sprite2D" parent="UI"]
+position = Vector2(192, 1003)
+scale = Vector2(2.9, 2.9)
+texture = ExtResource("9_842e2")
+hframes = 2
+vframes = 3
+script = ExtResource("10_ehxoa")
+
+[node name="Timer" type="Timer" parent="UI/A Button"]
+wait_time = 0.1
+
+[node name="S Button" type="Sprite2D" parent="UI"]
+position = Vector2(330, 1003)
+scale = Vector2(2.9, 2.9)
+texture = ExtResource("9_842e2")
+hframes = 2
+vframes = 3
+frame = 2
+script = ExtResource("11_06xms")
+
+[node name="Timer" type="Timer" parent="UI/S Button"]
+wait_time = 0.1
+
+[node name="D Button" type="Sprite2D" parent="UI"]
+position = Vector2(468, 1003)
+scale = Vector2(2.9, 2.9)
+texture = ExtResource("9_842e2")
+hframes = 2
+vframes = 3
+frame = 4
+script = ExtResource("12_8pyc5")
+
+[node name="Timer" type="Timer" parent="UI/D Button"]
+wait_time = 0.1
 
 [connection signal="area_entered" from="INPUTS/Q-key/key" to="INPUTS/Q-key" method="_on_key_area_entered"]
 [connection signal="area_entered" from="INPUTS/W-key/key" to="INPUTS/W-key" method="_on_key_area_entered"]
