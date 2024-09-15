@@ -11,7 +11,8 @@ scale = Vector2(3, 3)
 script = ExtResource("1_xas88")
 
 [node name="Player" parent="." instance=ExtResource("1_memmo")]
-position = Vector2(434.333, 333.667)
+position = Vector2(435, 335.667)
+collision_mask = 2
 
 [node name="Enemy1" parent="." instance=ExtResource("2_wqiss")]
 position = Vector2(347, 61.6667)
