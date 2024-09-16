@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bep8gylx7lt8r"
+path="res://.godot/imported/C6-Gummy Dance.mp3-5fc795a3c487383e2c040fbd84911669.mp3str"
+
+[deps]
+
+source_file="res://assets/Music/C6-Gummy Dance.mp3"
+dest_files=["res://.godot/imported/C6-Gummy Dance.mp3-5fc795a3c487383e2c040fbd84911669.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

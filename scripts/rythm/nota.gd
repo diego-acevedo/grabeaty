@@ -1,6 +1,6 @@
 extends Area2D
 
-var speed = 200
+var speed = 400
 
 func _ready() -> void:
 	pass
@@ -16,5 +16,5 @@ func correct():
 	# Esta funcion se ejecuta cuando la nota ha sido tocada, por lo tanto
 	# hago que desaparezca.
 	
-	get_parent().get_parent().pass_to_main()
+	get_parent().get_parent().get_parent().pass_to_main() # Nodo MAIN
 	queue_free()

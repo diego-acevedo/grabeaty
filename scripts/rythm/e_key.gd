@@ -4,12 +4,6 @@ extends Node2D
 @onready var timer: Timer = $key/Colision/Timer
 @onready var sprite: Sprite2D = $sprite
 
-func _ready() -> void:
-	pass 
-	
-func _physics_process(delta: float) -> void:
-	pass
-
 func _input(event: InputEvent) -> void:
 	
 	# Cuando presionamos la tecla "E" queremos aplicar la colision, mostrar el 

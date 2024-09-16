@@ -1,9 +1,10 @@
-[gd_scene load_steps=14 format=3 uid="uid://coftx1hc4aqyd"]
+[gd_scene load_steps=15 format=3 uid="uid://coftx1hc4aqyd"]
 
 [ext_resource type="Texture2D" uid="uid://ps3tkv2y118y" path="res://assets/ui/background_rythm.png" id="1_8ndhq"]
 [ext_resource type="Script" path="res://scripts/rythm/left_side.gd" id="1_fcyd0"]
-[ext_resource type="PackedScene" uid="uid://ug85r7bb4k6j" path="res://scenes/rythm/nota.tscn" id="2_ob0ol"]
+[ext_resource type="Script" path="res://scripts/rythm/note_spawner.gd" id="3_1xm6s"]
 [ext_resource type="Texture2D" uid="uid://q21au4to0dn4" path="res://assets/ui/foreground_rythm.png" id="3_8u2qm"]
+[ext_resource type="AudioStream" uid="uid://bep8gylx7lt8r" path="res://assets/Music/C6-Gummy Dance.mp3" id="4_13bks"]
 [ext_resource type="Script" path="res://scripts/rythm/q_key.gd" id="4_g5skv"]
 [ext_resource type="Script" path="res://scripts/rythm/w_key.gd" id="5_1x7iw"]
 [ext_resource type="Texture2D" uid="uid://b7xe1ldr7cv3s" path="res://assets/sprites/CirculoBlanco.png" id="5_nl0bq"]
@@ -49,37 +50,14 @@ position = Vector2(331, 490)
 scale = Vector2(3, 3)
 texture = ExtResource("1_8ndhq")
 
-[node name="NOTES" type="Node2D" parent="."]
+[node name="NoteSpawner" type="Node2D" parent="."]
+script = ExtResource("3_1xm6s")
 
-[node name="NOTA" parent="NOTES" instance=ExtResource("2_ob0ol")]
-position = Vector2(194, 66)
+[node name="FirstSong" type="AudioStreamPlayer" parent="NoteSpawner"]
+stream = ExtResource("4_13bks")
+bus = &"Music"
 
-[node name="NOTA2" parent="NOTES" instance=ExtResource("2_ob0ol")]
-position = Vector2(331, 280)
-
-[node name="NOTA3" parent="NOTES" instance=ExtResource("2_ob0ol")]
-position = Vector2(469, 335)
-
-[node name="NOTA4" parent="NOTES" instance=ExtResource("2_ob0ol")]
-position = Vector2(193, 554)
-
-[node name="NOTA5" parent="NOTES" instance=ExtResource("2_ob0ol")]
-position = Vector2(191, -214)
-
-[node name="NOTA6" parent="NOTES" instance=ExtResource("2_ob0ol")]
-position = Vector2(193, -353)
-
-[node name="NOTA7" parent="NOTES" instance=ExtResource("2_ob0ol")]
-position = Vector2(196, -491)
-
-[node name="NOTA8" parent="NOTES" instance=ExtResource("2_ob0ol")]
-position = Vector2(338, -348)
-
-[node name="NOTA9" parent="NOTES" instance=ExtResource("2_ob0ol")]
-position = Vector2(471, -93)
-
-[node name="NOTA10" parent="NOTES" instance=ExtResource("2_ob0ol")]
-position = Vector2(469, -476)
+[node name="NOTES" type="Node2D" parent="NoteSpawner"]
 
 [node name="INPUTS" type="Node2D" parent="."]
 
@@ -90,8 +68,8 @@ script = ExtResource("4_g5skv")
 [node name="sprite" type="Sprite2D" parent="INPUTS/Q-key"]
 visible = false
 modulate = Color(0, 0.654902, 1, 1)
-position = Vector2(120.5, 893)
-scale = Vector2(0.835938, 0.796875)
+position = Vector2(119.5, 892)
+scale = Vector2(0.789063, 0.78125)
 texture = ExtResource("5_nl0bq")
 
 [node name="key" type="Area2D" parent="INPUTS/Q-key"]
@@ -122,8 +100,8 @@ wait_time = 0.1
 [node name="sprite" type="Sprite2D" parent="INPUTS/W-key"]
 visible = false
 modulate = Color(0.380086, 0.710759, 0.383655, 1)
-position = Vector2(327, 895)
-scale = Vector2(1, 0.296875)
+position = Vector2(324, 898.5)
+scale = Vector2(0.78125, 0.789062)
 texture = ExtResource("5_nl0bq")
 
 [node name="E-key" type="Node2D" parent="INPUTS"]
@@ -144,8 +122,8 @@ wait_time = 0.1
 [node name="sprite" type="Sprite2D" parent="INPUTS/E-key"]
 visible = false
 modulate = Color(0.866667, 0.709804, 0.384314, 1)
-position = Vector2(331, 895)
-scale = Vector2(1, 0.296875)
+position = Vector2(333.5, 893)
+scale = Vector2(0.789063, 0.765625)
 texture = ExtResource("5_nl0bq")
 
 [node name="UI" type="Node2D" parent="."]
