@@ -17,6 +17,8 @@ func shoot():
 	velocity.y = 0
 	print("you shot")
 	var bullet_instance = BulletScene.instantiate()
-	bullet_instance.position = position + Vector2(0, -10) 
+	bullet_instance.position.x = position.x
+	bullet_instance.position.y = position.y - 10
 	get_parent().add_child(bullet_instance)
-	
+	if position.y < -10:
+		queue_free()
