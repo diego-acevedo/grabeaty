@@ -3,7 +3,7 @@ extends Node2D
 # IMPORTANTE: UNA NOTA DEMORA 2 SEGUNDOS EN LLEGAR A LA ZONA DONDE DEBE SER TOCADA
 
 @onready var song: AudioStreamPlayer = $FirstSong
-const note_scene = preload("res://scenes/rythm/nota.tscn")
+const note_scene = preload("res://scenes/rythm/note.tscn")
 @onready var notes_node: Node2D = $Notes
 
 
@@ -72,7 +72,7 @@ var processed_keys = []
 func _ready() -> void:
 	song.play()
 	
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	
 	# En cada tick veo en que momento de la cancion estamos y comparo ese momento
 	# con los del diccionario con una aproximacion de valor absoluto, HAY QUE

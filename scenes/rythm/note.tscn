@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://ug85r7bb4k6j"]
 
-[ext_resource type="Script" path="res://scripts/rythm/nota.gd" id="1_kjgis"]
+[ext_resource type="Script" path="res://scripts/rythm/note.gd" id="1_kjgis"]
 [ext_resource type="Texture2D" uid="uid://b7xe1ldr7cv3s" path="res://assets/sprites/CirculoBlanco.png" id="2_3bou3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a344c"]

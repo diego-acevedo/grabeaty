@@ -2,8 +2,7 @@ extends CharacterBody2D
 
 var speed = 600
 var acceleration = 1500
-var BulletScene = preload("res://scenes/shooter/characters/balafinal.tscn")
-@onready var player: CharacterBody2D = $"."
+var BulletScene = preload("res://scenes/shooter/characters/bullet.tscn")
 
 func _physics_process(delta: float) -> void:
 	
@@ -13,14 +12,9 @@ func _physics_process(delta: float) -> void:
 
 
 func shoot():
-	velocity.y = 0
-	print("you shot")
+		
+	var bullet = BulletScene.instantiate()
+	bullet.position.x = position.x
+	bullet.position.y = position.y - 10
 	
-	var bullet_instance = BulletScene.instantiate()
-	bullet_instance.position.x = position.x
-	bullet_instance.position.y = position.y - 10
-	
-	get_parent().call_deferred("add_child", bullet_instance)
-	
-	if position.y < -10:
-		queue_free()
+	owner.call_deferred("add_child", bullet)

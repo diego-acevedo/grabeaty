@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://coftx1hc4aqyd"]
 
 [ext_resource type="Texture2D" uid="uid://ps3tkv2y118y" path="res://assets/ui/background_rythm.png" id="1_8ndhq"]
-[ext_resource type="Script" path="res://scripts/rythm/left_side.gd" id="1_fcyd0"]
+[ext_resource type="Script" path="res://scripts/rythm/rythm.gd" id="1_fcyd0"]
 [ext_resource type="Script" path="res://scripts/rythm/note_spawner.gd" id="3_1xm6s"]
 [ext_resource type="Texture2D" uid="uid://q21au4to0dn4" path="res://assets/ui/foreground_rythm.png" id="3_8u2qm"]
 [ext_resource type="AudioStream" uid="uid://bep8gylx7lt8r" path="res://assets/music/C6-Gummy Dance.mp3" id="4_13bks"]
@@ -12,7 +12,7 @@
 script = ExtResource("1_fcyd0")
 
 [node name="NoteSpawner" type="Node2D" parent="."]
-position = Vector2(0, -200)
+position = Vector2(0, -300)
 script = ExtResource("3_1xm6s")
 
 [node name="FirstSong" type="AudioStreamPlayer" parent="NoteSpawner"]
