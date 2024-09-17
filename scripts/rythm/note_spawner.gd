@@ -4,7 +4,7 @@ extends Node2D
 
 @onready var song: AudioStreamPlayer = $FirstSong
 const note_scene = preload("res://scenes/rythm/nota.tscn")
-@onready var notes_node: Node2D = $NOTES
+@onready var notes_node: Node2D = $Notes
 
 
 # Diccionario con la info de en que momento deben aparecer y que tipo son las notas
@@ -92,13 +92,13 @@ func spawn_note(note_type: String) -> void:
 	var note_instance = note_scene.instantiate()
 	notes_node.add_child(note_instance)
 	if note_type == 'left':
-		note_instance.position = Vector2(193, 0)
+		note_instance.position = Vector2(-46, 0)
 		
 	elif note_type == 'center':
-		note_instance.position = Vector2(331, 0)
+		note_instance.position = Vector2(0, 0)
 		
 	elif note_type == 'right':
-		note_instance.position = Vector2(469, 0)
+		note_instance.position = Vector2(46, 0)
 		
 	
 	

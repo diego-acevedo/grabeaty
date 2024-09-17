@@ -4,17 +4,15 @@
 [ext_resource type="Texture2D" uid="uid://b7xe1ldr7cv3s" path="res://assets/sprites/CirculoBlanco.png" id="2_3bou3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a344c"]
-size = Vector2(20, 8.33333)
+size = Vector2(30, 12)
 
 [node name="NOTA" type="Area2D"]
 script = ExtResource("1_kjgis")
 
 [node name="Circulo_Sprite" type="Sprite2D" parent="."]
 modulate = Color(0.862745, 0.294118, 0.156863, 1)
-scale = Vector2(0.8, 0.8)
+scale = Vector2(0.25, 0.25)
 texture = ExtResource("2_3bou3")
 
 [node name="Colision" type="CollisionShape2D" parent="."]
-position = Vector2(0, -0.500001)
-scale = Vector2(3, 3)
 shape = SubResource("RectangleShape2D_a344c")

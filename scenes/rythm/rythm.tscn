@@ -1,173 +1,66 @@
-[gd_scene load_steps=15 format=3 uid="uid://coftx1hc4aqyd"]
+[gd_scene load_steps=8 format=3 uid="uid://coftx1hc4aqyd"]
 
 [ext_resource type="Texture2D" uid="uid://ps3tkv2y118y" path="res://assets/ui/background_rythm.png" id="1_8ndhq"]
 [ext_resource type="Script" path="res://scripts/rythm/left_side.gd" id="1_fcyd0"]
 [ext_resource type="Script" path="res://scripts/rythm/note_spawner.gd" id="3_1xm6s"]
 [ext_resource type="Texture2D" uid="uid://q21au4to0dn4" path="res://assets/ui/foreground_rythm.png" id="3_8u2qm"]
-[ext_resource type="AudioStream" uid="uid://bep8gylx7lt8r" path="res://assets/Music/C6-Gummy Dance.mp3" id="4_13bks"]
-[ext_resource type="Script" path="res://scripts/rythm/q_key.gd" id="4_g5skv"]
-[ext_resource type="Script" path="res://scripts/rythm/w_key.gd" id="5_1x7iw"]
-[ext_resource type="Texture2D" uid="uid://b7xe1ldr7cv3s" path="res://assets/sprites/CirculoBlanco.png" id="5_nl0bq"]
-[ext_resource type="Script" path="res://scripts/rythm/e_key.gd" id="6_2awgi"]
-[ext_resource type="Texture2D" uid="uid://bl0lrhhasinm6" path="res://assets/ui/buttons_rythm.png" id="9_842e2"]
-[ext_resource type="Script" path="res://scripts/rythm/a_button.gd" id="10_ehxoa"]
-[ext_resource type="Script" path="res://scripts/rythm/s_button.gd" id="11_06xms"]
-[ext_resource type="Script" path="res://scripts/rythm/d_button.gd" id="12_8pyc5"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_p3q2w"]
-size = Vector2(120, 34)
+[ext_resource type="AudioStream" uid="uid://bep8gylx7lt8r" path="res://assets/music/C6-Gummy Dance.mp3" id="4_13bks"]
+[ext_resource type="PackedScene" uid="uid://de03bf22k1vbg" path="res://scenes/rythm/inputs/key.tscn" id="4_a5f15"]
+[ext_resource type="PackedScene" uid="uid://bqwq6l7myomal" path="res://scenes/rythm/inputs/button.tscn" id="7_pq5ht"]
 
 [node name="Rythm" type="Node2D"]
 script = ExtResource("1_fcyd0")
 
-[node name="Background" type="Sprite2D" parent="."]
-position = Vector2(343, 537)
-scale = Vector2(5.71875, 9.0625)
-
-[node name="STRUCTURE" type="Node2D" parent="."]
-
-[node name="ColumnaQ" type="Sprite2D" parent="STRUCTURE"]
-modulate = Color(1, 0, 1, 1)
-position = Vector2(195, 15)
-scale = Vector2(1, 13.7305)
-
-[node name="ColumnaW" type="Sprite2D" parent="STRUCTURE"]
-modulate = Color(1, 0, 1, 1)
-position = Vector2(336, 18)
-scale = Vector2(1, 13.6602)
-
-[node name="ColumnaE" type="Sprite2D" parent="STRUCTURE"]
-modulate = Color(1, 0, 1, 1)
-position = Vector2(470, 25)
-scale = Vector2(1, 13.8086)
-
-[node name="AreaBlanca" type="Sprite2D" parent="STRUCTURE"]
-position = Vector2(345, 893.25)
-scale = Vector2(5.70313, 0.949219)
-
-[node name="BackgroundRythm" type="Sprite2D" parent="."]
-position = Vector2(331, 490)
-scale = Vector2(3, 3)
-texture = ExtResource("1_8ndhq")
-
 [node name="NoteSpawner" type="Node2D" parent="."]
+position = Vector2(0, -200)
 script = ExtResource("3_1xm6s")
 
 [node name="FirstSong" type="AudioStreamPlayer" parent="NoteSpawner"]
 stream = ExtResource("4_13bks")
 bus = &"Music"
 
-[node name="NOTES" type="Node2D" parent="NoteSpawner"]
+[node name="Notes" type="Node2D" parent="NoteSpawner"]
 
-[node name="INPUTS" type="Node2D" parent="."]
+[node name="Inputs" type="Node2D" parent="."]
+position = Vector2(0, 114)
+metadata/_edit_group_ = true
 
-[node name="Q-key" type="Node2D" parent="INPUTS"]
-position = Vector2(72, -20)
-script = ExtResource("4_g5skv")
+[node name="A Key" parent="Inputs" instance=ExtResource("4_a5f15")]
+position = Vector2(-46, 0)
+key = "A"
+color = Color(0.788235, 0.341176, 0.305882, 0.501961)
 
-[node name="sprite" type="Sprite2D" parent="INPUTS/Q-key"]
-visible = false
-modulate = Color(0, 0.654902, 1, 1)
-position = Vector2(119.5, 892)
-scale = Vector2(0.789063, 0.78125)
-texture = ExtResource("5_nl0bq")
+[node name="S Key" parent="Inputs" instance=ExtResource("4_a5f15")]
+key = "S"
+color = Color(0.231373, 0.686275, 0.721569, 0.501961)
 
-[node name="key" type="Area2D" parent="INPUTS/Q-key"]
-
-[node name="Colision" type="CollisionShape2D" parent="INPUTS/Q-key/key"]
-position = Vector2(121, 892)
-shape = SubResource("RectangleShape2D_p3q2w")
-disabled = true
-
-[node name="Timer" type="Timer" parent="INPUTS/Q-key/key/Colision"]
-wait_time = 0.1
-
-[node name="W-key" type="Node2D" parent="INPUTS"]
-position = Vector2(5, -25)
-script = ExtResource("5_1x7iw")
-
-[node name="key" type="Area2D" parent="INPUTS/W-key"]
-position = Vector2(207, 1)
-
-[node name="Colision" type="CollisionShape2D" parent="INPUTS/W-key/key"]
-position = Vector2(121, 893.5)
-shape = SubResource("RectangleShape2D_p3q2w")
-disabled = true
-
-[node name="Timer" type="Timer" parent="INPUTS/W-key/key/Colision"]
-wait_time = 0.1
-
-[node name="sprite" type="Sprite2D" parent="INPUTS/W-key"]
-visible = false
-modulate = Color(0.380086, 0.710759, 0.383655, 1)
-position = Vector2(324, 898.5)
-scale = Vector2(0.78125, 0.789062)
-texture = ExtResource("5_nl0bq")
-
-[node name="E-key" type="Node2D" parent="INPUTS"]
-position = Vector2(134, -20)
-script = ExtResource("6_2awgi")
-
-[node name="key" type="Area2D" parent="INPUTS/E-key"]
-position = Vector2(207, 1)
-
-[node name="Colision" type="CollisionShape2D" parent="INPUTS/E-key/key"]
-position = Vector2(121, 893.5)
-shape = SubResource("RectangleShape2D_p3q2w")
-disabled = true
-
-[node name="Timer" type="Timer" parent="INPUTS/E-key/key/Colision"]
-wait_time = 0.1
-
-[node name="sprite" type="Sprite2D" parent="INPUTS/E-key"]
-visible = false
-modulate = Color(0.866667, 0.709804, 0.384314, 1)
-position = Vector2(333.5, 893)
-scale = Vector2(0.789063, 0.765625)
-texture = ExtResource("5_nl0bq")
+[node name="D Key" parent="Inputs" instance=ExtResource("4_a5f15")]
+position = Vector2(46, 0)
+key = "D"
+color = Color(0.803922, 0.4, 0.694118, 0.501961)
 
 [node name="UI" type="Node2D" parent="."]
 
+[node name="BackgroundRythm" type="Sprite2D" parent="UI"]
+z_index = -1
+texture = ExtResource("1_8ndhq")
+
 [node name="ForegroundRythm" type="Sprite2D" parent="UI"]
-position = Vector2(330, 531)
-scale = Vector2(3, 3)
 texture = ExtResource("3_8u2qm")
 
-[node name="A Button" type="Sprite2D" parent="UI"]
-position = Vector2(192, 1003)
-scale = Vector2(2.9, 2.9)
-texture = ExtResource("9_842e2")
-hframes = 2
-vframes = 3
-script = ExtResource("10_ehxoa")
+[node name="Buttons" type="Node2D" parent="UI"]
+position = Vector2(0, 157)
+metadata/_edit_group_ = true
 
-[node name="Timer" type="Timer" parent="UI/A Button"]
-wait_time = 0.1
+[node name="A Button" parent="UI/Buttons" instance=ExtResource("7_pq5ht")]
+position = Vector2(-46, 0)
+key = "A"
 
-[node name="S Button" type="Sprite2D" parent="UI"]
-position = Vector2(330, 1003)
-scale = Vector2(2.9, 2.9)
-texture = ExtResource("9_842e2")
-hframes = 2
-vframes = 3
+[node name="S Button" parent="UI/Buttons" instance=ExtResource("7_pq5ht")]
 frame = 2
-script = ExtResource("11_06xms")
+key = "S"
 
-[node name="Timer" type="Timer" parent="UI/S Button"]
-wait_time = 0.1
-
-[node name="D Button" type="Sprite2D" parent="UI"]
-position = Vector2(468, 1003)
-scale = Vector2(2.9, 2.9)
-texture = ExtResource("9_842e2")
-hframes = 2
-vframes = 3
+[node name="D Button" parent="UI/Buttons" instance=ExtResource("7_pq5ht")]
+position = Vector2(46, 0)
 frame = 4
-script = ExtResource("12_8pyc5")
-
-[node name="Timer" type="Timer" parent="UI/D Button"]
-wait_time = 0.1
-
-[connection signal="area_entered" from="INPUTS/Q-key/key" to="INPUTS/Q-key" method="_on_key_area_entered"]
-[connection signal="area_entered" from="INPUTS/W-key/key" to="INPUTS/W-key" method="_on_key_area_entered"]
-[connection signal="area_entered" from="INPUTS/E-key/key" to="INPUTS/E-key" method="_on_key_area_entered"]
+key = "D"

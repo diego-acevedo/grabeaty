@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://de03bf22k1vbg"]
+
+[ext_resource type="Texture2D" uid="uid://b7xe1ldr7cv3s" path="res://assets/sprites/CirculoBlanco.png" id="1_haby2"]
+[ext_resource type="Script" path="res://scripts/rythm/inputs/key.gd" id="1_tg1cj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3kmyf"]
+size = Vector2(34, 12)
+
+[node name="Key" type="Node2D"]
+script = ExtResource("1_tg1cj")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+visible = false
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_haby2")
+
+[node name="Pressed Area" type="Area2D" parent="."]
+
+[node name="Colision" type="CollisionShape2D" parent="Pressed Area"]
+visible = false
+shape = SubResource("RectangleShape2D_3kmyf")
+disabled = true
+
+[node name="Timer" type="Timer" parent="Pressed Area/Colision"]
+wait_time = 0.1
+
+[connection signal="area_entered" from="Pressed Area" to="." method="_on_key_area_entered"]
