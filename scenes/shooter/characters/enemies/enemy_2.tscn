@@ -6,12 +6,13 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_dyohv"]
 radius = 15.0333
 
-[node name="Enemy2" type="CharacterBody2D"]
-collision_layer = 4
+[node name="Enemy2" type="CharacterBody2D" groups=["enemies"]]
+collision_layer = 8
+collision_mask = 8
 script = ExtResource("1_1uakw")
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["enemies"]]
 shape = SubResource("CircleShape2D_dyohv")
 
 [node name="Sprites" type="Node2D" parent="."]

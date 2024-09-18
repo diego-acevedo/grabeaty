@@ -4,17 +4,13 @@
 [ext_resource type="Texture2D" uid="uid://cti2yrxs2vrvl" path="res://assets/sprites/spaceships.png" id="2_6w5ja"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7idgm"]
-size = Vector2(8, 19)
+size = Vector2(6, 17)
 
 [node name="Bullet" type="Area2D"]
 position = Vector2(0, 1)
-collision_layer = 2
-collision_mask = 4
+collision_layer = 9
+collision_mask = 9
 script = ExtResource("1_xayco")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1.90735e-06, -0.499998)
-shape = SubResource("RectangleShape2D_7idgm")
 
 [node name="Spaceships" type="Sprite2D" parent="."]
 position = Vector2(1.90735e-06, -3)
@@ -23,3 +19,14 @@ texture = ExtResource("2_6w5ja")
 hframes = 18
 vframes = 10
 frame = 110
+
+[node name="AreaBullet" type="Area2D" parent="."]
+position = Vector2(0, -0.5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaBullet"]
+position = Vector2(0, -0.75)
+shape = SubResource("RectangleShape2D_7idgm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_7idgm")
