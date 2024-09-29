@@ -7,7 +7,6 @@ func _ready() -> void:
 	scale.y = -1
 	
 
-
 func take_damage(amount):
 	health = health - amount #daño que le quita
 	if health <= 0:
