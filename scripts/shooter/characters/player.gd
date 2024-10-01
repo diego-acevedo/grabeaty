@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
-var speed = 600
-var acceleration = 1500
+var speed = 800
+var acceleration = 5000
 var BulletScene = preload("res://scenes/shooter/characters/bullet.tscn")
 
 func _physics_process(delta: float) -> void:

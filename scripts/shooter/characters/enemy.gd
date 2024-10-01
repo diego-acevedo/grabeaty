@@ -3,7 +3,6 @@ extends CharacterBody2D
 var health = 20
 
 func _ready() -> void:
-	add_to_group("enemies") #asegurarse que se añadan al grupo de enemigos
 	scale.y = -1
 	
 
