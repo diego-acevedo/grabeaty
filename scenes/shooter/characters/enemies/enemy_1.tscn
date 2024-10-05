@@ -1,0 +1,41 @@
+[gd_scene load_steps=4 format=3 uid="uid://dq6pu4hm4bqav"]
+
+[ext_resource type="Script" path="res://scripts/shooter/characters/enemy.gd" id="1_rhcte"]
+[ext_resource type="Texture2D" uid="uid://cti2yrxs2vrvl" path="res://assets/sprites/spaceships.png" id="2_bb4up"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iq6yg"]
+size = Vector2(26, 28)
+
+[node name="Enemy1" type="CharacterBody2D"]
+collision_layer = 4
+script = ExtResource("1_rhcte")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_iq6yg")
+
+[node name="Sprites" type="Node2D" parent="."]
+
+[node name="Bottom" type="Sprite2D" parent="Sprites"]
+modulate = Color(0.529412, 0.666667, 0.317647, 1)
+position = Vector2(0, -2)
+texture = ExtResource("2_bb4up")
+hframes = 18
+vframes = 10
+frame = 67
+
+[node name="Middle" type="Sprite2D" parent="Sprites"]
+modulate = Color(0.529412, 0.666667, 0.317647, 1)
+texture = ExtResource("2_bb4up")
+hframes = 18
+vframes = 10
+frame = 68
+
+[node name="Top" type="Sprite2D" parent="Sprites"]
+modulate = Color(0.529412, 0.666667, 0.317647, 1)
+position = Vector2(0, -2)
+texture = ExtResource("2_bb4up")
+hframes = 18
+vframes = 10
+frame = 12

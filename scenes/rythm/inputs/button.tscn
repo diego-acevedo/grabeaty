@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://bqwq6l7myomal"]
+
+[ext_resource type="Script" path="res://scripts/rythm/inputs/button.gd" id="1_1vgji"]
+[ext_resource type="Texture2D" uid="uid://bl0lrhhasinm6" path="res://assets/ui/buttons_rythm.png" id="2_r8rpb"]
+
+[node name="Button" type="Sprite2D"]
+texture = ExtResource("2_r8rpb")
+hframes = 2
+vframes = 3
+script = ExtResource("1_1vgji")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.1

@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://bgg8locm7ra5i"]
+
+[ext_resource type="PackedScene" uid="uid://coftx1hc4aqyd" path="res://scenes/rythm/rythm.tscn" id="1_6eedq"]
+[ext_resource type="Script" path="res://scripts/main.gd" id="1_6r3ef"]
+[ext_resource type="PackedScene" uid="uid://bgg8kc0il1xyh" path="res://scenes/shooter/shooter.tscn" id="2_06ulc"]
+[ext_resource type="PackedScene" uid="uid://dhlbvlgq6cw2r" path="res://scenes/MENUS/pause_menu.tscn" id="4_q0r1c"]
+
+[node name="MAIN" type="Node2D"]
+scale = Vector2(3, 3)
+script = ExtResource("1_6r3ef")
+
+[node name="Rythm" parent="." instance=ExtResource("1_6eedq")]
+position = Vector2(110, 180)
+
+[node name="Shooter" parent="." instance=ExtResource("2_06ulc")]
+position = Vector2(430, 200)
+metadata/_edit_group_ = true
+
+[node name="PauseMenu" parent="." instance=ExtResource("4_q0r1c")]
+process_mode = 3
+visible = false

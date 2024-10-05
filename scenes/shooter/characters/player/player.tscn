@@ -1,0 +1,35 @@
+[gd_scene load_steps=4 format=3 uid="uid://cbhabtj12l8cd"]
+
+[ext_resource type="Texture2D" uid="uid://cti2yrxs2vrvl" path="res://assets/sprites/spaceships.png" id="1_bjy4s"]
+[ext_resource type="Script" path="res://scripts/shooter/characters/player.gd" id="1_p71rp"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5q4n7"]
+radius = 16.0
+
+[node name="Player" type="CharacterBody2D"]
+collision_layer = 2
+script = ExtResource("1_p71rp")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_5q4n7")
+
+[node name="Sprites" type="Node2D" parent="."]
+
+[node name="Bottom" type="Sprite2D" parent="Sprites"]
+texture = ExtResource("1_bjy4s")
+hframes = 18
+vframes = 10
+frame = 39
+
+[node name="Middle" type="Sprite2D" parent="Sprites"]
+texture = ExtResource("1_bjy4s")
+hframes = 18
+vframes = 10
+frame = 74
+
+[node name="Top" type="Sprite2D" parent="Sprites"]
+texture = ExtResource("1_bjy4s")
+hframes = 18
+vframes = 10
+frame = 21
