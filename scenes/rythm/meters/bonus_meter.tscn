@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://bkogdnrgevpja"]
+
+[ext_resource type="Texture2D" uid="uid://cas1ifyb7rvr8" path="res://assets/ui/bonus-bar-empty.png" id="1_4i5mk"]
+[ext_resource type="Texture2D" uid="uid://dplgie3f7hyv7" path="res://assets/ui/bonus-bar-full.png" id="2_yosvv"]
+
+[node name="BonusMeter" type="TextureProgressBar"]
+fill_mode = 3
+texture_under = ExtResource("1_4i5mk")
+texture_progress = ExtResource("2_yosvv")

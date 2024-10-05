@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://bxq7ppaikudr"]
+
+[ext_resource type="Texture2D" uid="uid://cln5suno5xtad" path="res://assets/ui/fuel-meter.png" id="1_4vi1u"]
+
+[node name="FuelMeter" type="Sprite2D"]
+texture = ExtResource("1_4vi1u")
+offset = Vector2(0, -7)

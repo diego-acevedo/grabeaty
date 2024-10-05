@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://coftx1hc4aqyd"]
+[gd_scene load_steps=12 format=3 uid="uid://coftx1hc4aqyd"]
 
 [ext_resource type="Texture2D" uid="uid://ps3tkv2y118y" path="res://assets/ui/background_rythm.png" id="1_8ndhq"]
 [ext_resource type="Script" path="res://scripts/rythm/rythm.gd" id="1_fcyd0"]
@@ -7,6 +7,10 @@
 [ext_resource type="AudioStream" uid="uid://bep8gylx7lt8r" path="res://assets/music/C6-Gummy Dance.mp3" id="4_13bks"]
 [ext_resource type="PackedScene" uid="uid://de03bf22k1vbg" path="res://scenes/rythm/inputs/key.tscn" id="4_a5f15"]
 [ext_resource type="PackedScene" uid="uid://bqwq6l7myomal" path="res://scenes/rythm/inputs/button.tscn" id="7_pq5ht"]
+[ext_resource type="PackedScene" uid="uid://bkogdnrgevpja" path="res://scenes/rythm/meters/bonus_meter.tscn" id="8_xs5mq"]
+[ext_resource type="PackedScene" uid="uid://bxq7ppaikudr" path="res://scenes/rythm/meters/fuel_meter.tscn" id="9_0r415"]
+[ext_resource type="PackedScene" uid="uid://ckhntsher1agx" path="res://scenes/rythm/meters/bonus_icon.tscn" id="10_btvpe"]
+[ext_resource type="Theme" uid="uid://ba8vlg8spmhxl" path="res://resources/score_label.tres" id="11_55ixq"]
 
 [node name="Rythm" type="Node2D"]
 script = ExtResource("1_fcyd0")
@@ -64,3 +68,37 @@ key = "S"
 position = Vector2(46, 0)
 frame = 4
 key = "D"
+
+[node name="Meters" type="Node2D" parent="UI"]
+
+[node name="BonusMeter" parent="UI/Meters" instance=ExtResource("8_xs5mq")]
+offset_left = -65.0
+offset_top = -158.0
+offset_right = -46.0
+offset_bottom = -117.0
+
+[node name="FuelMeter" parent="UI/Meters" instance=ExtResource("9_0r415")]
+position = Vector2(44.5, -137.5)
+
+[node name="BonusIcon" parent="UI/Meters" instance=ExtResource("10_btvpe")]
+position = Vector2(-36.5, -127.5)
+
+[node name="Score" type="Label" parent="UI/Meters"]
+offset_left = -25.0
+offset_top = -117.0
+offset_right = 27.0
+offset_bottom = -98.0
+theme = ExtResource("11_55ixq")
+text = "1234567"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Bonus" type="Label" parent="UI/Meters"]
+offset_left = -56.0
+offset_top = -154.0
+offset_right = -16.0
+offset_bottom = -131.0
+theme = ExtResource("11_55ixq")
+text = "x1"
+horizontal_alignment = 1
+vertical_alignment = 1
