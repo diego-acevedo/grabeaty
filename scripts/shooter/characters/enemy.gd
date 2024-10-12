@@ -1,6 +1,6 @@
 class_name Enemy
 extends CharacterBody2D
-var health = 20
+@export var health = 10
 
 signal dead(unit)
 
