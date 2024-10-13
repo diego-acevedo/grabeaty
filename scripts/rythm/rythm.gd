@@ -16,12 +16,10 @@ func pass_to_main():
 	get_parent().correct_to_shoot()
 	
 
-func _physics_process(_delta: float) -> void:
-	if (bonus_meter.value < 100):
-		bonus_meter.value += 1
-	else:
-		bonus_meter.value = 0
-		
-	fuel_meter.rotation = 1.5*sin(Time.get_unix_time_from_system())
-	
-	bonus_icon.frame = int (Time.get_unix_time_from_system()) % 5
+#func _physics_process(_delta: float) -> void:
+	#if (bonus_meter.value < 100):
+		#bonus_meter.value += 1
+	#else:
+		#bonus_meter.value = 0
+		#
+	#fuel_meter.rotation = 1.5*sin(Time.get_unix_time_from_system())
