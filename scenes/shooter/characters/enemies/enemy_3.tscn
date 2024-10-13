@@ -4,6 +4,33 @@
 [ext_resource type="Texture2D" uid="uid://cti2yrxs2vrvl" path="res://assets/sprites/spaceships.png" id="2_go5j0"]
 [ext_resource type="Texture2D" uid="uid://ca4gew2mlv38a" path="res://scenes/shooter/characters/enemies/spritesheet.png" id="3_vkhm6"]
 
+[sub_resource type="Animation" id="Animation_tmjq1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Spritesheet:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Spritesheet:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
 [sub_resource type="Animation" id="Animation_vlsxs"]
 resource_name = "explosion"
 length = 0.3
@@ -19,20 +46,17 @@ tracks/0/keys = {
 "update": 1,
 "values": [0, 1, 2, 3, 4, 5, 6]
 }
-
-[sub_resource type="Animation" id="Animation_tmjq1"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Spritesheet:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Spritesheet:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [0]
+"values": [true]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_rjpps"]
@@ -49,7 +73,7 @@ metadata/_edit_group_ = true
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 position = Vector2(0, -1)
-polygon = PackedVector2Array(15, 14, 15, 2, 6, -15, -6, -15, -15, 2, -15, 14)
+polygon = PackedVector2Array(16, 16, 16, 2, 7, -16, -7, -16, -16, 2, -16, 16)
 
 [node name="Sprites" type="Node2D" parent="."]
 
@@ -75,8 +99,7 @@ vframes = 10
 frame = 26
 
 [node name="Spritesheet" type="Sprite2D" parent="."]
-position = Vector2(1, 0)
-scale = Vector2(0.812749, 0.731183)
+visible = false
 texture = ExtResource("3_vkhm6")
 hframes = 7
 
