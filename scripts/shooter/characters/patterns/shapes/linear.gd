@@ -1,7 +1,7 @@
 extends Pattern
 
-@export var width: int = 100
-@export var height: int = 200
+@export var width: float = 100
+@export var height: float = 200
 var angles = {}
 
 func _ready() -> void:
@@ -10,7 +10,7 @@ func _ready() -> void:
 		var enemy = enemies[i]
 		angles[enemy] = PI / enemiesScenes.size() * i
 		enemy.position.x = width * sin(angles[enemy])
-		enemy.position.y = height * i / enemies.size() - (height / 2)
+		enemy.position.y = height * i / (enemies.size() - 1) - (height / 2) if enemies.size() != 1 else 0.0
 
 func _physics_process(delta: float) -> void:
 	for enemy in enemies:

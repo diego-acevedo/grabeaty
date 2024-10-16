@@ -2,14 +2,14 @@
 
 [ext_resource type="Script" path="res://scripts/shooter/characters/enemy.gd" id="1_jemk4"]
 [ext_resource type="Texture2D" uid="uid://cti2yrxs2vrvl" path="res://assets/sprites/spaceships.png" id="2_go5j0"]
-[ext_resource type="Texture2D" uid="uid://ca4gew2mlv38a" path="res://scenes/shooter/characters/enemies/spritesheet.png" id="3_vkhm6"]
+[ext_resource type="Texture2D" uid="uid://1fy311e6b4qj" path="res://assets/sprites/spritesheet.png" id="3_an3yc"]
 
 [sub_resource type="Animation" id="Animation_tmjq1"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Spritesheet:frame")
+tracks/0/path = NodePath("Explosion:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -21,7 +21,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Spritesheet:visible")
+tracks/1/path = NodePath("Explosion:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -37,7 +37,7 @@ length = 0.3
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Spritesheet:frame")
+tracks/0/path = NodePath("Explosion:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -49,7 +49,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Spritesheet:visible")
+tracks/1/path = NodePath("Explosion:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -98,12 +98,12 @@ hframes = 18
 vframes = 10
 frame = 26
 
-[node name="Spritesheet" type="Sprite2D" parent="."]
+[node name="Explosion" type="Sprite2D" parent="."]
 visible = false
-texture = ExtResource("3_vkhm6")
+texture = ExtResource("3_an3yc")
 hframes = 7
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Spritesheet"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Explosion"]
 root_node = NodePath("../..")
 libraries = {
 "": SubResource("AnimationLibrary_rjpps")

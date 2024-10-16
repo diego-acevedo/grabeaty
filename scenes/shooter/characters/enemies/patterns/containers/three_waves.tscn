@@ -1,0 +1,27 @@
+[gd_scene load_steps=6 format=3 uid="uid://cocykcs8lfg3y"]
+
+[ext_resource type="Script" path="res://scripts/shooter/characters/patterns/containers/container.gd" id="1_jhq56"]
+[ext_resource type="PackedScene" uid="uid://1fsawt2a4g77" path="res://scenes/shooter/characters/enemies/patterns/shapes/wave.tscn" id="2_mseoi"]
+[ext_resource type="PackedScene" uid="uid://ce0q61f8uhu4d" path="res://scenes/shooter/characters/enemies/enemy_2.tscn" id="3_7su80"]
+[ext_resource type="PackedScene" uid="uid://dq6pu4hm4bqav" path="res://scenes/shooter/characters/enemies/enemy_1.tscn" id="4_e1slh"]
+[ext_resource type="PackedScene" uid="uid://c75gnfrt2jnmh" path="res://scenes/shooter/characters/enemies/enemy_3.tscn" id="5_ec3tj"]
+
+[node name="ThreeWaves" type="Node2D"]
+script = ExtResource("1_jhq56")
+
+[node name="WaveLeft" parent="." instance=ExtResource("2_mseoi")]
+position = Vector2(-120, 0)
+width = 50.0
+height = 100.0
+enemiesScenes = Array[PackedScene]([ExtResource("3_7su80"), ExtResource("4_e1slh"), ExtResource("4_e1slh")])
+
+[node name="WaveMiddle" parent="." instance=ExtResource("2_mseoi")]
+width = 50.0
+height = 100.0
+enemiesScenes = Array[PackedScene]([ExtResource("5_ec3tj"), ExtResource("3_7su80"), ExtResource("4_e1slh")])
+
+[node name="WaveRight" parent="." instance=ExtResource("2_mseoi")]
+position = Vector2(120, 0)
+width = 50.0
+height = 100.0
+enemiesScenes = Array[PackedScene]([ExtResource("3_7su80"), ExtResource("4_e1slh"), ExtResource("4_e1slh")])

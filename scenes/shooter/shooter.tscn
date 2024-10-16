@@ -1,12 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://bgg8kc0il1xyh"]
+[gd_scene load_steps=5 format=3 uid="uid://bgg8kc0il1xyh"]
 
 [ext_resource type="PackedScene" uid="uid://cbhabtj12l8cd" path="res://scenes/shooter/characters/player/player.tscn" id="1_memmo"]
 [ext_resource type="Script" path="res://scripts/shooter/shooter.gd" id="1_xas88"]
-[ext_resource type="PackedScene" uid="uid://dq6pu4hm4bqav" path="res://scenes/shooter/characters/enemies/enemy_1.tscn" id="2_wqiss"]
-[ext_resource type="PackedScene" uid="uid://ce0q61f8uhu4d" path="res://scenes/shooter/characters/enemies/enemy_2.tscn" id="3_m2700"]
-[ext_resource type="PackedScene" uid="uid://rf5js4ermp4" path="res://scenes/shooter/characters/enemies/patterns/circle.tscn" id="3_ys0ln"]
-[ext_resource type="PackedScene" uid="uid://c75gnfrt2jnmh" path="res://scenes/shooter/characters/enemies/enemy_3.tscn" id="4_ino3g"]
-[ext_resource type="PackedScene" uid="uid://1fsawt2a4g77" path="res://scenes/shooter/characters/enemies/patterns/linear.tscn" id="7_qexoa"]
+[ext_resource type="PackedScene" uid="uid://bjaq3qhxir3dy" path="res://scenes/shooter/characters/enemies/patterns/enemies_generator.tscn" id="3_wuvcr"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ggyup"]
 
@@ -17,31 +13,18 @@ script = ExtResource("1_xas88")
 position = Vector2(0, 120)
 collision_mask = 2
 
-[node name="Circle" parent="." instance=ExtResource("3_ys0ln")]
-position = Vector2(-125, -75)
-enemiesScenes = Array[PackedScene]([ExtResource("2_wqiss"), ExtResource("3_m2700"), ExtResource("4_ino3g")])
+[node name="EnemiesGenerator" parent="." instance=ExtResource("3_wuvcr")]
+position = Vector2(0, -100)
 
-[node name="Circle2" parent="." instance=ExtResource("3_ys0ln")]
-position = Vector2(125, -75)
-enemiesScenes = Array[PackedScene]([ExtResource("2_wqiss"), ExtResource("3_m2700"), ExtResource("4_ino3g")])
-
-[node name="Linear" parent="." instance=ExtResource("7_qexoa")]
-position = Vector2(0, -75)
-width = 30
-height = 125
-enemiesScenes = Array[PackedScene]([ExtResource("2_wqiss"), ExtResource("3_m2700"), ExtResource("4_ino3g")])
-
-[node name="Limits" type="Node2D" parent="."]
-
-[node name="StaticBody2D" type="StaticBody2D" parent="Limits"]
+[node name="Limits" type="StaticBody2D" parent="."]
 collision_layer = 7
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Limits/StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Limits"]
 position = Vector2(-210, 0)
 rotation = 1.5708
 shape = SubResource("WorldBoundaryShape2D_ggyup")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Limits/StaticBody2D"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Limits"]
 position = Vector2(210, 0)
 rotation = -1.5708
 shape = SubResource("WorldBoundaryShape2D_ggyup")
