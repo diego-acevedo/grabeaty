@@ -12,7 +12,13 @@ var score: int = 0
 var max_score: int = 9999999
 var multiplier_bar: float = 0.0
 var multiplier_level: int = 1
-var fuel_meter_angle = 0
+var fuel_meter_angle = 0.0
+var missed_notes = 0
+
+var BAR_STEP = 1.0 / 6.0
+var FUEL_STEP = 1
+
+signal game_over
 
 func _ready() -> void:
 	update_score_ui()
@@ -32,30 +38,29 @@ func add_score(base_points: int) -> void:
 	update_score_ui()
 	
 func note_hit() -> void:
-	multiplier_bar += 0.04
+	missed_notes = 0
+	multiplier_bar += BAR_STEP
 	if multiplier_bar >= 1.0:
 		if multiplier_level == 5:
 			multiplier_bar = 1
 		else:
 			multiplier_level += 1
 			multiplier_bar = 0.0 
-	fuel_meter_angle += 1
+	fuel_meter_angle += 5 * FUEL_STEP
 	if fuel_meter_angle > 90:
 		fuel_meter_angle = 90
 	add_score(10)
 	
 func note_miss() -> void:
-	multiplier_bar -= 0.2
-	if multiplier_bar <= 0:
-		if multiplier_level == 1:
-			multiplier_bar = 0
-			multiplier_level = 1
-		else:
-			multiplier_bar = 1
-			multiplier_level -= 1
-	fuel_meter_angle -= 15
+	missed_notes += 1
+	if multiplier_level == 1:
+		multiplier_bar = 0
+	else:
+		multiplier_level -= 1
+	fuel_meter_angle -= 2**missed_notes * FUEL_STEP
 	if fuel_meter_angle < -90:
 		fuel_meter_angle = -90
+		game_over.emit()
 	add_score(0)
 
 func enemy_killed() -> void:

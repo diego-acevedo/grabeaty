@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://scripts/rythm/rythm.gd" id="1_fcyd0"]
 [ext_resource type="Script" path="res://scripts/rythm/note_spawner.gd" id="3_1xm6s"]
 [ext_resource type="Texture2D" uid="uid://q21au4to0dn4" path="res://assets/ui/foreground_rythm.png" id="3_8u2qm"]
-[ext_resource type="AudioStream" uid="uid://dc5fn6osjwqlu" path="res://assets/Music/578786_The-Signalist.mp3" id="3_40qu0"]
+[ext_resource type="AudioStream" uid="uid://dc5fn6osjwqlu" path="res://assets/music/578786_The-Signalist.mp3" id="3_40qu0"]
 [ext_resource type="PackedScene" uid="uid://de03bf22k1vbg" path="res://scenes/rythm/inputs/key.tscn" id="4_a5f15"]
 [ext_resource type="PackedScene" uid="uid://bqwq6l7myomal" path="res://scenes/rythm/inputs/button.tscn" id="7_pq5ht"]
 [ext_resource type="PackedScene" uid="uid://bkogdnrgevpja" path="res://scenes/rythm/meters/bonus_meter.tscn" id="8_xs5mq"]
