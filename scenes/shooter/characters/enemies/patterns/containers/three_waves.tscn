@@ -10,18 +10,18 @@
 script = ExtResource("1_jhq56")
 
 [node name="WaveLeft" parent="." instance=ExtResource("2_mseoi")]
-position = Vector2(-120, 0)
-width = 50.0
-height = 100.0
+position = Vector2(-100, 0)
+width = 40.0
+height = 80.0
 enemiesScenes = Array[PackedScene]([ExtResource("3_7su80"), ExtResource("4_e1slh"), ExtResource("4_e1slh")])
 
 [node name="WaveMiddle" parent="." instance=ExtResource("2_mseoi")]
-width = 50.0
-height = 100.0
+width = 40.0
+height = 80.0
 enemiesScenes = Array[PackedScene]([ExtResource("5_ec3tj"), ExtResource("3_7su80"), ExtResource("4_e1slh")])
 
 [node name="WaveRight" parent="." instance=ExtResource("2_mseoi")]
-position = Vector2(120, 0)
-width = 50.0
-height = 100.0
+position = Vector2(100, 0)
+width = 40.0
+height = 80.0
 enemiesScenes = Array[PackedScene]([ExtResource("3_7su80"), ExtResource("4_e1slh"), ExtResource("4_e1slh")])

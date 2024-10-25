@@ -11,16 +11,17 @@
 script = ExtResource("1_5furo")
 
 [node name="WaveLeft" parent="." instance=ExtResource("2_7e0lr")]
-position = Vector2(-140, 0)
-width = 30.0
+position = Vector2(-120, 0)
+width = 25.0
 height = 60.0
 enemiesScenes = Array[PackedScene]([ExtResource("3_nmbgh"), ExtResource("4_8ab45")])
 
 [node name="Circle" parent="." instance=ExtResource("5_kpyra")]
+height = 40
 enemiesScenes = Array[PackedScene]([ExtResource("6_d3w7x"), ExtResource("3_nmbgh"), ExtResource("4_8ab45"), ExtResource("3_nmbgh"), ExtResource("6_d3w7x")])
 
 [node name="WaveRight" parent="." instance=ExtResource("2_7e0lr")]
-position = Vector2(140, 0)
-width = 30.0
+position = Vector2(120, 0)
+width = 25.0
 height = 60.0
 enemiesScenes = Array[PackedScene]([ExtResource("3_nmbgh"), ExtResource("4_8ab45")])

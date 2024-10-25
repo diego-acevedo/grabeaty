@@ -10,11 +10,11 @@
 script = ExtResource("1_lp876")
 
 [node name="CircleLeft" parent="." instance=ExtResource("2_x02uq")]
-position = Vector2(-100, 0)
-width = 70
+position = Vector2(-80, 0)
+height = 40
 enemiesScenes = Array[PackedScene]([ExtResource("3_7n1j5"), ExtResource("4_uc8b7"), ExtResource("3_7n1j5"), ExtResource("5_ett1n"), ExtResource("3_7n1j5"), ExtResource("4_uc8b7")])
 
 [node name="CircleRight" parent="." instance=ExtResource("2_x02uq")]
-position = Vector2(100, 0)
-width = 70
+position = Vector2(80, 0)
+height = 40
 enemiesScenes = Array[PackedScene]([ExtResource("4_uc8b7"), ExtResource("3_7n1j5"), ExtResource("5_ett1n"), ExtResource("3_7n1j5"), ExtResource("4_uc8b7"), ExtResource("3_7n1j5")])

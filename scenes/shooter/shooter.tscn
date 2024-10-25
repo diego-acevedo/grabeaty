@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://bgg8kc0il1xyh"]
+[gd_scene load_steps=6 format=3 uid="uid://bgg8kc0il1xyh"]
 
 [ext_resource type="PackedScene" uid="uid://cbhabtj12l8cd" path="res://scenes/shooter/characters/player/player.tscn" id="1_memmo"]
 [ext_resource type="Script" path="res://scripts/shooter/shooter.gd" id="1_xas88"]
+[ext_resource type="Texture2D" uid="uid://hf7qftxduc1" path="res://assets/ui/shooter_box.png" id="2_ja4uh"]
 [ext_resource type="PackedScene" uid="uid://bjaq3qhxir3dy" path="res://scenes/shooter/characters/enemies/patterns/enemies_generator.tscn" id="3_wuvcr"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ggyup"]
@@ -9,22 +10,26 @@
 [node name="Shooter" type="Node2D"]
 script = ExtResource("1_xas88")
 
+[node name="ShooterBox" type="Sprite2D" parent="."]
+z_index = 1
+texture = ExtResource("2_ja4uh")
+
 [node name="Player" parent="." instance=ExtResource("1_memmo")]
 position = Vector2(0, 120)
 collision_mask = 2
 
 [node name="EnemiesGenerator" parent="." instance=ExtResource("3_wuvcr")]
-position = Vector2(0, -100)
+position = Vector2(0, -80)
 
 [node name="Limits" type="StaticBody2D" parent="."]
 collision_layer = 7
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Limits"]
-position = Vector2(-210, 0)
+[node name="LeftLimit" type="CollisionShape2D" parent="Limits"]
+position = Vector2(-177, 0)
 rotation = 1.5708
 shape = SubResource("WorldBoundaryShape2D_ggyup")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Limits"]
-position = Vector2(210, 0)
+[node name="RightLimit" type="CollisionShape2D" parent="Limits"]
+position = Vector2(177, 0)
 rotation = -1.5708
 shape = SubResource("WorldBoundaryShape2D_ggyup")
