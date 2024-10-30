@@ -16,5 +16,4 @@ func shoot():
 	var bullet = BulletScene.instantiate()
 	bullet.position.x = position.x
 	bullet.position.y = position.y - 10
-	
 	owner.call_deferred("add_child", bullet)
