@@ -6,6 +6,9 @@ extends Control
 @onready var weapon_node: Sprite2D = $"../Rythm/UI/Meters/BonusIcon"
 @onready var fuel_meter_node: Node2D = $"../Rythm/UI/Meters/FuelMeter"
 
+@onready var game_over_node: CanvasLayer = $"../GameOver"
+@onready var win_node: CanvasLayer = $"../YouWin"
+
 @onready var enemy_node: Node2D = $"../Shooter"
 
 var score: int = 0
@@ -60,8 +63,20 @@ func note_miss() -> void:
 	fuel_meter_angle -= 2**missed_notes * FUEL_STEP
 	if fuel_meter_angle < -90:
 		fuel_meter_angle = -90
-		game_over.emit()
+		#game_over.emit()
+		gameover()
 	add_score(0)
 
 func enemy_killed() -> void:
 	add_score(200)
+	
+func gameover():
+	game_over_node.ejecutar()
+	
+func finish_level():
+	if score >= 7000:
+		win_node.ejecutar()
+	else:
+		game_over_node.ejecutar()
+	
+	

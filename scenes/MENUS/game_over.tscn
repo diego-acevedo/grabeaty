@@ -1,0 +1,89 @@
+[gd_scene load_steps=8 format=3 uid="uid://1cd8ro5aqvw4"]
+
+[ext_resource type="Script" path="res://scripts/MENUS/game_over.gd" id="1_6k3o5"]
+[ext_resource type="Texture2D" uid="uid://kxyuxo28tbfn" path="res://assets/sprites/cudradinho.png" id="2_ae34p"]
+[ext_resource type="Texture2D" uid="uid://ps3tkv2y118y" path="res://assets/ui/background_rythm.png" id="2_hxxx6"]
+[ext_resource type="Texture2D" uid="uid://hf7qftxduc1" path="res://assets/ui/shooter_box.png" id="3_5j6tx"]
+[ext_resource type="Texture2D" uid="uid://u5d5gwoi3vg6" path="res://assets/sprites/menububttons.png" id="4_dob6t"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_jj44g"]
+line_spacing = 5.0
+font_size = 50
+font_color = Color(1, 0, 0, 1)
+outline_size = 16
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_e84xq"]
+font_size = 30
+
+[node name="GameOver" type="CanvasLayer"]
+script = ExtResource("1_6k3o5")
+
+[node name="bgFade" type="Sprite2D" parent="."]
+modulate = Color(0, 0, 0, 0.470588)
+position = Vector2(1010.5, 558.5)
+scale = Vector2(20.1484, 10.9297)
+texture = ExtResource("2_ae34p")
+
+[node name="backgroundBox" type="Sprite2D" parent="."]
+position = Vector2(1304.5, 518.5)
+scale = Vector2(-2.568, -1.303)
+texture = ExtResource("2_hxxx6")
+
+[node name="borderBox" type="Sprite2D" parent="."]
+position = Vector2(1296, 518)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("3_5j6tx")
+
+[node name="quitsprite" type="Sprite2D" parent="."]
+position = Vector2(1438, 644)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("4_dob6t")
+hframes = 10
+vframes = 5
+frame = 1
+
+[node name="retrysrprite" type="Sprite2D" parent="."]
+position = Vector2(1154, 643)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("4_dob6t")
+hframes = 10
+vframes = 5
+frame = 21
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 196.0
+offset_top = -190.0
+offset_right = 483.0
+offset_bottom = -3.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TITLE" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "GAME OVER"
+label_settings = SubResource("LabelSettings_jj44g")
+
+[node name="SCORE" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "SCORE:"
+label_settings = SubResource("LabelSettings_e84xq")
+
+[node name="retrybutton" type="Button" parent="."]
+offset_left = 1085.0
+offset_top = 567.0
+offset_right = 1234.0
+offset_bottom = 719.0
+flat = true
+
+[node name="quitbutton" type="Button" parent="."]
+offset_left = 1372.0
+offset_top = 577.0
+offset_right = 1516.0
+offset_bottom = 713.0
+flat = true
