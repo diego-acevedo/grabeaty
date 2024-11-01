@@ -13,7 +13,7 @@ func _physics_process(delta: float) -> void:
 		score_manager.note_miss()
 		miss_count = 1
 	
-	if position.y > 1200:
+	if position.y > 500:
 		queue_free()
 
 func correct():

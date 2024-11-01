@@ -14,7 +14,9 @@ script = ExtResource("1_xas88")
 z_index = 1
 texture = ExtResource("2_ja4uh")
 
-[node name="Player" parent="." instance=ExtResource("1_memmo")]
+[node name="Players" type="Node2D" parent="."]
+
+[node name="Player" parent="Players" instance=ExtResource("1_memmo")]
 position = Vector2(0, 120)
 collision_mask = 2
 

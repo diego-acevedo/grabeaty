@@ -9,7 +9,7 @@ extends Control
 @onready var game_over_node: CanvasLayer = $"../GameOver"
 @onready var win_node: CanvasLayer = $"../YouWin"
 
-@onready var enemy_node: Node2D = $"../Shooter"
+@onready var shooter_node: Node2D = $"../Shooter"
 
 var score: int = 0
 var max_score: int = 9999999
@@ -44,6 +44,7 @@ func note_hit() -> void:
 	missed_notes = 0
 	multiplier_bar += BAR_STEP
 	if multiplier_bar >= 1.0:
+		shooter_node.upgrade()
 		if multiplier_level == 5:
 			multiplier_bar = 1
 		else:
@@ -55,6 +56,7 @@ func note_hit() -> void:
 	add_score(10)
 	
 func note_miss() -> void:
+	shooter_node.downgrade()
 	missed_notes += 1
 	if multiplier_level == 1:
 		multiplier_bar = 0

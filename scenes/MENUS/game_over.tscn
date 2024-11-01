@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://1cd8ro5aqvw4"]
+[gd_scene load_steps=9 format=3 uid="uid://1cd8ro5aqvw4"]
 
 [ext_resource type="Script" path="res://scripts/MENUS/game_over.gd" id="1_6k3o5"]
 [ext_resource type="Texture2D" uid="uid://kxyuxo28tbfn" path="res://assets/sprites/cudradinho.png" id="2_ae34p"]
@@ -15,6 +15,10 @@ outline_color = Color(0, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_e84xq"]
 font_size = 30
+
+[sub_resource type="LabelSettings" id="LabelSettings_crjg3"]
+font_size = 30
+font_color = Color(1, 1, 0, 1)
 
 [node name="GameOver" type="CanvasLayer"]
 script = ExtResource("1_6k3o5")
@@ -73,6 +77,11 @@ label_settings = SubResource("LabelSettings_jj44g")
 layout_mode = 2
 text = "SCORE:"
 label_settings = SubResource("LabelSettings_e84xq")
+
+[node name="SCORENEEDED" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "SCORE NEEDED: 7000"
+label_settings = SubResource("LabelSettings_crjg3")
 
 [node name="retrybutton" type="Button" parent="."]
 offset_left = 1085.0
