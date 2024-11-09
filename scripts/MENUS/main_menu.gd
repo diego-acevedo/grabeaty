@@ -1,8 +1,8 @@
 extends Control
 
-@onready var go_to_demo_button: Button = $"GO TO DEMO BUTTON"
-@onready var credits_button: Button = $"CREDITS BUTTON"
-@onready var quit_button: Button = $"QUIT BUTTON"
+@onready var go_to_demo_button: Button = $"VBoxContainer/GO TO DEMO BUTTON"
+@onready var credits_button: Button = $"VBoxContainer/CREDITS BUTTON"
+@onready var quit_button: Button = $"VBoxContainer/QUIT BUTTON"
 
 var demo_scene: PackedScene = preload("res://scenes/main.tscn")
 

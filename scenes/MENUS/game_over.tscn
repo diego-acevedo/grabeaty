@@ -25,22 +25,22 @@ script = ExtResource("1_6k3o5")
 
 [node name="bgFade" type="Sprite2D" parent="."]
 modulate = Color(0, 0, 0, 0.470588)
-position = Vector2(1010.5, 558.5)
-scale = Vector2(20.1484, 10.9297)
+position = Vector2(640, 360)
+scale = Vector2(15, 8.438)
 texture = ExtResource("2_ae34p")
 
 [node name="backgroundBox" type="Sprite2D" parent="."]
-position = Vector2(1304.5, 518.5)
+position = Vector2(631.5, 353.5)
 scale = Vector2(-2.568, -1.303)
 texture = ExtResource("2_hxxx6")
 
 [node name="borderBox" type="Sprite2D" parent="."]
-position = Vector2(1296, 518)
+position = Vector2(623, 353)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("3_5j6tx")
 
 [node name="quitsprite" type="Sprite2D" parent="."]
-position = Vector2(1438, 644)
+position = Vector2(765, 479)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("4_dob6t")
 hframes = 10
@@ -48,7 +48,7 @@ vframes = 5
 frame = 1
 
 [node name="retrysrprite" type="Sprite2D" parent="."]
-position = Vector2(1154, 643)
+position = Vector2(481, 478)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("4_dob6t")
 hframes = 10
@@ -61,12 +61,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 196.0
-offset_top = -190.0
-offset_right = 483.0
-offset_bottom = -3.0
+offset_left = -156.0
+offset_top = -173.0
+offset_right = 149.0
+offset_bottom = 14.0
 grow_horizontal = 2
 grow_vertical = 2
+metadata/_edit_group_ = true
 
 [node name="TITLE" type="Label" parent="VBoxContainer"]
 layout_mode = 2
@@ -84,15 +85,15 @@ text = "SCORE NEEDED: 7000"
 label_settings = SubResource("LabelSettings_crjg3")
 
 [node name="retrybutton" type="Button" parent="."]
-offset_left = 1085.0
-offset_top = 567.0
-offset_right = 1234.0
-offset_bottom = 719.0
+offset_left = 412.0
+offset_top = 402.0
+offset_right = 561.0
+offset_bottom = 554.0
 flat = true
 
 [node name="quitbutton" type="Button" parent="."]
-offset_left = 1372.0
-offset_top = 577.0
-offset_right = 1516.0
-offset_bottom = 713.0
+offset_left = 699.0
+offset_top = 412.0
+offset_right = 843.0
+offset_bottom = 548.0
 flat = true

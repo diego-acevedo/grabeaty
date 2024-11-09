@@ -271,6 +271,7 @@ var processed_keys = []
 
 func _ready() -> void:
 	song.play()
+	song.finished.connect(finish_level.emit)
 	
 func _process(_delta: float) -> void:
 	
@@ -279,9 +280,7 @@ func _process(_delta: float) -> void:
 	# OPTIMIZARLO.
 	
 	var song_time = song.get_playback_position()
-	if song_time > 94:
-		finish_level.emit()
-		
+	
 	time_label.text = str(round(song_time))
 	for key in notes_data.keys():
 		if key not in processed_keys and abs(song_time - key) < 0.1:

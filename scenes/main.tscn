@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://b378dxl84wvil" path="res://scenes/MENUS/you_win.tscn" id="7_33cxf"]
 
 [node name="MAIN" type="Node2D"]
-scale = Vector2(3, 3)
+scale = Vector2(2, 2)
 script = ExtResource("1_6r3ef")
 
 [node name="ScoreManager" parent="." instance=ExtResource("2_k63sw")]
