@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://rf5js4ermp4"]
+
+[ext_resource type="Script" path="res://scripts/shooter/characters/patterns/shapes/circle.gd" id="1_crp45"]
+
+[node name="Circle" type="Node2D"]
+script = ExtResource("1_crp45")

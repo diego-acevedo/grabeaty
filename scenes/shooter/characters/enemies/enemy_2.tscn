@@ -1,14 +1,77 @@
-[gd_scene load_steps=4 format=3 uid="uid://ce0q61f8uhu4d"]
+[gd_scene load_steps=8 format=3 uid="uid://ce0q61f8uhu4d"]
 
 [ext_resource type="Script" path="res://scripts/shooter/characters/enemy.gd" id="1_1uakw"]
 [ext_resource type="Texture2D" uid="uid://cti2yrxs2vrvl" path="res://assets/sprites/spaceships.png" id="2_ws6q1"]
+[ext_resource type="Texture2D" uid="uid://1fy311e6b4qj" path="res://assets/sprites/spritesheet.png" id="3_8rmx2"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_dyohv"]
-radius = 15.0333
+radius = 17.0
+
+[sub_resource type="Animation" id="Animation_tmjq1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Explosion:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Explosion:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_vlsxs"]
+resource_name = "explosion"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Explosion:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0333333, 0.0666667, 0.1, 0.133333, 0.166667, 0.2, 0.233333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Explosion:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rjpps"]
+_data = {
+"RESET": SubResource("Animation_tmjq1"),
+"explosion": SubResource("Animation_vlsxs")
+}
 
 [node name="Enemy2" type="CharacterBody2D"]
 collision_layer = 4
 script = ExtResource("1_1uakw")
+health = 20
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -37,3 +100,14 @@ texture = ExtResource("2_ws6q1")
 hframes = 18
 vframes = 10
 frame = 31
+
+[node name="Explosion" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("3_8rmx2")
+hframes = 7
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Explosion"]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_rjpps")
+}

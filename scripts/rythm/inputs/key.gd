@@ -6,6 +6,7 @@ extends Node2D
 @onready var sprite: Sprite2D = $Sprite
 @onready var colision: CollisionShape2D = $"Pressed Area/Colision"
 @onready var timer: Timer = $"Pressed Area/Colision/Timer"
+@onready var score_manager: Control = $"../../../ScoreManager"
 
 func _ready() -> void:
 	modulate = color
@@ -33,3 +34,5 @@ func _on_key_area_entered(area: Area2D) -> void:
 	
 	if area.has_method("correct"):
 		area.correct()
+		score_manager.note_hit()
+		

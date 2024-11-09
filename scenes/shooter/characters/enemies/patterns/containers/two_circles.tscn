@@ -1,0 +1,20 @@
+[gd_scene load_steps=6 format=3 uid="uid://dujmfnwg7x626"]
+
+[ext_resource type="Script" path="res://scripts/shooter/characters/patterns/containers/container.gd" id="1_lp876"]
+[ext_resource type="PackedScene" uid="uid://rf5js4ermp4" path="res://scenes/shooter/characters/enemies/patterns/shapes/circle.tscn" id="2_x02uq"]
+[ext_resource type="PackedScene" uid="uid://dq6pu4hm4bqav" path="res://scenes/shooter/characters/enemies/enemy_1.tscn" id="3_7n1j5"]
+[ext_resource type="PackedScene" uid="uid://ce0q61f8uhu4d" path="res://scenes/shooter/characters/enemies/enemy_2.tscn" id="4_uc8b7"]
+[ext_resource type="PackedScene" uid="uid://c75gnfrt2jnmh" path="res://scenes/shooter/characters/enemies/enemy_3.tscn" id="5_ett1n"]
+
+[node name="TwoCircles" type="Node2D"]
+script = ExtResource("1_lp876")
+
+[node name="CircleLeft" parent="." instance=ExtResource("2_x02uq")]
+position = Vector2(-80, 0)
+height = 40
+enemiesScenes = Array[PackedScene]([ExtResource("3_7n1j5"), ExtResource("4_uc8b7"), ExtResource("3_7n1j5"), ExtResource("5_ett1n"), ExtResource("3_7n1j5"), ExtResource("4_uc8b7")])
+
+[node name="CircleRight" parent="." instance=ExtResource("2_x02uq")]
+position = Vector2(80, 0)
+height = 40
+enemiesScenes = Array[PackedScene]([ExtResource("4_uc8b7"), ExtResource("3_7n1j5"), ExtResource("5_ett1n"), ExtResource("3_7n1j5"), ExtResource("4_uc8b7"), ExtResource("3_7n1j5")])

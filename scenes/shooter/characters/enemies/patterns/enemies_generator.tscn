@@ -1,0 +1,11 @@
+[gd_scene load_steps=6 format=3 uid="uid://bjaq3qhxir3dy"]
+
+[ext_resource type="Script" path="res://scripts/shooter/characters/patterns/enemies_generator.gd" id="1_4m8uk"]
+[ext_resource type="PackedScene" uid="uid://cocykcs8lfg3y" path="res://scenes/shooter/characters/enemies/patterns/containers/three_waves.tscn" id="2_4oih8"]
+[ext_resource type="PackedScene" uid="uid://dujmfnwg7x626" path="res://scenes/shooter/characters/enemies/patterns/containers/two_circles.tscn" id="3_tej5m"]
+[ext_resource type="PackedScene" uid="uid://dk06ron63gf2" path="res://scenes/shooter/characters/enemies/patterns/containers/two_circle_one_wave.tscn" id="4_bgicf"]
+[ext_resource type="PackedScene" uid="uid://s11fs1p3vxih" path="res://scenes/shooter/characters/enemies/patterns/containers/two_waves_one_circle.tscn" id="5_efy2g"]
+
+[node name="EnemiesGenerator" type="Node2D"]
+script = ExtResource("1_4m8uk")
+containers = Array[PackedScene]([ExtResource("2_4oih8"), ExtResource("3_tej5m"), ExtResource("4_bgicf"), ExtResource("5_efy2g")])

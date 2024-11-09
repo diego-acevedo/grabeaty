@@ -1,0 +1,28 @@
+[gd_scene load_steps=7 format=3 uid="uid://dk06ron63gf2"]
+
+[ext_resource type="Script" path="res://scripts/shooter/characters/patterns/containers/container.gd" id="1_8cy3p"]
+[ext_resource type="PackedScene" uid="uid://rf5js4ermp4" path="res://scenes/shooter/characters/enemies/patterns/shapes/circle.tscn" id="2_3v6pf"]
+[ext_resource type="PackedScene" uid="uid://dq6pu4hm4bqav" path="res://scenes/shooter/characters/enemies/enemy_1.tscn" id="3_286d2"]
+[ext_resource type="PackedScene" uid="uid://1fsawt2a4g77" path="res://scenes/shooter/characters/enemies/patterns/shapes/wave.tscn" id="3_wew35"]
+[ext_resource type="PackedScene" uid="uid://ce0q61f8uhu4d" path="res://scenes/shooter/characters/enemies/enemy_2.tscn" id="4_3cwdk"]
+[ext_resource type="PackedScene" uid="uid://c75gnfrt2jnmh" path="res://scenes/shooter/characters/enemies/enemy_3.tscn" id="6_ggsxs"]
+
+[node name="TwoCircleOneWave" type="Node2D"]
+script = ExtResource("1_8cy3p")
+
+[node name="CircleLeft" parent="." instance=ExtResource("2_3v6pf")]
+position = Vector2(-100, 0)
+width = 40
+height = 40
+enemiesScenes = Array[PackedScene]([ExtResource("3_286d2"), ExtResource("4_3cwdk"), ExtResource("3_286d2"), ExtResource("4_3cwdk"), ExtResource("3_286d2")])
+
+[node name="Wave" parent="." instance=ExtResource("3_wew35")]
+width = 20.0
+height = 80.0
+enemiesScenes = Array[PackedScene]([ExtResource("6_ggsxs"), ExtResource("6_ggsxs")])
+
+[node name="CircleRight" parent="." instance=ExtResource("2_3v6pf")]
+position = Vector2(100, 0)
+width = 40
+height = 40
+enemiesScenes = Array[PackedScene]([ExtResource("3_286d2"), ExtResource("4_3cwdk"), ExtResource("3_286d2"), ExtResource("3_286d2"), ExtResource("4_3cwdk")])
