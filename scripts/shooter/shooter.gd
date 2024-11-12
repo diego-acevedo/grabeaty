@@ -11,7 +11,6 @@ func downgrade():
 	for player in players.get_children():
 		
 		if player.bullets_to_shoot == 5:
-			player.duplicated_times = 0
 			player.bullets_to_shoot -= 1
 		else:
 			player.bullets_to_shoot -= 1

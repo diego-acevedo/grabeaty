@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://cpqfndx4rcm0u"]
 
-[ext_resource type="Script" path="res://scripts/shooter/characters/bullet.gd" id="1_xayco"]
+[ext_resource type="Script" path="res://scripts/shooter/characters/bullets/bullet.gd" id="1_xayco"]
 [ext_resource type="Texture2D" uid="uid://c4r3puxhl6suj" path="res://assets/sprites/All_Fire_Bullet_Pixel_16x16_02.png" id="2_kx2y2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7idgm"]
@@ -46,13 +46,6 @@ _data = {
 position = Vector2(0, 1)
 collision_mask = 4
 script = ExtResource("1_xayco")
-
-[node name="Spaceships" type="Sprite2D" parent="."]
-position = Vector2(1.90735e-06, -3)
-rotation = 3.14159
-hframes = 18
-vframes = 10
-frame = 110
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -0.5)
