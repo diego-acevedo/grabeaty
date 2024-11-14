@@ -8,6 +8,8 @@ extends Node2D
 @onready var timer: Timer = $"Pressed Area/Colision/Timer"
 @onready var score_manager: Control = $"../../../ScoreManager"
 
+var note_hit = false
+
 func _ready() -> void:
 	modulate = color
 
@@ -23,6 +25,9 @@ func _input(event: InputEvent) -> void:
 		sprite.visible = true
 		timer.start()
 		await timer.timeout
+		if not note_hit:
+			score_manager.note_miss()
+		note_hit = false
 		colision.disabled = true
 		sprite.visible = false
 
@@ -33,6 +38,7 @@ func _on_key_area_entered(area: Area2D) -> void:
 	# desaparezca.
 	
 	if area.has_method("correct"):
+		note_hit = true
 		area.correct()
 		score_manager.note_hit()
 		
