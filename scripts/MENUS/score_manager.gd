@@ -18,8 +18,8 @@ var multiplier_level: int = 1
 var fuel_meter_angle = 0.0
 var missed_notes = 0
 
-var BAR_STEP = 1.0 / 6.0
-var FUEL_STEP = 1
+var BAR_STEP: float = 1.0 / 5.0
+var FUEL_STEP: int = 1
 
 signal game_over
 
@@ -42,7 +42,7 @@ func add_score(base_points: int) -> void:
 	
 func note_hit() -> void:
 	missed_notes = 0
-	multiplier_bar += BAR_STEP
+	multiplier_bar += BAR_STEP / multiplier_level
 	if multiplier_bar >= 1.0:
 		shooter_node.upgrade()
 		if multiplier_level == 5:
