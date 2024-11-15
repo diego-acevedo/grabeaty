@@ -68,6 +68,19 @@ func note_miss() -> void:
 		#game_over.emit()
 		gameover()
 	add_score(0)
+	
+func fail() -> void:
+	shooter_node.downgrade()
+	if multiplier_level == 1:
+		multiplier_bar = 0
+	else:
+		multiplier_level -= 1
+	fuel_meter_angle -= 5 * FUEL_STEP
+	if fuel_meter_angle < -90:
+		fuel_meter_angle = -90
+		#game_over.emit()
+		gameover()
+	add_score(0)
 
 func enemy_killed() -> void:
 	add_score(200)

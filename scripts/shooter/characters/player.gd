@@ -8,6 +8,8 @@ var DroneScene = preload("res://scenes/shooter/characters/bullets/drone.tscn")
 var bullets_to_shoot = 1
 var drones = []
 
+signal damage_dealt
+
 func _ready() -> void:
 	drones = []
 
@@ -99,6 +101,6 @@ func deactivate_drones():
 	for drone in drones:
 		drone.queue_free()
 	drones.clear()
-		
-		
-		
+
+func take_damage(_damage):
+	damage_dealt.emit()

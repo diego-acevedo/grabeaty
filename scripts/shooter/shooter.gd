@@ -1,6 +1,7 @@
 extends Node
 
 @onready var players: Node2D = $Players
+@onready var player: CharacterBody2D = $Players/Player
 
 func character_shoot():
 	for player in players.get_children():

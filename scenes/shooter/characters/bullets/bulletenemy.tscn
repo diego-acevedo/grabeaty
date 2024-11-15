@@ -44,7 +44,7 @@ _data = {
 
 [node name="Bullet" type="Area2D"]
 position = Vector2(0, 1)
-collision_mask = 4
+collision_mask = 2
 script = ExtResource("1_mwwm6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

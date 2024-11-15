@@ -26,7 +26,7 @@ func _input(event: InputEvent) -> void:
 		timer.start()
 		await timer.timeout
 		if not note_hit:
-			score_manager.note_miss()
+			score_manager.fail()
 		note_hit = false
 		colision.disabled = true
 		sprite.visible = false

@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://ce0q61f8uhu4d"]
+[gd_scene load_steps=9 format=3 uid="uid://ce0q61f8uhu4d"]
 
 [ext_resource type="Script" path="res://scripts/shooter/characters/enemy.gd" id="1_1uakw"]
+[ext_resource type="PackedScene" uid="uid://dx7wernvjnc3s" path="res://scenes/shooter/characters/bullets/bulletenemy.tscn" id="2_t46wd"]
 [ext_resource type="Texture2D" uid="uid://cti2yrxs2vrvl" path="res://assets/sprites/spaceships.png" id="2_ws6q1"]
 [ext_resource type="Texture2D" uid="uid://1fy311e6b4qj" path="res://assets/sprites/spritesheet.png" id="3_8rmx2"]
 
@@ -72,6 +73,7 @@ _data = {
 collision_layer = 4
 script = ExtResource("1_1uakw")
 health = 20
+bullet_scene = ExtResource("2_t46wd")
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -111,3 +113,5 @@ root_node = NodePath("../..")
 libraries = {
 "": SubResource("AnimationLibrary_rjpps")
 }
+
+[node name="Timer" type="Timer" parent="."]
