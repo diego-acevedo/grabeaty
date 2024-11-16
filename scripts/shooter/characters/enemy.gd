@@ -14,6 +14,8 @@ func _ready() -> void:
 	timer.timeout.connect(_shoot)
 	_set_timer()
 	
+
+	
 func _shoot() -> void:
 	var bullet = bullet_scene.instantiate()
 	bullet.speed = 250
