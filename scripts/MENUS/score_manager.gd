@@ -5,6 +5,7 @@ extends Control
 @onready var score_node: Label = $"../Rythm/UI/Meters/Score"
 @onready var weapon_node: Sprite2D = $"../Rythm/UI/Meters/BonusIcon"
 @onready var fuel_meter_node: Node2D = $"../Rythm/UI/Meters/FuelMeter"
+@onready var light: Sprite2D = $"../Rythm/UI/Light"
 
 @onready var game_over_node: CanvasLayer = $"../GameOver"
 @onready var win_node: CanvasLayer = $"../YouWin"
@@ -25,6 +26,9 @@ signal game_over
 
 func _ready() -> void:
 	update_score_ui()
+
+func _process(delta: float) -> void:
+	light.modulate.a = move_toward(light.modulate.a, 0, 0.7 * delta)
 
 func update_score_ui() -> void:
 	score_node.text = str(score)
@@ -56,6 +60,7 @@ func note_hit() -> void:
 	add_score(10)
 	
 func note_miss() -> void:
+	light.modulate.a = 0.6
 	shooter_node.downgrade()
 	missed_notes += 1
 	if multiplier_level == 1:

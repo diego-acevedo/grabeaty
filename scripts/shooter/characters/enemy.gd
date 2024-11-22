@@ -14,8 +14,6 @@ func _ready() -> void:
 	timer.timeout.connect(_shoot)
 	_set_timer()
 	
-
-	
 func _shoot() -> void:
 	var bullet = bullet_scene.instantiate()
 	bullet.speed = 250
@@ -34,12 +32,12 @@ func take_damage(amount):
 		
 func die():
 	animation_player.play("explosion")
-	var timer = Timer.new()
-	add_child(timer)
-	timer.wait_time = 0.25  # Tiempo de espera (0.2 segundos)
-	timer.one_shot = true
-	timer.start()
-	timer.timeout.connect(_end_of_explosion)
+	var t = Timer.new()
+	add_child(t)
+	t.wait_time = 0.25  # Tiempo de espera (0.2 segundos)
+	t.one_shot = true
+	t.start()
+	t.timeout.connect(_end_of_explosion)
 
 func _end_of_explosion():
 	dead.emit(self)
