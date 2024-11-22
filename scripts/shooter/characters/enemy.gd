@@ -2,7 +2,7 @@ class_name Enemy
 extends CharacterBody2D
 @export var health = 10
 @export var bullet_scene: PackedScene
-@onready var animation_player: AnimationPlayer = $Explosion/AnimationPlayer
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var timer: Timer = $Timer
 var min_time = 5
 var variance = 10
@@ -29,6 +29,8 @@ func take_damage(amount):
 	health = health - amount #daño que le quita
 	if health <= 0:
 		die()
+	else:
+		animation_player.play("damage")
 		
 func die():
 	animation_player.play("explosion")

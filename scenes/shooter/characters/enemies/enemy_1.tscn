@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://dq6pu4hm4bqav"]
+[gd_scene load_steps=11 format=3 uid="uid://dq6pu4hm4bqav"]
 
 [ext_resource type="Script" path="res://scripts/shooter/characters/enemy.gd" id="1_rhcte"]
 [ext_resource type="Texture2D" uid="uid://cti2yrxs2vrvl" path="res://assets/sprites/spaceships.png" id="2_bb4up"]
 [ext_resource type="PackedScene" uid="uid://dx7wernvjnc3s" path="res://scenes/shooter/characters/bullets/bulletenemy.tscn" id="2_ov2aq"]
 [ext_resource type="Texture2D" uid="uid://1fy311e6b4qj" path="res://assets/sprites/spritesheet.png" id="3_hake4"]
+[ext_resource type="Texture2D" uid="uid://dn8xrg1wwebfl" path="res://assets/sprites/damage.png" id="4_4gyu2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iq6yg"]
 size = Vector2(30, 30)
@@ -34,9 +35,155 @@ tracks/1/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprites/Bottom/Damage:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprites/Middle/Damage:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Sprites/Top/Damage:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Sprites/Bottom:clip_children")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Sprites/Middle:clip_children")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Sprites/Top:clip_children")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
 
 [sub_resource type="Animation" id="Animation_2i6bm"]
 resource_name = "damage"
+length = 0.5
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprites/Bottom/Damage:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [true, false, true, false, true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprites/Middle/Damage:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [true, false, true, false, true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprites/Top/Damage:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [true, false, true, false, true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprites/Bottom:clip_children")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [1, 0, 1, 0, 1, 0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Sprites/Middle:clip_children")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [1, 0, 1, 0, 1, 0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Sprites/Top:clip_children")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [1, 0, 1, 0, 1, 0]
+}
 
 [sub_resource type="Animation" id="Animation_vlsxs"]
 resource_name = "explosion"
@@ -86,37 +233,51 @@ shape = SubResource("RectangleShape2D_iq6yg")
 [node name="Sprites" type="Node2D" parent="."]
 
 [node name="Bottom" type="Sprite2D" parent="Sprites"]
-modulate = Color(0.529412, 0.666667, 0.317647, 1)
+self_modulate = Color(0.529412, 0.666667, 0.317647, 1)
 position = Vector2(0, -2)
 texture = ExtResource("2_bb4up")
 hframes = 18
 vframes = 10
 frame = 67
 
+[node name="Damage" type="Sprite2D" parent="Sprites/Bottom"]
+visible = false
+position = Vector2(0, 1)
+texture = ExtResource("4_4gyu2")
+
 [node name="Middle" type="Sprite2D" parent="Sprites"]
-modulate = Color(0.529412, 0.666667, 0.317647, 1)
+self_modulate = Color(0.529412, 0.666667, 0.317647, 1)
 texture = ExtResource("2_bb4up")
 hframes = 18
 vframes = 10
 frame = 68
 
+[node name="Damage" type="Sprite2D" parent="Sprites/Middle"]
+visible = false
+position = Vector2(0, -1)
+texture = ExtResource("4_4gyu2")
+
 [node name="Top" type="Sprite2D" parent="Sprites"]
-modulate = Color(0.529412, 0.666667, 0.317647, 1)
+self_modulate = Color(0.529412, 0.666667, 0.317647, 1)
 position = Vector2(0, -2)
 texture = ExtResource("2_bb4up")
 hframes = 18
 vframes = 10
 frame = 12
 
+[node name="Damage" type="Sprite2D" parent="Sprites/Top"]
+visible = false
+position = Vector2(0, 1)
+texture = ExtResource("4_4gyu2")
+
 [node name="Explosion" type="Sprite2D" parent="."]
 visible = false
 texture = ExtResource("3_hake4")
 hframes = 7
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Explosion"]
-root_node = NodePath("../..")
+[node name="Timer" type="Timer" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_rjpps")
 }
-
-[node name="Timer" type="Timer" parent="."]

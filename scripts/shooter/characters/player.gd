@@ -8,6 +8,8 @@ var DroneScene = preload("res://scenes/shooter/characters/bullets/drone.tscn")
 var bullets_to_shoot = 1
 var drones = []
 
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
+
 signal damage_dealt
 
 func _ready() -> void:
@@ -18,7 +20,6 @@ func _physics_process(delta: float) -> void:
 	var move_input = Input.get_axis("move_left", "move_right")
 	velocity.x = move_toward(velocity.x, speed * move_input, acceleration * delta)
 	move_and_slide()
-
 
 func shoot():
 	if bullets_to_shoot == 1:
@@ -103,4 +104,5 @@ func deactivate_drones():
 	drones.clear()
 
 func take_damage(_damage):
+	animation_player.play("damage")
 	damage_dealt.emit()
