@@ -7,6 +7,7 @@ extends Control
 var demo_scene: PackedScene = preload("res://scenes/main.tscn")
 
 func _ready() -> void:
+	go_to_demo_button.grab_focus()
 	go_to_demo_button.pressed.connect(_on_go_to_demo_pressed)
 	credits_button.pressed.connect(_on_credits_pressed)
 	quit_button.pressed.connect(_on_quit_pressed)

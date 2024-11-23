@@ -47,6 +47,8 @@ label_settings = SubResource("LabelSettings_y0e0v")
 
 [node name="GO TO DEMO BUTTON" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+focus_neighbor_top = NodePath("../QUIT BUTTON")
+focus_neighbor_bottom = NodePath("../CREDITS BUTTON")
 theme_override_font_sizes/font_size = 42
 text = "GO TO DEMO"
 flat = true
@@ -54,6 +56,8 @@ alignment = 0
 
 [node name="CREDITS BUTTON" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+focus_neighbor_top = NodePath("../GO TO DEMO BUTTON")
+focus_neighbor_bottom = NodePath("../QUIT BUTTON")
 theme_override_font_sizes/font_size = 42
 text = "CREDITS"
 flat = true
@@ -61,6 +65,8 @@ alignment = 0
 
 [node name="QUIT BUTTON" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+focus_neighbor_top = NodePath("../CREDITS BUTTON")
+focus_neighbor_bottom = NodePath("../GO TO DEMO BUTTON")
 theme_override_font_sizes/font_size = 42
 text = "QUIT"
 flat = true
