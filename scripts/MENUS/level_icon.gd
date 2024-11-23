@@ -16,4 +16,4 @@ func unfocus():
 	marker.visible = false
 
 func select():
-	print("Hola")
+	print(StaticData.read(StaticData.levels)[handle])

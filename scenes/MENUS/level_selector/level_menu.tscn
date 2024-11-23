@@ -10,14 +10,17 @@ scale = Vector2(2, 2)
 
 [node name="Tutorial" parent="Levels" instance=ExtResource("1_6ybyj")]
 position = Vector2(188.5, 88.5)
+handle = "tutorial"
 
 [node name="Level1" parent="Levels" instance=ExtResource("1_6ybyj")]
 position = Vector2(450.5, 139)
 sprite_coord = Vector2i(1, 0)
+handle = "level_1"
 
 [node name="Level2" parent="Levels" instance=ExtResource("1_6ybyj")]
 position = Vector2(334, 267.5)
 sprite_coord = Vector2i(3, 2)
+handle = "level_2"
 
 [node name="Cursor" parent="." instance=ExtResource("2_6k4q4")]
 position = Vector2(41.5, 44.5)
