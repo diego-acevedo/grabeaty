@@ -1,19 +1,19 @@
 extends Control
 
-@onready var go_to_demo_button: Button = $"VBoxContainer/GO TO DEMO BUTTON"
 @onready var credits_button: Button = $"VBoxContainer/CREDITS BUTTON"
 @onready var quit_button: Button = $"VBoxContainer/QUIT BUTTON"
+@onready var levels: Button = $VBoxContainer/LEVELS
 
 var demo_scene: PackedScene = preload("res://scenes/main.tscn")
-
+const LEVEL_MENU = preload("res://scenes/MENUS/level_selector/level_menu.tscn")
 func _ready() -> void:
-	go_to_demo_button.grab_focus()
-	go_to_demo_button.pressed.connect(_on_go_to_demo_pressed)
+	levels.grab_focus()
+	levels.pressed.connect(_on_levels_pressed)
 	credits_button.pressed.connect(_on_credits_pressed)
 	quit_button.pressed.connect(_on_quit_pressed)
 	
-func _on_go_to_demo_pressed():
-	get_tree().change_scene_to_packed(demo_scene)
+func _on_levels_pressed():
+	get_tree().change_scene_to_packed(LEVEL_MENU)
 	
 func _on_quit_pressed():
 	get_tree().quit()
