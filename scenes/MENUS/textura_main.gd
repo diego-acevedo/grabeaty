@@ -1,6 +1,6 @@
 extends TextureRect
 
-var velocidad = Vector2(30, 0)  
+var velocidad = Vector2(25, 0)  
 var offset = Vector2(0, 0)  
 
 func _process(delta):
