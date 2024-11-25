@@ -1,12 +1,13 @@
 extends CanvasLayer
 
-@onready var resume: Button = $VBoxContainer/Resume
-@onready var restart: Button = $VBoxContainer/Restart
-@onready var main_menu: Button = $"VBoxContainer/Main Menu"
-@onready var quit: Button = $VBoxContainer/Quit
+@onready var resume: TextureButton = $VBoxContainer/VBoxContainer/Resume
+@onready var restart: TextureButton = $VBoxContainer/VBoxContainer/Restart
+@onready var main_menu: TextureButton = $"VBoxContainer/VBoxContainer/Main Menu"
+@onready var quit: TextureButton = $VBoxContainer/VBoxContainer/Quit
 var main_menu_scene: PackedScene = load("res://scenes/MENUS/main_menu.tscn")
 
 func _ready() -> void:
+	resume.grab_focus()
 	resume.pressed.connect(_on_resume_pressed)
 	restart.pressed.connect(_on_restart_pressed)
 	main_menu.pressed.connect(_on_main_menu_pressed)

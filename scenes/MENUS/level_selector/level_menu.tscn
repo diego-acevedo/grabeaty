@@ -1,10 +1,44 @@
-[gd_scene load_steps=3 format=3 uid="uid://csq21mlrl3m0j"]
+[gd_scene load_steps=7 format=3 uid="uid://csq21mlrl3m0j"]
 
 [ext_resource type="PackedScene" uid="uid://d1mlh8ryumneq" path="res://scenes/MENUS/level_selector/level_icon.tscn" id="1_6ybyj"]
+[ext_resource type="Script" path="res://scripts/shooter/parallax_background.gd" id="1_p51f8"]
 [ext_resource type="PackedScene" uid="uid://fmruimvuipr8" path="res://scenes/MENUS/level_selector/cursor.tscn" id="2_6k4q4"]
+[ext_resource type="Texture2D" uid="uid://fte3hnl0xf02" path="res://assets/sprites/parallax_stars.png" id="2_rgi3y"]
+[ext_resource type="Texture2D" uid="uid://c0clug4ty6x1o" path="res://assets/sprites/parallax_nebulosa.png" id="3_08ohw"]
+[ext_resource type="Texture2D" uid="uid://ddwbdc4mlbrwn" path="res://assets/sprites/parallax_asteroids.png" id="4_ihq8k"]
 
 [node name="LevelMenu" type="Node2D"]
 scale = Vector2(2, 2)
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+script = ExtResource("1_p51f8")
+
+[node name="Stars" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.2, 0.2)
+motion_mirroring = Vector2(1280, 720)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Stars"]
+scale = Vector2(2, 2)
+texture = ExtResource("2_rgi3y")
+centered = false
+
+[node name="Nebulosa" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.3, 0.3)
+motion_mirroring = Vector2(1280, 720)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Nebulosa"]
+scale = Vector2(2, 2)
+texture = ExtResource("3_08ohw")
+centered = false
+
+[node name="Asteroids" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.6, 0.6)
+motion_mirroring = Vector2(1280, 720)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Asteroids"]
+scale = Vector2(2, 2)
+texture = ExtResource("4_ihq8k")
+centered = false
 
 [node name="Levels" type="Node2D" parent="."]
 

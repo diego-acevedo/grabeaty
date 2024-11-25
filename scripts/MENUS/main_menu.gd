@@ -1,8 +1,8 @@
 extends Control
 
-@onready var credits_button: Button = $"VBoxContainer/CREDITS BUTTON"
-@onready var quit_button: Button = $"VBoxContainer/QUIT BUTTON"
-@onready var levels: Button = $VBoxContainer/LEVELS
+@onready var credits_button: TextureButton = $VBoxContainer/VBoxContainer/CREDITS
+@onready var quit_button: TextureButton = $VBoxContainer/VBoxContainer/QUIT
+@onready var levels: TextureButton = $VBoxContainer/VBoxContainer/LEVELS
 
 var demo_scene: PackedScene = preload("res://scenes/main.tscn")
 const LEVEL_MENU = preload("res://scenes/MENUS/level_selector/level_menu.tscn")

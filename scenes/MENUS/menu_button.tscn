@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://do6wl6e06c0g0"]
+
+[ext_resource type="Texture2D" uid="uid://cf7kp4ggq366b" path="res://assets/ui/button_normal.png" id="1_y5u8u"]
+[ext_resource type="Texture2D" uid="uid://bwxpa522mgtho" path="res://assets/ui/button_focus.png" id="2_1tdrx"]
+[ext_resource type="Script" path="res://scripts/MENUS/menu_button.gd" id="3_rpuio"]
+
+[node name="MenuButton" type="TextureButton"]
+texture_normal = ExtResource("1_y5u8u")
+texture_focused = ExtResource("2_1tdrx")
+script = ExtResource("3_rpuio")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 0
+offset_right = 256.0
+offset_bottom = 64.0
+
+[node name="Label" type="Label" parent="CenterContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+horizontal_alignment = 1
+vertical_alignment = 1

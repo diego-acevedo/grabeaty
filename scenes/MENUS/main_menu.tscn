@@ -1,18 +1,23 @@
-[gd_scene load_steps=7 format=3 uid="uid://oj53866gn1vj"]
+[gd_scene load_steps=14 format=3 uid="uid://oj53866gn1vj"]
 
 [ext_resource type="Script" path="res://scripts/MENUS/main_menu.gd" id="1_82ekr"]
 [ext_resource type="Texture2D" uid="uid://hf7qftxduc1" path="res://assets/ui/shooter_box.png" id="2_yj0uv"]
 [ext_resource type="Texture2D" uid="uid://cdc177owgt21t" path="res://scenes/imlarge.jpg" id="3_3m1io"]
 [ext_resource type="Script" path="res://scenes/MENUS/textura_main.gd" id="4_3dn6h"]
-[ext_resource type="FontFile" uid="uid://bj8msmm1wy6tk" path="res://assets/fonts/m6x11.ttf" id="5_1g050"]
+[ext_resource type="Texture2D" uid="uid://btp6u4bc1n8q6" path="res://assets/sprites/Space Background.png" id="5_wu867"]
+[ext_resource type="PackedScene" uid="uid://do6wl6e06c0g0" path="res://scenes/MENUS/menu_button.tscn" id="6_byx03"]
+[ext_resource type="Script" path="res://scripts/shooter/parallax_background.gd" id="6_jxskp"]
+[ext_resource type="Texture2D" uid="uid://fte3hnl0xf02" path="res://assets/sprites/parallax_stars.png" id="7_csh4i"]
+[ext_resource type="Texture2D" uid="uid://c0clug4ty6x1o" path="res://assets/sprites/parallax_nebulosa.png" id="8_ds7m5"]
+[ext_resource type="Texture2D" uid="uid://yej3hqv3akt8" path="res://assets/sprites/parallax_planets.png" id="9_n8xdu"]
+[ext_resource type="Texture2D" uid="uid://ddwbdc4mlbrwn" path="res://assets/sprites/parallax_asteroids.png" id="10_gnsi0"]
+[ext_resource type="Theme" uid="uid://obh6fmmpfc6d" path="res://resources/title_label.tres" id="11_nh043"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_y0e0v"]
-font = ExtResource("5_1g050")
-font_size = 210
-font_color = Color(0.0431373, 1, 1, 1)
-shadow_size = 51
-shadow_color = Color(0, 0, 0, 1)
-shadow_offset = Vector2(1, 0.13)
+[sub_resource type="LabelSettings" id="LabelSettings_cudyx"]
+font_size = 128
+font_color = Color(0.0392157, 0.376471, 0.443137, 1)
+outline_size = 16
+outline_color = Color(0.805839, 0.95668, 0.997673, 1)
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -36,6 +41,7 @@ scale = Vector2(1.524, 2)
 texture = ExtResource("2_yj0uv")
 
 [node name="TextureRect" type="TextureRect" parent="."]
+visible = false
 texture_repeat = 2
 layout_mode = 0
 offset_right = 13424.0
@@ -44,6 +50,51 @@ scale = Vector2(0.640169, 0.290027)
 texture = ExtResource("3_3m1io")
 script = ExtResource("4_3dn6h")
 
+[node name="SpaceBackground" type="Sprite2D" parent="."]
+visible = false
+scale = Vector2(2, 2)
+texture = ExtResource("5_wu867")
+centered = false
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+script = ExtResource("6_jxskp")
+
+[node name="Stars" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.2, 0.2)
+motion_mirroring = Vector2(1280, 720)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Stars"]
+scale = Vector2(2, 2)
+texture = ExtResource("7_csh4i")
+centered = false
+
+[node name="Nebulosa" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.3, 0.3)
+motion_mirroring = Vector2(1280, 720)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Nebulosa"]
+scale = Vector2(2, 2)
+texture = ExtResource("8_ds7m5")
+centered = false
+
+[node name="Planets" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.4, 0.4)
+motion_mirroring = Vector2(1280, 720)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Planets"]
+scale = Vector2(2, 2)
+texture = ExtResource("9_n8xdu")
+centered = false
+
+[node name="Asteroids" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.6, 0.6)
+motion_mirroring = Vector2(1280, 720)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Asteroids"]
+scale = Vector2(2, 2)
+texture = ExtResource("10_gnsi0")
+centered = false
+
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 8
@@ -51,35 +102,43 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -273.0
+offset_left = -367.5
 offset_top = -168.0
-offset_right = 273.0
+offset_right = 367.5
 offset_bottom = 168.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/separation = 30
+alignment = 1
 
 [node name="TITLE" type="Label" parent="VBoxContainer"]
 layout_mode = 2
-text = "graBEATy"
-label_settings = SubResource("LabelSettings_y0e0v")
+theme = ExtResource("11_nh043")
+text = "GRABEATY"
+label_settings = SubResource("LabelSettings_cudyx")
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="LEVELS" type="Button" parent="VBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
-focus_neighbor_bottom = NodePath("../QUIT BUTTON")
-theme_override_fonts/font = ExtResource("5_1g050")
-theme_override_font_sizes/font_size = 77
-text = "LEVELS"
+size_flags_horizontal = 4
+theme_override_constants/separation = 10
+alignment = 1
 
-[node name="CREDITS BUTTON" type="Button" parent="VBoxContainer"]
+[node name="LEVELS" parent="VBoxContainer/VBoxContainer" instance=ExtResource("6_byx03")]
 layout_mode = 2
-focus_neighbor_bottom = NodePath("../QUIT BUTTON")
-theme_override_fonts/font = ExtResource("5_1g050")
-theme_override_font_sizes/font_size = 77
+focus_neighbor_top = NodePath("../QUIT")
+focus_neighbor_bottom = NodePath("../CREDITS")
+text = "PLAY"
+
+[node name="CREDITS" parent="VBoxContainer/VBoxContainer" instance=ExtResource("6_byx03")]
+layout_mode = 2
+focus_neighbor_top = NodePath("../LEVELS")
+focus_neighbor_bottom = NodePath("../QUIT")
 text = "CREDITS"
 
-[node name="QUIT BUTTON" type="Button" parent="VBoxContainer"]
+[node name="QUIT" parent="VBoxContainer/VBoxContainer" instance=ExtResource("6_byx03")]
 layout_mode = 2
-focus_neighbor_top = NodePath("../CREDITS BUTTON")
-theme_override_fonts/font = ExtResource("5_1g050")
-theme_override_font_sizes/font_size = 77
+focus_neighbor_top = NodePath("../CREDITS")
+focus_neighbor_bottom = NodePath("../LEVELS")
 text = "QUIT"
