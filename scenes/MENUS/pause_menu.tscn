@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://dhlbvlgq6cw2r"]
+[gd_scene load_steps=7 format=3 uid="uid://dhlbvlgq6cw2r"]
 
 [ext_resource type="Script" path="res://scripts/MENUS/pause_menu.gd" id="1_tuaf8"]
 [ext_resource type="Texture2D" uid="uid://dqabv6h0m75u3" path="res://assets/ui/menu_box.png" id="2_ljw38"]
+[ext_resource type="Texture2D" uid="uid://kxyuxo28tbfn" path="res://assets/sprites/cudradinho.png" id="2_yq5uk"]
 [ext_resource type="Theme" uid="uid://obh6fmmpfc6d" path="res://resources/title_label.tres" id="3_5e8ad"]
 [ext_resource type="PackedScene" uid="uid://do6wl6e06c0g0" path="res://scenes/MENUS/menu_button.tscn" id="4_2242d"]
 
@@ -13,6 +14,12 @@ outline_color = Color(0.803922, 0.956863, 0.996078, 1)
 
 [node name="PauseMenu" type="CanvasLayer"]
 script = ExtResource("1_tuaf8")
+
+[node name="bgFade" type="Sprite2D" parent="."]
+modulate = Color(0, 0, 0, 0.470588)
+position = Vector2(640, 360)
+scale = Vector2(15, 8.438)
+texture = ExtResource("2_yq5uk")
 
 [node name="MenuBox" type="Sprite2D" parent="."]
 position = Vector2(640, 360)
@@ -64,9 +71,11 @@ layout_mode = 2
 focus_neighbor_top = NodePath("../Restart")
 focus_neighbor_bottom = NodePath("../Quit")
 text = "Main Menu"
+positive = false
 
 [node name="Quit" parent="VBoxContainer/VBoxContainer" instance=ExtResource("4_2242d")]
 layout_mode = 2
 focus_neighbor_top = NodePath("../Main Menu")
 focus_neighbor_bottom = NodePath("../Resume")
 text = "Quit"
+positive = false

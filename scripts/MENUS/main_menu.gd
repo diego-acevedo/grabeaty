@@ -7,7 +7,9 @@ extends Control
 var demo_scene: PackedScene = preload("res://scenes/main.tscn")
 const LEVEL_MENU = preload("res://scenes/MENUS/level_selector/level_menu.tscn")
 func _ready() -> void:
+	levels.active_sound = false
 	levels.grab_focus()
+	levels.active_sound = true
 	levels.pressed.connect(_on_levels_pressed)
 	credits_button.pressed.connect(_on_credits_pressed)
 	quit_button.pressed.connect(_on_quit_pressed)

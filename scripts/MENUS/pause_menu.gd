@@ -7,11 +7,16 @@ extends CanvasLayer
 var main_menu_scene: PackedScene = load("res://scenes/MENUS/main_menu.tscn")
 
 func _ready() -> void:
-	resume.grab_focus()
+	init_focus()
 	resume.pressed.connect(_on_resume_pressed)
 	restart.pressed.connect(_on_restart_pressed)
 	main_menu.pressed.connect(_on_main_menu_pressed)
 	quit.pressed.connect(_on_quit_pressed)
+	
+func init_focus():
+	resume.active_sound = false
+	resume.grab_focus()
+	resume.active_sound = true
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("Pause"):
