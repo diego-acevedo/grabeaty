@@ -26,6 +26,7 @@ func _physics_process(delta: float) -> void:
 		_select()
 	
 func _on_area_entered(node: Node):
+	SoundManager.play(SoundManager.CURSOR)
 	if node is LevelIcon:
 		element = node
 		node.focus()
@@ -36,5 +37,6 @@ func _on_area_exited(node: Node):
 		node.unfocus()
 		
 func _select():
+	SoundManager.play(SoundManager.ACCEPT)
 	if element != null:
 		element.select()
