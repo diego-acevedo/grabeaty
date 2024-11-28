@@ -47,14 +47,14 @@ func shoot():
 		var bullet3 = BulletScene.instantiate()
 		bullet1.position.x = position.x - 10
 		bullet1.position.y = position.y - 10
-		bullet1.angler = 100
+		bullet1.direction = Vector2(-cos(deg_to_rad(100)), sin(deg_to_rad(100))).normalized()
 		
 		bullet2.position.x = position.x
 		bullet2.position.y = position.y - 10
 		
 		bullet3.position.x = position.x + 10
 		bullet3.position.y = position.y - 10
-		bullet3.angler = 80
+		bullet3.direction = Vector2(-cos(deg_to_rad(80)), sin(deg_to_rad(80))).normalized()
 		
 		get_parent().get_parent().call_deferred("add_child", bullet1)
 		get_parent().get_parent().call_deferred("add_child", bullet2)

@@ -16,9 +16,8 @@ func _ready() -> void:
 	
 func _shoot() -> void:
 	var bullet = bullet_scene.instantiate()
-	bullet.speed = 250
-	bullet.position.x = position.x
-	bullet.position.y = position.y + 10
+	bullet.speed = 500
+	bullet.direction = Vector2(-cos(deg_to_rad(90)), sin(deg_to_rad(90))).normalized()
 	get_parent().call_deferred("add_child", bullet)
 	_set_timer()
 

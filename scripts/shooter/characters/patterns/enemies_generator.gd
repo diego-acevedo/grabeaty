@@ -8,8 +8,6 @@ var currentContainer: EnemyContainer = null
 
 func _ready() -> void:
 	_new_container()
-	if shooter.actual_level == "Level 2":
-		enemies_generator.visible = not enemies_generator.visible
 
 func _new_container():
 	if not currentContainer == null:
@@ -25,3 +23,4 @@ func _new_container():
 func _physics_process(delta: float) -> void:
 	t += delta * 0.05
 	currentContainer.position = currentContainer.position.lerp(Vector2(0.0, 0.0), t)
+	

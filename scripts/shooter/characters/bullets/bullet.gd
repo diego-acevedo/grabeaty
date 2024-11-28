@@ -14,7 +14,6 @@ func _physics_process(delta: float) -> void:
 
 func _ready():
 	body_entered.connect(_on_bullet_body_entered)
-	direction = Vector2(-cos(deg_to_rad(angler)), sin(deg_to_rad(angler))).normalized()
 	animation_player.speed_scale = 0.2
 	animation_player.play("start_bullet")
 

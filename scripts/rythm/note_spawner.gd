@@ -6,8 +6,9 @@ extends Node2D
 const note_scene = preload("res://scenes/rythm/note.tscn")
 @onready var notes_node: Node2D = $Notes
 @onready var shooter: Node2D = $"../../Shooter"
-
+@onready var enemy_spawner: Node2D = $"../../Shooter/EnemiesGenerator"
 @onready var time_label: Label = $TimeLabel
+@onready var timer: Timer = $BossNode/Timer
 
 @onready var boss = preload("res://scenes/shooter/characters/enemies/boss.tscn")
 var boss_instance: Node = null
@@ -976,11 +977,27 @@ func _process(_delta: float) -> void:
 	
 	var song_time = song.get_playback_position()
 	
-	if abs(song_time - 1) < 0.1 and boss_instance == null:
-		spawn_boss()
-	
-	if abs(song_time - 15) < 0.1 and boss_instance != null:
-		despawn_boss()
+	if shooter.actual_level == "Level 2":
+		if abs(song_time - 30) < 0.1:
+			enemy_spawner.visible = false
+			
+		if abs(song_time - 31) < 0.1 and boss_instance == null:
+			spawn_boss()
+		
+		if abs(song_time - 76) < 0.1 and boss_instance != null:
+			despawn_boss()
+		
+		if abs(song_time - 78) < 0.1:
+			enemy_spawner.visible = true
+			
+		if abs(song_time - 118) < 0.1:
+			enemy_spawner.visible = false
+		
+		if abs(song_time - 120) < 0.1 and boss_instance == null:
+			spawn_boss()
+			
+		if abs(song_time - 153) < 0.1 and boss_instance != null:
+			despawn_boss()
 	
 	if boss_instance != null:
 		boss_instance.check_attack(song_time)
@@ -1022,7 +1039,14 @@ func spawn_boss():
 
 func despawn_boss():
 	var boss_node_new = boss_node.get_child(0)
+	boss_instance = null
+	boss_node_new.anim_player.play("Despawn")
+	timer.start()
+	await timer.timeout
 	boss_node_new.queue_free()
+func dead_boss():
+	var boss_node_new = boss_node.get_child(0)
+	boss_node_new.anim_player.play("Despawn")
 	
 	
 	
