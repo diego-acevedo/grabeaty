@@ -5,6 +5,7 @@ extends Control
 @onready var levels: TextureButton = $VBoxContainer/VBoxContainer/LEVELS
 
 var demo_scene: PackedScene = preload("res://scenes/main.tscn")
+var credits_scene: PackedScene = preload("res://scenes/MENUS/credits.tscn")
 const LEVEL_MENU = preload("res://scenes/MENUS/level_selector/level_menu.tscn")
 func _ready() -> void:
 	levels.active_sound = false
@@ -21,4 +22,4 @@ func _on_quit_pressed():
 	get_tree().quit()
 	
 func _on_credits_pressed():
-	get_tree().change_scene_to_packed(demo_scene)
+	get_tree().change_scene_to_packed(credits_scene)
