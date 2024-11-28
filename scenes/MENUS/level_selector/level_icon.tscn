@@ -3,15 +3,14 @@
 [ext_resource type="Texture2D" uid="uid://bjfgfq7ttf2be" path="res://assets/sprites/celestial_objects.png" id="1_rgvnj"]
 [ext_resource type="Script" path="res://scripts/MENUS/level_icon.gd" id="2_hipj2"]
 [ext_resource type="Texture2D" uid="uid://btohxpwbuk76s" path="res://assets/ui/marker.png" id="3_uhxv4"]
-[ext_resource type="FontFile" uid="uid://dxxhraep02x78" path="res://assets/fonts/NanoSquare.ttf" id="4_vnk7l"]
+[ext_resource type="FontFile" uid="uid://bj8msmm1wy6tk" path="res://assets/fonts/m6x11.ttf" id="4_ldm75"]
 [ext_resource type="Texture2D" uid="uid://dk1mhrj766g45" path="res://assets/sprites/lock.png" id="5_0w0bp"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7htv4"]
 radius = 32.0
 
 [sub_resource type="LabelSettings" id="LabelSettings_blgey"]
-font = ExtResource("4_vnk7l")
-font_size = 32
+font = ExtResource("4_ldm75")
 outline_size = 4
 outline_color = Color(0, 0.0431373, 0.0823529, 1)
 
