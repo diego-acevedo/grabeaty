@@ -6,7 +6,7 @@ extends Node
 
 func play(stream: AudioStream):
 	var player = AudioStreamPlayer.new()
-	#player.bus = "SFX"
+	player.bus = "sfx"
 	player.stream = stream
 	add_child(player)
 	player.finished.connect(player.queue_free)
