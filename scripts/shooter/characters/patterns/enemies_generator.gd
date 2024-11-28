@@ -1,4 +1,6 @@
 extends Node2D
+@onready var shooter: Node2D = $".."
+@onready var enemies_generator: Node2D = $"."
 
 @export var containers: Array[PackedScene]
 var t = 0.0
@@ -6,6 +8,8 @@ var currentContainer: EnemyContainer = null
 
 func _ready() -> void:
 	_new_container()
+	if shooter.actual_level == "Level 2":
+		enemies_generator.visible = not enemies_generator.visible
 
 func _new_container():
 	if not currentContainer == null:

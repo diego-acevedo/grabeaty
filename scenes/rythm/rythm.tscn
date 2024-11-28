@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://coftx1hc4aqyd"]
+[gd_scene load_steps=13 format=3 uid="uid://coftx1hc4aqyd"]
 
 [ext_resource type="Texture2D" uid="uid://ps3tkv2y118y" path="res://assets/ui/background_rythm.png" id="1_8ndhq"]
 [ext_resource type="Script" path="res://scripts/rythm/rythm.gd" id="1_fcyd0"]
@@ -6,7 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://q21au4to0dn4" path="res://assets/ui/foreground_rythm.png" id="3_8u2qm"]
 [ext_resource type="PackedScene" uid="uid://de03bf22k1vbg" path="res://scenes/rythm/inputs/key.tscn" id="4_a5f15"]
 [ext_resource type="AudioStream" uid="uid://bh3f6bsqtojfg" path="res://assets/Music/SecondLevel.mp3" id="4_qbr8q"]
-[ext_resource type="PackedScene" uid="uid://cyglljgysxmhl" path="res://scenes/shooter/characters/enemies/boss.tscn" id="5_btsnx"]
 [ext_resource type="Texture2D" uid="uid://bavnwc2g5jfb3" path="res://assets/ui/light.png" id="6_rvx1s"]
 [ext_resource type="PackedScene" uid="uid://bqwq6l7myomal" path="res://scenes/rythm/inputs/button.tscn" id="7_pq5ht"]
 [ext_resource type="PackedScene" uid="uid://bkogdnrgevpja" path="res://scenes/rythm/meters/bonus_meter.tscn" id="8_xs5mq"]
@@ -39,8 +38,9 @@ color = Color(0.803922, 0.4, 0.694118, 0.501961)
 position = Vector2(0, -300)
 script = ExtResource("3_1xm6s")
 
-[node name="FirstSong" type="AudioStreamPlayer" parent="NoteSpawner"]
+[node name="LevelSong" type="AudioStreamPlayer" parent="NoteSpawner"]
 stream = ExtResource("4_qbr8q")
+autoplay = true
 bus = &"Music"
 
 [node name="Notes" type="Node2D" parent="NoteSpawner"]
@@ -51,11 +51,6 @@ offset_top = 213.0
 offset_right = 111.0
 offset_bottom = 236.0
 text = "10"
-
-[node name="Bosspruebaa" parent="NoteSpawner" instance=ExtResource("5_btsnx")]
-visible = false
-position = Vector2(320, 300)
-scale = Vector2(0.1, 0.1)
 
 [node name="BossNode" type="Node2D" parent="NoteSpawner"]
 

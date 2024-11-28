@@ -7,7 +7,7 @@ extends Node2D
 @onready var colision: CollisionShape2D = $"Pressed Area/Colision"
 @onready var timer: Timer = $"Pressed Area/Colision/Timer"
 @onready var score_manager: Control = $"../../../ScoreManager"
-@onready var song: AudioStreamPlayer = $"../../NoteSpawner/FirstSong"
+@onready var song: AudioStreamPlayer = $"../../NoteSpawner/LevelSong"
 
 var note_hit = false
 

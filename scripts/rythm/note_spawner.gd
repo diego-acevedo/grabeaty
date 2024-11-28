@@ -2,15 +2,17 @@ extends Node2D
 
 # IMPORTANTE: UNA NOTA DEMORA 2 SEGUNDOS EN LLEGAR A LA ZONA DONDE DEBE SER TOCADA
 
-@onready var song: AudioStreamPlayer = $FirstSong
+@onready var song: AudioStreamPlayer = $LevelSong
 const note_scene = preload("res://scenes/rythm/note.tscn")
 @onready var notes_node: Node2D = $Notes
+@onready var shooter: Node2D = $"../../Shooter"
 
 @onready var time_label: Label = $TimeLabel
 
 @onready var boss = preload("res://scenes/shooter/characters/enemies/boss.tscn")
 var boss_instance: Node = null
 @onready var boss_node: Node2D = $BossNode
+@onready var rythm_node: Node2D = $".."
 
 signal finish_level
 # Diccionario con la info de en que momento deben aparecer y que tipo son las notas
@@ -269,6 +271,7 @@ var first_level = {
 	90.39: "center"
 	
 }
+
 var second_level = {
 	
 	0.8: "left", 
@@ -953,14 +956,17 @@ var second_level = {
 	150.85: "right",
 	
 }
-var notes_data = second_level
+
+var tutorial = {}
+
+var notes_data
 
 # diccionario de notas que ya han aparecido, evita bugs de duplicacion de notas
 var processed_keys = []
 
 func _ready() -> void:
-	song.play()
 	song.finished.connect(finish_level.emit)
+	notes_data = first_level if shooter.actual_level == "Level 1" else second_level if shooter.actual_level == "Level 2" else tutorial
 	
 func _process(_delta: float) -> void:
 	
@@ -970,8 +976,11 @@ func _process(_delta: float) -> void:
 	
 	var song_time = song.get_playback_position()
 	
-	if abs(song_time - 31) < 0.1 and boss_instance == null:
+	if abs(song_time - 1) < 0.1 and boss_instance == null:
 		spawn_boss()
+	
+	if abs(song_time - 15) < 0.1 and boss_instance != null:
+		despawn_boss()
 	
 	if boss_instance != null:
 		boss_instance.check_attack(song_time)
@@ -1010,6 +1019,10 @@ func spawn_boss():
 	boss_node.position = Vector2(320,300)
 	boss_node.scale.x = 0.1
 	boss_node.scale.y = 0.1
+
+func despawn_boss():
+	var boss_node_new = boss_node.get_child(0)
+	boss_node_new.queue_free()
 	
 	
 	

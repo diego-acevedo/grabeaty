@@ -1,12 +1,12 @@
 extends Node2D
 
 @onready var anim_player: AnimationPlayer = $AnimationPlayer
-var health = 100
+var health = 10000
 
 var boss_attacks = {
-	34.16: "rightArm",
-	37.91: "leftArm",
-	41.74: "Main",
+	5.16: "rightArm",
+	7.91: "leftArm",
+	9.74: "Main",
 }
 
 var processed_attacks = []
@@ -15,11 +15,9 @@ func _ready() -> void:
 	anim_player.play("Entrance")
 	anim_player.animation_finished.connect(_on_entrance_finished)
 
-func _process(delta: float) -> void:
-	pass
-
 func take_damage(amount):
 	health = health - amount #daño que le quita
+	print(health)
 	if health <= 0:
 		die()
 	else:

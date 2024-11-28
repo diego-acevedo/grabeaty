@@ -16,6 +16,7 @@ script = ExtResource("1_6r3ef")
 
 [node name="Rythm" parent="." instance=ExtResource("1_6eedq")]
 position = Vector2(110, 180)
+file_song = "res://assets/Music/SecondLevel.mp3"
 
 [node name="Shooter" parent="." instance=ExtResource("2_06ulc")]
 position = Vector2(430, 180)
