@@ -4,6 +4,9 @@ extends CanvasLayer
 @onready var restart: TextureButton = $VBoxContainer/HBoxContainer/Restart
 @onready var main_menu: TextureButton = $"VBoxContainer/HBoxContainer/Main Menu"
 @onready var score: Label = $VBoxContainer/VBoxContainer/Score
+var main_menu_scene: PackedScene = load("res://scenes/MENUS/main_menu.tscn")
+
+var level_scene: PackedScene = null
 
 @export var handle: String
 
@@ -14,8 +17,13 @@ func _ready() -> void:
 	restart.grab_focus()
 	restart.active_sound = true
 	info = StaticData.read(StaticData.levels)[handle]
+	restart.pressed.connect(_on_restart_pressed)
+	main_menu.pressed.connect(_on_main_menu_pressed)
 
 func set_values(new_score: int):
+	restart.active_sound = false
+	restart.grab_focus()
+	restart.active_sound = true
 	var victory = new_score >= info.min_score
 	title.text = 'VICTORY' if victory else 'GAME OVER'
 	title.label_settings.font_color = '#0a6071' if victory else '#90312c'
@@ -28,3 +36,14 @@ func activate():
 	restart.active_sound = false
 	restart.grab_focus()
 	restart.active_sound = true
+
+func _on_restart_pressed() -> void:
+	hide()
+	get_tree().paused = false
+	get_tree().reload_current_scene()
+	
+	
+func _on_main_menu_pressed() -> void:
+	hide()
+	get_tree().paused = false
+	get_tree().change_scene_to_packed(main_menu_scene)

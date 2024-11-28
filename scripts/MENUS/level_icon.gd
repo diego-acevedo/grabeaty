@@ -9,6 +9,7 @@ extends Area2D
 @export var sprite_coord: Vector2i
 @export var handle: String
 @export var active: bool
+@export var level_scene_path: String
 
 var level_info = null
 
@@ -32,3 +33,4 @@ func select():
 	if active:
 		SoundManager.play(SoundManager.ACCEPT)
 		print(StaticData.read(StaticData.levels)[handle])
+		get_tree().change_scene_to_file(level_scene_path)

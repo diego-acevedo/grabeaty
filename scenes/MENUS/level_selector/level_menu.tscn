@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://csq21mlrl3m0j"]
+[gd_scene load_steps=9 format=3 uid="uid://csq21mlrl3m0j"]
 
 [ext_resource type="PackedScene" uid="uid://d1mlh8ryumneq" path="res://scenes/MENUS/level_selector/level_icon.tscn" id="1_6ybyj"]
 [ext_resource type="Script" path="res://scripts/shooter/parallax_background.gd" id="1_p51f8"]
@@ -6,6 +6,14 @@
 [ext_resource type="Texture2D" uid="uid://fte3hnl0xf02" path="res://assets/sprites/parallax_stars.png" id="2_rgi3y"]
 [ext_resource type="Texture2D" uid="uid://c0clug4ty6x1o" path="res://assets/sprites/parallax_nebulosa.png" id="3_08ohw"]
 [ext_resource type="Texture2D" uid="uid://ddwbdc4mlbrwn" path="res://assets/sprites/parallax_asteroids.png" id="4_ihq8k"]
+[ext_resource type="FontFile" uid="uid://b7ioow2dnfdoe" path="res://assets/fonts/NanoPlus.ttf" id="7_6sav0"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_0cmms"]
+font = ExtResource("7_6sav0")
+font_size = 32
+font_color = Color(0.0392157, 0.376471, 0.443137, 1)
+outline_size = 8
+outline_color = Color(0.803922, 0.956863, 0.996078, 1)
 
 [node name="LevelMenu" type="Node2D"]
 scale = Vector2(2, 2)
@@ -42,21 +50,27 @@ centered = false
 
 [node name="Levels" type="Node2D" parent="."]
 
-[node name="Tutorial" parent="Levels" instance=ExtResource("1_6ybyj")]
-position = Vector2(188.5, 88.5)
-handle = "tutorial"
-active = true
-
 [node name="Level1" parent="Levels" instance=ExtResource("1_6ybyj")]
-position = Vector2(450.5, 139)
+position = Vector2(178.5, 150)
 sprite_coord = Vector2i(0, 1)
 handle = "level_1"
 active = true
+level_scene_path = "res://scenes/level_1.tscn"
 
 [node name="Level2" parent="Levels" instance=ExtResource("1_6ybyj")]
-position = Vector2(334, 267.5)
+position = Vector2(454, 220.5)
 sprite_coord = Vector2i(3, 2)
 handle = "level_2"
+active = true
+level_scene_path = "res://scenes/level_2.tscn"
 
 [node name="Cursor" parent="." instance=ExtResource("2_6k4q4")]
 position = Vector2(41.5, 44.5)
+
+[node name="Label" type="Label" parent="."]
+offset_left = 245.0
+offset_top = 15.0
+offset_right = 433.0
+offset_bottom = 43.0
+text = "SELECT A LEVEL"
+label_settings = SubResource("LabelSettings_0cmms")

@@ -2,6 +2,7 @@ extends Node
 
 @onready var players: Node2D = $Players
 @onready var player: CharacterBody2D = $Players/Player
+@export var actual_level: String = "algo"
 
 func character_shoot():
 	for p in players.get_children():

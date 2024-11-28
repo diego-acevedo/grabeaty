@@ -5,7 +5,14 @@ extends Node2D
 @onready var bonus_icon: Sprite2D = $UI/Meters/BonusIcon
 @onready var score_manager_node: Control = $"../ScoreManager"
 
+@onready var level_song: AudioStreamPlayer = $NoteSpawner/LevelSong
 
+@export var file_song: String = "res://assets/Music/C6-Gummy Dance.mp3"
+
+func _ready() -> void:
+	level_song.stream = load(file_song)
+	level_song.play(27)
+	
 func _input(event: InputEvent) -> void:
 	
 	# Un input para cerrar el juego con tan solo apretar la tecla "ESC".

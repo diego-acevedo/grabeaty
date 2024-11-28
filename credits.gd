@@ -1,6 +1,6 @@
 extends Control
 @onready var movable_container: Control = $MovableContainer
-@onready var menu: Button = $menu
+@onready var menu: TextureButton = $MenuButton
 var menus: PackedScene = preload("res://scenes/MENUS/main_menu.tscn")
 
 var animation_speed = 80  # Velocidad en píxeles por segundo
@@ -10,6 +10,9 @@ var is_scrolling = true  # Variable para controlar el movimiento
 
 func _ready():
 	# Configurar la posición inicial
+	menu.active_sound = false
+	menu.grab_focus()
+	menu.active_sound = true
 	movable_container.position.y = initial_position
 	menu.pressed.connect(_on_menu_pressed)
 func _on_menu_pressed() -> void:
