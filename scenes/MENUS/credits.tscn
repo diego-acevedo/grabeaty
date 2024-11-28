@@ -1,8 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://dd4quwig6i1pk"]
+[gd_scene load_steps=8 format=3 uid="uid://dd4quwig6i1pk"]
 
 [ext_resource type="Script" path="res://credits.gd" id="1_tlmx8"]
 [ext_resource type="Texture2D" uid="uid://d4kud81pprh50" path="res://scenes/MENUS/Space Background.png" id="2_d0yba"]
-[ext_resource type="FontFile" uid="uid://cmwoug0w2hk4t" path="res://assets/fonts/impact.ttf" id="3_mxlv5"]
+[ext_resource type="FontFile" uid="uid://b7ioow2dnfdoe" path="res://assets/fonts/NanoPlus.ttf" id="3_wuvq6"]
+[ext_resource type="FontFile" uid="uid://bj8msmm1wy6tk" path="res://assets/fonts/m6x11.ttf" id="4_v1t6d"]
+[ext_resource type="PackedScene" uid="uid://do6wl6e06c0g0" path="res://scenes/MENUS/menu_button.tscn" id="5_8jxhf"]
 
 [sub_resource type="Animation" id="Animation_s7krv"]
 resource_name = "new_animation"
@@ -44,15 +46,15 @@ grow_horizontal = 2
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_colors/font_color = Color(1, 1, 0, 1)
-theme_override_fonts/font = ExtResource("3_mxlv5")
-theme_override_font_sizes/font_size = 221
+theme_override_fonts/font = ExtResource("3_wuvq6")
+theme_override_font_sizes/font_size = 256
 text = "CREDITS"
 
 [node name="developers" type="Label" parent="MovableContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0.956863, 0.960784, 1)
-theme_override_fonts/font = ExtResource("3_mxlv5")
-theme_override_font_sizes/font_size = 101
+theme_override_fonts/font = ExtResource("3_wuvq6")
+theme_override_font_sizes/font_size = 128
 text = "DEVELOPERS:"
 horizontal_alignment = 1
 
@@ -60,8 +62,8 @@ horizontal_alignment = 1
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("3_mxlv5")
-theme_override_font_sizes/font_size = 76
+theme_override_fonts/font = ExtResource("4_v1t6d")
+theme_override_font_sizes/font_size = 64
 text = "Alonso Becerra
 Diego Acevedo
 Jorge Contreras"
@@ -70,8 +72,8 @@ horizontal_alignment = 3
 [node name="SONGS" type="Label" parent="MovableContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0.956863, 0.960784, 1)
-theme_override_fonts/font = ExtResource("3_mxlv5")
-theme_override_font_sizes/font_size = 101
+theme_override_fonts/font = ExtResource("3_wuvq6")
+theme_override_font_sizes/font_size = 128
 text = "SONGS:"
 horizontal_alignment = 1
 
@@ -79,8 +81,8 @@ horizontal_alignment = 1
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("3_mxlv5")
-theme_override_font_sizes/font_size = 51
+theme_override_fonts/font = ExtResource("4_v1t6d")
+theme_override_font_sizes/font_size = 64
 text = "LEVEL 1 “The Signalist”, Author: OcularNebula
 LEVEL 2 “Cord Cutter”, Author: Boom Kitty
 "
@@ -89,8 +91,8 @@ horizontal_alignment = 3
 [node name="ASSETS" type="Label" parent="MovableContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0.956863, 0.960784, 1)
-theme_override_fonts/font = ExtResource("3_mxlv5")
-theme_override_font_sizes/font_size = 101
+theme_override_fonts/font = ExtResource("3_wuvq6")
+theme_override_font_sizes/font_size = 128
 text = "ASSETS:"
 horizontal_alignment = 1
 
@@ -98,8 +100,8 @@ horizontal_alignment = 1
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("3_mxlv5")
-theme_override_font_sizes/font_size = 70
+theme_override_fonts/font = ExtResource("4_v1t6d")
+theme_override_font_sizes/font_size = 64
 text = "Sprite Planets: Norma2D
 Sprite Ships: BizmasterStudios
 Bullets: BDragon1727
@@ -110,25 +112,25 @@ horizontal_alignment = 3
 [node name="SOUNDS OTROS" type="Label" parent="MovableContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0.956863, 0.960784, 1)
-theme_override_fonts/font = ExtResource("3_mxlv5")
-theme_override_font_sizes/font_size = 101
-text = "ANOTHER SOUNDS:"
+theme_override_fonts/font = ExtResource("3_wuvq6")
+theme_override_font_sizes/font_size = 128
+text = "SOUND EFFECTS:"
 horizontal_alignment = 1
 
 [node name="TEXT4" type="Label" parent="MovableContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("3_mxlv5")
-theme_override_font_sizes/font_size = 70
+theme_override_fonts/font = ExtResource("4_v1t6d")
+theme_override_font_sizes/font_size = 64
 text = "Menus: Bleeoop"
 horizontal_alignment = 3
 
 [node name="FONTS" type="Label" parent="MovableContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0.956863, 0.960784, 1)
-theme_override_fonts/font = ExtResource("3_mxlv5")
-theme_override_font_sizes/font_size = 101
+theme_override_fonts/font = ExtResource("3_wuvq6")
+theme_override_font_sizes/font_size = 128
 text = "FONTS:"
 horizontal_alignment = 1
 
@@ -136,8 +138,8 @@ horizontal_alignment = 1
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("3_mxlv5")
-theme_override_font_sizes/font_size = 70
+theme_override_fonts/font = ExtResource("4_v1t6d")
+theme_override_font_sizes/font_size = 64
 text = "Title: SpicyGame Studios
 General: Daniel Linssen
 "
@@ -149,9 +151,10 @@ libraries = {
 "": SubResource("AnimationLibrary_2ijt7")
 }
 
-[node name="menu" type="Button" parent="."]
-offset_top = 627.0
-offset_right = 179.0
-offset_bottom = 722.0
-theme_override_font_sizes/font_size = 56
-text = "MENU"
+[node name="MenuButton" parent="." instance=ExtResource("5_8jxhf")]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 646.0
+offset_right = 270.0
+offset_bottom = 710.0
+text = "Go Back"

@@ -32,4 +32,3 @@ visible = false
 
 [node name="YouWin" parent="." instance=ExtResource("7_33cxf")]
 process_mode = 3
-visible = false

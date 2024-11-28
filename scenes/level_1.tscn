@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://rmtkeqva88pk"]
+[gd_scene load_steps=8 format=3 uid="uid://boujstohcmoqt"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_6f0ke"]
 [ext_resource type="PackedScene" uid="uid://db3wo43ldjkrg" path="res://scenes/MENUS/score_manager.tscn" id="1_fpxwt"]
@@ -33,4 +33,3 @@ visible = false
 
 [node name="YouWin" parent="." instance=ExtResource("6_x0wa0")]
 process_mode = 3
-visible = false
