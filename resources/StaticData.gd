@@ -2,12 +2,9 @@ extends Node
 
 var levels = "res://resources/levels.json"
 
-func _ready() -> void:
-	update_record_score('level_1', 4000)
-
 func save(content, path):
 	var file = FileAccess.open(path, FileAccess.WRITE)
-	file.store_string(JSON.stringify(content))
+	file.store_string(JSON.stringify(content, '\t'))
 	file.close()
 	file = null
 	

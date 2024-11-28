@@ -1,1 +1,17 @@
-{"level_1":{"min_score":7000,"name":"Level 1","record_score":4000},"level_2":{},"tutorial":{}}
+{
+	"level_1": {
+		"min_score": 7000,
+		"name": "Level 1",
+		"record_score": 0
+	},
+	"level_2": {
+		"min_score": 9000,
+		"name": "Level 2",
+		"record_score": 0
+	},
+	"tutorial": {
+		"min_score": 0,
+		"name": "Tutorial",
+		"record_score": 0
+	}
+}
