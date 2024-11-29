@@ -31,6 +31,7 @@ func unfocus():
 
 func select():
 	if active:
+		SoundManager.menu.stop()
 		SoundManager.play(SoundManager.ACCEPT)
 		print(StaticData.read(StaticData.levels)[handle])
 		get_tree().change_scene_to_file(level_scene_path)

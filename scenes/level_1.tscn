@@ -13,6 +13,7 @@ scale = Vector2(2, 2)
 script = ExtResource("1_6f0ke")
 
 [node name="ScoreManager" parent="." instance=ExtResource("1_fpxwt")]
+actual_level = "Level 1"
 
 [node name="Rythm" parent="." instance=ExtResource("2_d6rix")]
 position = Vector2(110, 180)

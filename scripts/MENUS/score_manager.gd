@@ -11,6 +11,7 @@ extends Control
 @onready var win_node: CanvasLayer = $"../YouWin"
 
 @onready var shooter_node: Node2D = $"../Shooter"
+@export var actual_level: String
 
 var score: int = 0
 var max_score: int = 9999999
@@ -26,6 +27,7 @@ signal game_over
 
 func _ready() -> void:
 	update_score_ui()
+		
 
 func _process(delta: float) -> void:
 	light.modulate.a = move_toward(light.modulate.a, 0, 0.7 * delta)
@@ -94,7 +96,9 @@ func gameover():
 	game_over_node.ejecutar()
 	
 func finish_level():
-	if score >= 7000:
+	if actual_level == "Level 1" and score >= 7000:
+		win_node.ejecutar()
+	if actual_level == "Level 2" and score >= 20000:
 		win_node.ejecutar()
 	else:
 		game_over_node.ejecutar()

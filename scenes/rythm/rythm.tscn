@@ -46,6 +46,7 @@ bus = &"Music"
 [node name="Notes" type="Node2D" parent="NoteSpawner"]
 
 [node name="TimeLabel" type="Label" parent="NoteSpawner"]
+visible = false
 offset_left = -8.0
 offset_top = 213.0
 offset_right = 111.0

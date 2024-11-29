@@ -11,7 +11,7 @@ extends Node2D
 
 func _ready() -> void:
 	level_song.stream = load(file_song)
-	level_song.play(27)
+	level_song.play()
 	
 func _input(event: InputEvent) -> void:
 	

@@ -68,7 +68,6 @@ func _ready() -> void:
 
 func take_damage(amount):
 	health = health - amount #daño que le quita
-	print(health)
 	if health <= 0:
 		die()
 	else:

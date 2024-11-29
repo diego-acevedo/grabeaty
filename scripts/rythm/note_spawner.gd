@@ -979,7 +979,7 @@ func _process(_delta: float) -> void:
 	
 	if shooter.actual_level == "Level 2":
 		if abs(song_time - 30) < 0.1:
-			enemy_spawner.visible = false
+			enemy_spawner.disappear()
 			
 		if abs(song_time - 31) < 0.1 and boss_instance == null:
 			spawn_boss()
@@ -988,10 +988,10 @@ func _process(_delta: float) -> void:
 			despawn_boss()
 		
 		if abs(song_time - 78) < 0.1:
-			enemy_spawner.visible = true
+			enemy_spawner.appear()
 			
 		if abs(song_time - 118) < 0.1:
-			enemy_spawner.visible = false
+			enemy_spawner.disappear()
 		
 		if abs(song_time - 120) < 0.1 and boss_instance == null:
 			spawn_boss()
@@ -1038,14 +1038,15 @@ func spawn_boss():
 	boss_node.scale.y = 0.1
 
 func despawn_boss():
-	var boss_node_new = boss_node.get_child(0)
+	var boss_node_new = boss_node.get_child(1)
 	boss_instance = null
 	boss_node_new.anim_player.play("Despawn")
 	timer.start()
 	await timer.timeout
 	boss_node_new.queue_free()
+	
 func dead_boss():
-	var boss_node_new = boss_node.get_child(0)
+	var boss_node_new = boss_node.get_child(1)
 	boss_node_new.anim_player.play("Despawn")
 	
 	

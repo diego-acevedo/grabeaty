@@ -65,7 +65,7 @@ active = true
 level_scene_path = "res://scenes/level_2.tscn"
 
 [node name="Cursor" parent="." instance=ExtResource("2_6k4q4")]
-position = Vector2(41.5, 44.5)
+position = Vector2(344, 173.5)
 
 [node name="Label" type="Label" parent="."]
 offset_left = 245.0

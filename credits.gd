@@ -3,8 +3,8 @@ extends Control
 @onready var menu: TextureButton = $MenuButton
 var menus: PackedScene = preload("res://scenes/MENUS/main_menu.tscn")
 
-var animation_speed = 80  # Velocidad en píxeles por segundo
-var target_position = -1350  # Posición final del desplazamiento
+var animation_speed = 150  # Velocidad en píxeles por segundo
+var target_position = -1700  # Posición final del desplazamiento
 var initial_position = 600  # Posición inicial (fuera de la pantalla)
 var is_scrolling = true  # Variable para controlar el movimiento
 

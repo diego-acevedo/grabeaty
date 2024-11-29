@@ -1,6 +1,7 @@
 extends Node2D
 @onready var shooter: Node2D = $".."
 @onready var enemies_generator: Node2D = $"."
+@onready var timer: Timer = $Timer
 
 @export var containers: Array[PackedScene]
 var t = 0.0
@@ -29,7 +30,14 @@ func _physics_process(delta: float) -> void:
 func disappear():
 	t = 0
 	appearing = false
+	timer.start()
+	await timer.timeout
+	visible = false
+	
 
 func appear():
 	t = 0
 	appearing = true
+	timer.start()
+	await timer.timeout
+	visible = true
