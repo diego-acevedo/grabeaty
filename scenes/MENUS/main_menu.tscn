@@ -128,12 +128,18 @@ alignment = 1
 [node name="LEVELS" parent="VBoxContainer/VBoxContainer" instance=ExtResource("6_byx03")]
 layout_mode = 2
 focus_neighbor_top = NodePath("../QUIT")
-focus_neighbor_bottom = NodePath("../CREDITS")
+focus_neighbor_bottom = NodePath("../TUTORIAL")
 text = "PLAY"
+
+[node name="TUTORIAL" parent="VBoxContainer/VBoxContainer" instance=ExtResource("6_byx03")]
+layout_mode = 2
+focus_neighbor_top = NodePath("../LEVELS")
+focus_neighbor_bottom = NodePath("../CREDITS")
+text = "TUTORIAL"
 
 [node name="CREDITS" parent="VBoxContainer/VBoxContainer" instance=ExtResource("6_byx03")]
 layout_mode = 2
-focus_neighbor_top = NodePath("../LEVELS")
+focus_neighbor_top = NodePath("../TUTORIAL")
 focus_neighbor_bottom = NodePath("../QUIT")
 text = "CREDITS"
 
