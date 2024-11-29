@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://fmruimvuipr8"]
+
+[ext_resource type="Script" path="res://scripts/MENUS/cursor.gd" id="1_kqsw8"]
+[ext_resource type="Texture2D" uid="uid://dgnfyjoubtqtt" path="res://assets/ui/cursor.png" id="2_jgc3p"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_isbyx"]
+size = Vector2(16, 16)
+
+[node name="Cursor" type="Node2D"]
+script = ExtResource("1_kqsw8")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_jgc3p")
+
+[node name="Focus" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Focus"]
+shape = SubResource("RectangleShape2D_isbyx")

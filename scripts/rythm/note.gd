@@ -1,6 +1,6 @@
 extends Area2D
 
-@onready var circulo_sprite: Sprite2D = $Circulo_Sprite
+@onready var note_sprite: Sprite2D = $NoteSprite
 @onready var score_manager: Control = $"../../../../ScoreManager"
 
 var speed = 200
@@ -26,11 +26,11 @@ func correct():
 	
 func changeColor(color):
 	if (color == "center"):
-		circulo_sprite.set_modulate(Color(0.231, 0.686, 0.722, 1))
+		note_sprite.frame_coords.x = 5
 	elif (color == "left"):
-		circulo_sprite.set_modulate(Color(0.788, 0.341, 0.306, 1))
+		note_sprite.frame_coords.x = 4
 	elif (color == "right"):
-		circulo_sprite.set_modulate(Color(0.804, 0.4, 0.694, 1))
+		note_sprite.frame_coords.x = 7
 		
 		
 	

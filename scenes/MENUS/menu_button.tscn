@@ -1,0 +1,27 @@
+[gd_scene load_steps=6 format=3 uid="uid://do6wl6e06c0g0"]
+
+[ext_resource type="Texture2D" uid="uid://cf7kp4ggq366b" path="res://assets/ui/button_normal.png" id="1_y5u8u"]
+[ext_resource type="Texture2D" uid="uid://bwxpa522mgtho" path="res://assets/ui/button_focus.png" id="2_1tdrx"]
+[ext_resource type="Script" path="res://scripts/MENUS/menu_button.gd" id="3_rpuio"]
+[ext_resource type="FontFile" uid="uid://bj8msmm1wy6tk" path="res://assets/fonts/m6x11.ttf" id="4_og41o"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_oes40"]
+font = ExtResource("4_og41o")
+font_size = 32
+
+[node name="MenuButton" type="TextureButton"]
+texture_normal = ExtResource("1_y5u8u")
+texture_focused = ExtResource("2_1tdrx")
+script = ExtResource("3_rpuio")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 0
+offset_right = 256.0
+offset_bottom = 73.0
+
+[node name="Label" type="Label" parent="CenterContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+label_settings = SubResource("LabelSettings_oes40")
+horizontal_alignment = 1
+vertical_alignment = 2

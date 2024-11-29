@@ -1,0 +1,36 @@
+[gd_scene load_steps=8 format=3 uid="uid://boujstohcmoqt"]
+
+[ext_resource type="Script" path="res://scripts/main.gd" id="1_6f0ke"]
+[ext_resource type="PackedScene" uid="uid://db3wo43ldjkrg" path="res://scenes/MENUS/score_manager.tscn" id="1_fpxwt"]
+[ext_resource type="PackedScene" uid="uid://coftx1hc4aqyd" path="res://scenes/rythm/rythm.tscn" id="2_d6rix"]
+[ext_resource type="PackedScene" uid="uid://bgg8kc0il1xyh" path="res://scenes/shooter/shooter.tscn" id="3_vtaq6"]
+[ext_resource type="PackedScene" uid="uid://dhlbvlgq6cw2r" path="res://scenes/MENUS/pause_menu.tscn" id="4_wlma8"]
+[ext_resource type="PackedScene" uid="uid://1cd8ro5aqvw4" path="res://scenes/MENUS/game_over.tscn" id="5_exgjj"]
+[ext_resource type="PackedScene" uid="uid://b378dxl84wvil" path="res://scenes/MENUS/you_win.tscn" id="6_x0wa0"]
+
+[node name="Level1" type="Node2D"]
+scale = Vector2(2, 2)
+script = ExtResource("1_6f0ke")
+
+[node name="ScoreManager" parent="." instance=ExtResource("1_fpxwt")]
+actual_level = "Level 1"
+
+[node name="Rythm" parent="." instance=ExtResource("2_d6rix")]
+position = Vector2(110, 180)
+file_song = "res://assets/Music/level1.mp3"
+
+[node name="Shooter" parent="." instance=ExtResource("3_vtaq6")]
+position = Vector2(430, 180)
+actual_level = "Level 1"
+metadata/_edit_group_ = true
+
+[node name="PauseMenu" parent="." instance=ExtResource("4_wlma8")]
+process_mode = 3
+visible = false
+
+[node name="GameOver" parent="." instance=ExtResource("5_exgjj")]
+process_mode = 3
+visible = false
+
+[node name="YouWin" parent="." instance=ExtResource("6_x0wa0")]
+process_mode = 3

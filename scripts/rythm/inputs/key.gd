@@ -7,6 +7,9 @@ extends Node2D
 @onready var colision: CollisionShape2D = $"Pressed Area/Colision"
 @onready var timer: Timer = $"Pressed Area/Colision/Timer"
 @onready var score_manager: Control = $"../../../ScoreManager"
+@onready var song: AudioStreamPlayer = $"../../NoteSpawner/LevelSong"
+
+var note_hit = false
 
 func _ready() -> void:
 	modulate = color
@@ -23,6 +26,11 @@ func _input(event: InputEvent) -> void:
 		sprite.visible = true
 		timer.start()
 		await timer.timeout
+		if not note_hit:
+			score_manager.fail()
+			var tiempo = song.get_playback_position() - 1.98
+			print("fail in: " + str(tiempo))
+		note_hit = false
 		colision.disabled = true
 		sprite.visible = false
 
@@ -33,6 +41,7 @@ func _on_key_area_entered(area: Area2D) -> void:
 	# desaparezca.
 	
 	if area.has_method("correct"):
+		note_hit = true
 		area.correct()
 		score_manager.note_hit()
 		

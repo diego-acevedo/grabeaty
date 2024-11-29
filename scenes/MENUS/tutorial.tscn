@@ -1,0 +1,133 @@
+[gd_scene load_steps=6 format=3 uid="uid://b2436uchxguxw"]
+
+[ext_resource type="Script" path="res://scripts/MENUS/tutorial.gd" id="1_m32ij"]
+[ext_resource type="Texture2D" uid="uid://caol5kef3a6wi" path="res://assets/ui/Sin título-1.png" id="1_pxg7l"]
+[ext_resource type="FontFile" uid="uid://b7ioow2dnfdoe" path="res://assets/fonts/NanoPlus.ttf" id="2_0dllj"]
+[ext_resource type="FontFile" uid="uid://bj8msmm1wy6tk" path="res://assets/fonts/m6x11.ttf" id="2_yhtg0"]
+[ext_resource type="PackedScene" uid="uid://do6wl6e06c0g0" path="res://scenes/MENUS/menu_button.tscn" id="5_owp31"]
+
+[node name="TUTORIAL" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_m32ij")
+
+[node name="SinTítulo-1" type="Sprite2D" parent="."]
+texture = ExtResource("1_pxg7l")
+centered = false
+
+[node name="Label6" type="Label" parent="."]
+layout_mode = 0
+offset_left = 27.0
+offset_top = 223.0
+offset_right = 387.0
+offset_bottom = 390.0
+theme_override_colors/font_color = Color(0.952941, 1, 1, 0.964706)
+theme_override_fonts/font = ExtResource("2_yhtg0")
+theme_override_font_sizes/font_size = 20
+text = "For each correct score, the multiplier will increase progressively and at each level the player's ship will improve.
+The fuel will go down if you miss notes, and will go up if you get them right.
+If you run out of fuel, you lose."
+autowrap_mode = 3
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 31.0
+offset_top = 184.0
+offset_right = 352.0
+offset_bottom = 283.0
+theme_override_colors/font_color = Color(0.952941, 1, 0, 0.964706)
+theme_override_fonts/font = ExtResource("2_0dllj")
+theme_override_font_sizes/font_size = 36
+text = "MULTIPLIER"
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 282.0
+offset_top = 183.0
+offset_right = 603.0
+offset_bottom = 282.0
+theme_override_colors/font_color = Color(0.952941, 1, 0, 0.964706)
+theme_override_fonts/font = ExtResource("2_0dllj")
+theme_override_font_sizes/font_size = 36
+text = "FUEL"
+
+[node name="Label3" type="Label" parent="."]
+layout_mode = 0
+offset_left = 118.0
+offset_top = 405.0
+offset_right = 439.0
+offset_bottom = 504.0
+theme_override_colors/font_color = Color(0.952941, 1, 0, 0.964706)
+theme_override_fonts/font = ExtResource("2_0dllj")
+theme_override_font_sizes/font_size = 36
+text = "NOTE BUTTONS"
+
+[node name="Label4" type="Label" parent="."]
+layout_mode = 0
+offset_left = 943.0
+offset_top = 93.0
+offset_right = 1264.0
+offset_bottom = 192.0
+theme_override_colors/font_color = Color(0.952941, 1, 0, 0.964706)
+theme_override_fonts/font = ExtResource("2_0dllj")
+theme_override_font_sizes/font_size = 36
+text = "ENEMIES"
+
+[node name="Label5" type="Label" parent="."]
+layout_mode = 0
+offset_left = 600.0
+offset_top = 508.0
+offset_right = 921.0
+offset_bottom = 607.0
+theme_override_colors/font_color = Color(0.952941, 1, 0, 0.964706)
+theme_override_fonts/font = ExtResource("2_0dllj")
+theme_override_font_sizes/font_size = 36
+text = "PLAYER"
+
+[node name="Label7" type="Label" parent="."]
+layout_mode = 0
+offset_left = 65.0
+offset_top = 445.0
+offset_right = 425.0
+offset_bottom = 612.0
+theme_override_colors/font_color = Color(0.952941, 1, 1, 0.964706)
+theme_override_fonts/font = ExtResource("2_yhtg0")
+theme_override_font_sizes/font_size = 20
+text = "Using A-S-D, you will be able to hit the notes, only if they are in the white circle."
+autowrap_mode = 3
+
+[node name="Label8" type="Label" parent="."]
+layout_mode = 0
+offset_left = 867.0
+offset_top = 136.0
+offset_right = 1227.0
+offset_bottom = 303.0
+theme_override_colors/font_color = Color(0.952941, 1, 1, 0.964706)
+theme_override_fonts/font = ExtResource("2_yhtg0")
+theme_override_font_sizes/font_size = 20
+text = "Enemies will appear in rounds and you will have to shoot them. There are 3 types of them, the red ones die in 3 shots, the yellow ones in 2, and the green ones in 1."
+autowrap_mode = 3
+
+[node name="Label9" type="Label" parent="."]
+layout_mode = 0
+offset_left = 553.0
+offset_top = 551.0
+offset_right = 768.0
+offset_bottom = 718.0
+theme_override_colors/font_color = Color(0.952941, 1, 1, 0.964706)
+theme_override_fonts/font = ExtResource("2_yhtg0")
+theme_override_font_sizes/font_size = 20
+text = "This is you, you can move using the arrow keys on the keyboard, right and left. You must be attentive to enemy shots."
+autowrap_mode = 3
+
+[node name="MenuButton" parent="." instance=ExtResource("5_owp31")]
+layout_mode = 0
+offset_left = 1015.0
+offset_top = 646.0
+offset_right = 1271.0
+offset_bottom = 710.0
+text = "Go Back"

@@ -1,9 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://bgg8kc0il1xyh"]
+[gd_scene load_steps=9 format=3 uid="uid://bgg8kc0il1xyh"]
 
 [ext_resource type="PackedScene" uid="uid://cbhabtj12l8cd" path="res://scenes/shooter/characters/player/player.tscn" id="1_memmo"]
 [ext_resource type="Script" path="res://scripts/shooter/shooter.gd" id="1_xas88"]
 [ext_resource type="Texture2D" uid="uid://hf7qftxduc1" path="res://assets/ui/shooter_box.png" id="2_ja4uh"]
 [ext_resource type="PackedScene" uid="uid://bjaq3qhxir3dy" path="res://scenes/shooter/characters/enemies/patterns/enemies_generator.tscn" id="3_wuvcr"]
+[ext_resource type="Script" path="res://scripts/shooter/parallax_background.gd" id="5_a03e7"]
+[ext_resource type="Texture2D" uid="uid://bsa35n5inui7b" path="res://assets/sprites/stars.png" id="5_mv7ya"]
+[ext_resource type="Texture2D" uid="uid://xwfmaftx4br" path="res://assets/sprites/asteroids.png" id="7_7luhr"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ggyup"]
 
@@ -35,3 +38,28 @@ shape = SubResource("WorldBoundaryShape2D_ggyup")
 position = Vector2(177, 0)
 rotation = -1.5708
 shape = SubResource("WorldBoundaryShape2D_ggyup")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+script = ExtResource("5_a03e7")
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.2, 0.2)
+motion_mirroring = Vector2(840, 720)
+
+[node name="Stars" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+modulate = Color(0.625597, 0.625597, 0.625597, 1)
+scale = Vector2(2, 2)
+texture = ExtResource("5_mv7ya")
+centered = false
+offset = Vector2(210, 0)
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.5, 0.5)
+motion_mirroring = Vector2(840, 720)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
+modulate = Color(0.498039, 0.498039, 0.498039, 1)
+scale = Vector2(2, 2)
+texture = ExtResource("7_7luhr")
+centered = false
+offset = Vector2(210, 0)

@@ -1,0 +1,89 @@
+[gd_scene load_steps=11 format=3 uid="uid://csq21mlrl3m0j"]
+
+[ext_resource type="PackedScene" uid="uid://d1mlh8ryumneq" path="res://scenes/MENUS/level_selector/level_icon.tscn" id="1_6ybyj"]
+[ext_resource type="Script" path="res://scripts/MENUS/level_menu.gd" id="1_ki03y"]
+[ext_resource type="Script" path="res://scripts/shooter/parallax_background.gd" id="1_p51f8"]
+[ext_resource type="PackedScene" uid="uid://fmruimvuipr8" path="res://scenes/MENUS/level_selector/cursor.tscn" id="2_6k4q4"]
+[ext_resource type="Texture2D" uid="uid://fte3hnl0xf02" path="res://assets/sprites/parallax_stars.png" id="2_rgi3y"]
+[ext_resource type="Texture2D" uid="uid://c0clug4ty6x1o" path="res://assets/sprites/parallax_nebulosa.png" id="3_08ohw"]
+[ext_resource type="Texture2D" uid="uid://ddwbdc4mlbrwn" path="res://assets/sprites/parallax_asteroids.png" id="4_ihq8k"]
+[ext_resource type="FontFile" uid="uid://b7ioow2dnfdoe" path="res://assets/fonts/NanoPlus.ttf" id="7_6sav0"]
+[ext_resource type="PackedScene" uid="uid://do6wl6e06c0g0" path="res://scenes/MENUS/menu_button.tscn" id="8_gnjdu"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_0cmms"]
+font = ExtResource("7_6sav0")
+font_size = 32
+font_color = Color(0.0392157, 0.376471, 0.443137, 1)
+outline_size = 8
+outline_color = Color(0.803922, 0.956863, 0.996078, 1)
+
+[node name="LevelMenu" type="Node2D"]
+scale = Vector2(2, 2)
+script = ExtResource("1_ki03y")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+script = ExtResource("1_p51f8")
+
+[node name="Stars" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.2, 0.2)
+motion_mirroring = Vector2(1280, 720)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Stars"]
+scale = Vector2(2, 2)
+texture = ExtResource("2_rgi3y")
+centered = false
+
+[node name="Nebulosa" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.3, 0.3)
+motion_mirroring = Vector2(1280, 720)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Nebulosa"]
+scale = Vector2(2, 2)
+texture = ExtResource("3_08ohw")
+centered = false
+
+[node name="Asteroids" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.6, 0.6)
+motion_mirroring = Vector2(1280, 720)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Asteroids"]
+scale = Vector2(2, 2)
+texture = ExtResource("4_ihq8k")
+centered = false
+
+[node name="Levels" type="Node2D" parent="."]
+
+[node name="Level1" parent="Levels" instance=ExtResource("1_6ybyj")]
+position = Vector2(178.5, 150)
+sprite_coord = Vector2i(0, 1)
+handle = "level_1"
+active = true
+level_scene_path = "res://scenes/level_1.tscn"
+
+[node name="Level2" parent="Levels" instance=ExtResource("1_6ybyj")]
+position = Vector2(454, 220.5)
+sprite_coord = Vector2i(3, 2)
+handle = "level_2"
+active = true
+level_scene_path = "res://scenes/level_2.tscn"
+
+[node name="Cursor" parent="." instance=ExtResource("2_6k4q4")]
+position = Vector2(344, 173.5)
+
+[node name="Label" type="Label" parent="."]
+offset_left = 245.0
+offset_top = 15.0
+offset_right = 433.0
+offset_bottom = 43.0
+text = "SELECT A LEVEL"
+label_settings = SubResource("LabelSettings_0cmms")
+
+[node name="Node2D" type="Node2D" parent="."]
+scale = Vector2(0.5, 0.5)
+
+[node name="MenuButton" parent="Node2D" instance=ExtResource("8_gnjdu")]
+offset_left = 25.0
+offset_top = 629.0
+offset_right = 281.0
+offset_bottom = 693.0
+text = "Go Back"

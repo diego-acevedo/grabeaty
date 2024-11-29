@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://26x7e6rscw2w"]
+
+[ext_resource type="Script" path="res://scripts/shooter/characters/bullets/drone.gd" id="1_hc3tc"]
+[ext_resource type="Texture2D" uid="uid://cti2yrxs2vrvl" path="res://assets/sprites/spaceships.png" id="2_knwk2"]
+
+[node name="Drone" type="Node2D"]
+script = ExtResource("1_hc3tc")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_knwk2")
+hframes = 18
+vframes = 10
+frame = 20

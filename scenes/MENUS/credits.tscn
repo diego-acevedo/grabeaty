@@ -1,0 +1,160 @@
+[gd_scene load_steps=8 format=3 uid="uid://dd4quwig6i1pk"]
+
+[ext_resource type="Script" path="res://credits.gd" id="1_tlmx8"]
+[ext_resource type="Texture2D" uid="uid://d4kud81pprh50" path="res://scenes/MENUS/Space Background.png" id="2_d0yba"]
+[ext_resource type="FontFile" uid="uid://b7ioow2dnfdoe" path="res://assets/fonts/NanoPlus.ttf" id="3_wuvq6"]
+[ext_resource type="FontFile" uid="uid://bj8msmm1wy6tk" path="res://assets/fonts/m6x11.ttf" id="4_v1t6d"]
+[ext_resource type="PackedScene" uid="uid://do6wl6e06c0g0" path="res://scenes/MENUS/menu_button.tscn" id="5_8jxhf"]
+
+[sub_resource type="Animation" id="Animation_s7krv"]
+resource_name = "new_animation"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2ijt7"]
+_data = {
+"new_animation": SubResource("Animation_s7krv")
+}
+
+[node name="Credits" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_tlmx8")
+
+[node name="SpaceBackground" type="Sprite2D" parent="."]
+position = Vector2(640, 360)
+texture = ExtResource("2_d0yba")
+
+[node name="MovableContainer" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MovableContainer"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 359.0
+offset_right = 881.0
+offset_bottom = 760.0
+grow_horizontal = 2
+
+[node name="TITULO" type="Label" parent="MovableContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_fonts/font = ExtResource("3_wuvq6")
+theme_override_font_sizes/font_size = 256
+text = "CREDITS"
+
+[node name="developers" type="Label" parent="MovableContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0.956863, 0.960784, 1)
+theme_override_fonts/font = ExtResource("3_wuvq6")
+theme_override_font_sizes/font_size = 128
+text = "DEVELOPERS:"
+horizontal_alignment = 1
+
+[node name="TEXT1" type="Label" parent="MovableContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_v1t6d")
+theme_override_font_sizes/font_size = 64
+text = "Alonso Becerra
+Diego Acevedo
+Jorge Contreras"
+horizontal_alignment = 3
+
+[node name="SONGS" type="Label" parent="MovableContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0.956863, 0.960784, 1)
+theme_override_fonts/font = ExtResource("3_wuvq6")
+theme_override_font_sizes/font_size = 128
+text = "SONGS:"
+horizontal_alignment = 1
+
+[node name="TEXT2" type="Label" parent="MovableContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_v1t6d")
+theme_override_font_sizes/font_size = 64
+text = "LEVEL 1 “The Signalist”, OcularNebula
+LEVEL 2 “Cord Cutter”, Boom Kitty
+MENU \"Space ambiental loop\", JeanClaudeHitler
+"
+
+[node name="ASSETS" type="Label" parent="MovableContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0.956863, 0.960784, 1)
+theme_override_fonts/font = ExtResource("3_wuvq6")
+theme_override_font_sizes/font_size = 128
+text = "ASSETS:"
+horizontal_alignment = 1
+
+[node name="TEXT3" type="Label" parent="MovableContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_v1t6d")
+theme_override_font_sizes/font_size = 64
+text = "Sprite Planets: Norma2D
+Sprite Ships: BizmasterStudios
+Bullets: BDragon1727
+Explosion of Death: ansimuz
+Credit Fund: Deep-Fold"
+horizontal_alignment = 3
+
+[node name="SOUNDS OTROS" type="Label" parent="MovableContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0.956863, 0.960784, 1)
+theme_override_fonts/font = ExtResource("3_wuvq6")
+theme_override_font_sizes/font_size = 128
+text = "SOUND EFFECTS:"
+horizontal_alignment = 1
+
+[node name="TEXT4" type="Label" parent="MovableContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_v1t6d")
+theme_override_font_sizes/font_size = 64
+text = "Menus: Bleeoop"
+horizontal_alignment = 3
+
+[node name="FONTS" type="Label" parent="MovableContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0.956863, 0.960784, 1)
+theme_override_fonts/font = ExtResource("3_wuvq6")
+theme_override_font_sizes/font_size = 128
+text = "FONTS:"
+horizontal_alignment = 1
+
+[node name="TEXT5" type="Label" parent="MovableContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_v1t6d")
+theme_override_font_sizes/font_size = 64
+text = "Title: SpicyGame Studios
+General: Daniel Linssen
+"
+horizontal_alignment = 3
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MovableContainer"]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_2ijt7")
+}
+
+[node name="MenuButton" parent="." instance=ExtResource("5_8jxhf")]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 646.0
+offset_right = 270.0
+offset_bottom = 710.0
+text = "Go Back"

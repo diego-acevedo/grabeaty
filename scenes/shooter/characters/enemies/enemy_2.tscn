@@ -1,8 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://ce0q61f8uhu4d"]
+[gd_scene load_steps=11 format=3 uid="uid://ce0q61f8uhu4d"]
 
 [ext_resource type="Script" path="res://scripts/shooter/characters/enemy.gd" id="1_1uakw"]
+[ext_resource type="PackedScene" uid="uid://dx7wernvjnc3s" path="res://scenes/shooter/characters/bullets/bulletenemy.tscn" id="2_t46wd"]
 [ext_resource type="Texture2D" uid="uid://cti2yrxs2vrvl" path="res://assets/sprites/spaceships.png" id="2_ws6q1"]
 [ext_resource type="Texture2D" uid="uid://1fy311e6b4qj" path="res://assets/sprites/spritesheet.png" id="3_8rmx2"]
+[ext_resource type="Texture2D" uid="uid://dn8xrg1wwebfl" path="res://assets/sprites/damage.png" id="4_2wibr"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_dyohv"]
 radius = 17.0
@@ -33,6 +35,78 @@ tracks/1/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprites/Bottom/Damage:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprites/Middle/Damage:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Sprites/Top/Damage:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Sprites/Bottom:clip_children")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Sprites/Middle:clip_children")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Sprites/Top:clip_children")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
 
 [sub_resource type="Animation" id="Animation_vlsxs"]
 resource_name = "explosion"
@@ -62,9 +136,87 @@ tracks/1/keys = {
 "values": [true]
 }
 
+[sub_resource type="Animation" id="Animation_0d7yy"]
+resource_name = "damage"
+length = 0.5
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprites/Bottom/Damage:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [true, false, true, false, true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprites/Middle/Damage:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [true, false, true, false, true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprites/Top/Damage:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [true, false, true, false, true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprites/Bottom:clip_children")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [1, 0, 1, 0, 1, 0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Sprites/Middle:clip_children")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [1, 0, 1, 0, 1, 0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Sprites/Top:clip_children")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [1, 0, 1, 0, 1, 0]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_rjpps"]
 _data = {
 "RESET": SubResource("Animation_tmjq1"),
+"damage": SubResource("Animation_0d7yy"),
 "explosion": SubResource("Animation_vlsxs")
 }
 
@@ -72,6 +224,7 @@ _data = {
 collision_layer = 4
 script = ExtResource("1_1uakw")
 health = 20
+bullet_scene = ExtResource("2_t46wd")
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -80,11 +233,16 @@ shape = SubResource("CircleShape2D_dyohv")
 [node name="Sprites" type="Node2D" parent="."]
 
 [node name="Bottom" type="Sprite2D" parent="Sprites"]
-modulate = Color(0.878431, 0.658824, 0.329412, 1)
+self_modulate = Color(0.878431, 0.658824, 0.329412, 1)
 texture = ExtResource("2_ws6q1")
 hframes = 18
 vframes = 10
 frame = 50
+
+[node name="Damage" type="Sprite2D" parent="Sprites/Bottom"]
+visible = false
+position = Vector2(0, -1)
+texture = ExtResource("4_2wibr")
 
 [node name="Middle" type="Sprite2D" parent="Sprites"]
 position = Vector2(0, -4)
@@ -93,21 +251,32 @@ hframes = 18
 vframes = 10
 frame = 81
 
+[node name="Damage" type="Sprite2D" parent="Sprites/Middle"]
+visible = false
+position = Vector2(0, 3)
+texture = ExtResource("4_2wibr")
+
 [node name="Top" type="Sprite2D" parent="Sprites"]
-modulate = Color(0.878431, 0.658824, 0.329412, 1)
+self_modulate = Color(0.878431, 0.658824, 0.329412, 1)
 position = Vector2(0, -6)
 texture = ExtResource("2_ws6q1")
 hframes = 18
 vframes = 10
 frame = 31
 
+[node name="Damage" type="Sprite2D" parent="Sprites/Top"]
+visible = false
+position = Vector2(0, 5)
+texture = ExtResource("4_2wibr")
+
 [node name="Explosion" type="Sprite2D" parent="."]
 visible = false
 texture = ExtResource("3_8rmx2")
 hframes = 7
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Explosion"]
-root_node = NodePath("../..")
+[node name="Timer" type="Timer" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_rjpps")
 }

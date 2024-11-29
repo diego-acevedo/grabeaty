@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://ug85r7bb4k6j"]
 
 [ext_resource type="Script" path="res://scripts/rythm/note.gd" id="1_kjgis"]
-[ext_resource type="Texture2D" uid="uid://b7xe1ldr7cv3s" path="res://assets/sprites/CirculoBlanco.png" id="2_3bou3"]
+[ext_resource type="Texture2D" uid="uid://bjfgfq7ttf2be" path="res://assets/sprites/celestial_objects.png" id="2_skxyq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a344c"]
 size = Vector2(30, 12)
@@ -9,10 +9,11 @@ size = Vector2(30, 12)
 [node name="NOTA" type="Area2D"]
 script = ExtResource("1_kjgis")
 
-[node name="Circulo_Sprite" type="Sprite2D" parent="."]
-modulate = Color(0.763574, 0.00254073, 0.974554, 1)
-scale = Vector2(0.25, 0.25)
-texture = ExtResource("2_3bou3")
+[node name="NoteSprite" type="Sprite2D" parent="."]
+texture = ExtResource("2_skxyq")
+hframes = 12
+vframes = 8
+frame = 77
 
 [node name="Colision" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_a344c")
