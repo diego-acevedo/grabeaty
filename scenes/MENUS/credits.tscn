@@ -83,10 +83,10 @@ size_flags_horizontal = 4
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("4_v1t6d")
 theme_override_font_sizes/font_size = 64
-text = "LEVEL 1 “The Signalist”, Author: OcularNebula
-LEVEL 2 “Cord Cutter”, Author: Boom Kitty
+text = "LEVEL 1 “The Signalist”, OcularNebula
+LEVEL 2 “Cord Cutter”, Boom Kitty
+MENU \"Space ambiental loop\", JeanClaudeHitler
 "
-horizontal_alignment = 3
 
 [node name="ASSETS" type="Label" parent="MovableContainer/VBoxContainer"]
 layout_mode = 2
