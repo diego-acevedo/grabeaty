@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://resources/sound_manager.gd" id="1_rk8pw"]
 [ext_resource type="AudioStream" uid="uid://lllgmighce8c" path="res://assets/sfx/cursor2.wav" id="2_3uopx"]
 [ext_resource type="AudioStream" uid="uid://cwo4uob14n5mf" path="res://assets/sfx/accept2.wav" id="3_anvoi"]
-[ext_resource type="AudioStream" uid="uid://cs6qx2mj8w853" path="res://assets/Music/288395_space_theme.mp3" id="4_f1w5h"]
+[ext_resource type="AudioStream" uid="uid://cs6qx2mj8w853" path="res://assets/music/288395_space_theme.mp3" id="4_f1w5h"]
 
 [node name="SoundManager" type="Node2D"]
 script = ExtResource("1_rk8pw")

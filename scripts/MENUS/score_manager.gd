@@ -27,7 +27,6 @@ signal game_over
 
 func _ready() -> void:
 	update_score_ui()
-		
 
 func _process(delta: float) -> void:
 	light.modulate.a = move_toward(light.modulate.a, 0, 0.7 * delta)
@@ -93,6 +92,8 @@ func enemy_killed() -> void:
 	add_score(200)
 	
 func gameover():
+	game_over_node.end_game.handle = 'level_1' if actual_level == 'Level 1' else 'level_2'
+	win_node.end_game.handle = 'level_1' if actual_level == 'Level 1' else 'level_2'
 	game_over_node.ejecutar()
 	
 func finish_level():

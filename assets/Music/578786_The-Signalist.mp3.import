@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://dc5fn6osjwqlu"
-path="res://.godot/imported/578786_The-Signalist.mp3-4e4b0900aa457239b4ccb907b4d44780.mp3str"
+path="res://.godot/imported/578786_The-Signalist.mp3-8b173c4f016bb72c0c32dcd5ad8c8220.mp3str"
 
 [deps]
 
-source_file="res://assets/Music/578786_The-Signalist.mp3"
-dest_files=["res://.godot/imported/578786_The-Signalist.mp3-4e4b0900aa457239b4ccb907b4d44780.mp3str"]
+source_file="res://assets/music/578786_The-Signalist.mp3"
+dest_files=["res://.godot/imported/578786_The-Signalist.mp3-8b173c4f016bb72c0c32dcd5ad8c8220.mp3str"]
 
 [params]
 

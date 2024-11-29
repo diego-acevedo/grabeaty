@@ -30,6 +30,7 @@ func set_values(new_score: int):
 	restart.label.text = 'Play Again' if victory else 'Try Again'
 	main_menu.label.text = 'Next Level' if victory else 'Go Back'
 	score.text = "%d/%d" % [new_score, info.min_score]
+	StaticData.update_record_score(handle, new_score)
 
 func activate():
 	visible = true
